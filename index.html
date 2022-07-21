@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBooks Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- header section start -->
+        <div class="header">
+            <!-- logo & login section start -->
+            <div class="headerTop">
+                <div class="logoFrame">
+                    <img src="logo.png" alt="" id="logo">
+                </div>
+                <div class="loginIcon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
+            <!-- logo & login section end -->
+
+            <!-- header navBar start -->
+            <div class="nav">
+                <div class="nav-bar">
+                
+                    <!--메뉴바-->
+                    <span>home</span>
+
+                    <span class="scroll-ele">newBook</span>
+
+                    <span class="scroll-ele">generBook</span>
+
+                    <span class="scroll-ele">reviwBook</span>
+                    <div class="nav-bar-dropdown">
+                        <!--메뉴바 드롭다운-->
+                        <div>
+                            <a href="">
+                                <img src="dropdown1.jpeg" alt="">
+
+                                <span>fiction</span>
+                            </a>
+                            <a href="">
+                                <img src="dropdown1.jpeg" alt="">
+
+                                <span>fantasy</span>
+                            </a>
+                            <a href="">
+                                <img src="dropdown1.jpeg" alt="">
+
+                                <span>magazine</span>
+                            </a>
+                            <a href="">
+                                <img src="dropdown1.jpeg" alt="">
+
+                                <span>comicbook</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-bar-modal"></div>
+                    <!--드롭다운 하단 가리개-->
+                </div>
+                
+            </div>
+            
+            <!-- header navBar end -->
+
+            <!-- header bestSeller start -->
+            <div class="bestSeller">
+                <div class="bestSeller-sell">
+                    <!-- 베스트셀러 캐러셀 -->
+                    <div class="bestSeller-sell-warp">
+                        <!-- 오버플로우 히든 디브 -->
+                        <div class="bestSeller-sell-move">
+                            <!-- 움직이는 디브 -->
+                            <div class="slideItem">
+                                <img src="header4.jpeg" alt="" class="sellEle">
+                            </div>
+
+                            <div class="slideItem">
+                                <img src="bestSeller-Sell1.jpeg" alt="" class="sellEle">
+                            </div>
+
+                            <div class="slideItem">
+                                <img src="header4.jpeg" alt="" class="sellEle">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bestSeller-book">
+                    <!--베스트셀러 책 이미지-->
+                    <div class="bestSeller-book-warp">
+                        <!--베스트셀러 캐러셀-->
+                        <div class="bestSeller-book-move">
+                            <!-- <div class="bookItem">
+                                <img src="bestSellerBook1.jpeg" alt="">
+                            </div>
+
+                            <div class="bookItem">
+                                <img src="bestSellerBook1.jpeg" alt="">
+                            </div>
+
+                            <div class="bookItem">
+                                <img src="bestSellerBook1.jpeg" alt="">
+                            </div> -->
+                        </div>
+                    </div>
+                    
+                    <div class="bestSeller-book-modal">
+                        <!--베스트셀러 모달-->
+                        <p>Weekly</p>
+                        <p>Best Seller</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- header bestSeller end -->
+        </div>
+        <!-- header section end -->
+
+
+        <div class="loginModal" style="display: none;">
+            <div class="lgModal">
+                <i class="fa-solid fa-xmark"></i>
+                <div class="modalTitle">Sign In</div>
+                <div class="inputBox">
+                    <div class="userNameBox">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" class="userName" placeholder="User Name">
+                    </div>
+                    <div class="passwdBox">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" class="passwd" placeholder="Password">
+                    </div>
+
+                    <button class="modalBtn">LOGIN</button>
+                </div>
+                <div class="modalCheckBox">
+                    <p id="signUp">SIGN UP</p>
+                </div>
+            </div>
+            <img src="loadingBook.gif" class="loadingBook" alt="">
+            <div class="loginForm">
+                <p class="loginFormTitle">Sign Up</p>
+                <div class="loginFormContent">
+                    <input type="text" class="legId" placeholder="ID">
+                    <input type="text" class="legPasswd" placeholder="비밀번호">
+                    <input type="password" class="legPasswdCheck" placeholder="비밀번호 재확인">
+                    <input type="text" class="legName" placeholder="이름">
+                    <div class="birthBox">
+                        <input type="text" name="" class="legYear" placeholder="연도(4자)">
+                        <select name="" id="" class="legMonth">
+                            <option value="month" disabled selected>월</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <input type="text" class="legDay" placeholder="일">
+                    </div>
+                    <input type="text" class="legIdentity" placeholder="주민등록번호">
+                    <div class="addressBox">
+                        <input type="text" class="legAddress" placeholder="주소">
+                        <button class="addressBtn">주소 검색</button>
+                    </div>
+                    <input type="text" class="legPhone" placeholder="전화 번호">
+                    <button class="legBtn">가입하기</button>
+                    <!--
+                        아이디 
+                        비밀번호
+                        비밀번호 확인
+                        이름
+                        생년월일 / 성별
+                        주소
+                        핸드폰 번호
+                        [가입] - 버튼
+                     -->
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- 신간 도서 section start -->
+        <div class="newBook pointer">
+            <div class="newBook_title">
+                <h1>이달의 신간 도서</h1>
+            </div>
+            <div class="newBook_slide_wrapper">
+                <ul class="newBook_slides">
+                    <li>
+                        <div class="img_box">
+                            <img src="img_sugeun/가장 좋은 것을 너에게 줄개.jpg">
+                            <span>가장 좋은 것을 너에게 줄게</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img_box">
+                            <img src="img_sugeun/작고 똑똑한 심리책.jpg">
+                            <span>작고 똑똑한 심리책</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img_box">
+                            <img src="img_sugeun/어느 도망자의 고백.jpg">
+                            <span>어느 도망자의 고백</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img_box">
+                            <img src="img_sugeun/건강한 뇌과학.jpg">
+                            <span>건강한 뇌과학</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img_box">
+                            <img src="img_sugeun/영원한 우정으로.jpg">
+                            <span>영원한 우정으로</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img_box">
+                            <img src="img_sugeun/마음을 업데이트할 시간입니다.jpg">
+                            <span>마음을 업데이트할 시간입니다</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <P class="newBook_controls">
+                <span class="prev">&lang;</span>
+                <span class="next">&rang;</span>
+            </P>
+        </div>
+        <!-- 신간 도서 section end -->
+
+
+        <!-- -------------------------------백진주 시작 ---------------------------------------------->
+        <!-- 장르별 도서 section start -->
+        <div class="genreBook pointer">
+            <h2 class="gb_mtit">장르별 도서</h2>
+            <div class="gb_cont">
+                <ul>
+                    <li class="gb_item">
+                        <a href="genre.html"> 
+                            <div class="gb_box">                            
+                                <div class="gb_thumb">
+                                    <div class="gb_thumb_cont">                                                                       
+                                        <img src="genreimg/local1-1.jpg" alt="">                                                                        
+                                    </div>                                
+                                    <div class="gb_thumb_title"></div>
+                                    <div class="gb_thumb_title_txt"> 
+                                        <h1 class="gb_genre">국내도서</h1> 
+                                        <span>#시/에세이</span>
+                                        <span>#소설</span>
+                                        <span>#정치/문화</span>
+                                        <span>#여행</span>                                    
+                                    </div>                         
+                                </div>
+                                <div class="gb_tagList">                                    
+                                    <p class="gb_tagList_txt">
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        더보기</p>                                
+                                </div>     
+                            </div>                            
+                        </a>
+                    </li>
+                    <li class="gb_item">
+                        <a href="genre.html"> 
+                            <div class="gb_box">                            
+                                <div class="gb_thumb">
+                                    <div class="gb_thumb_cont">                                                                       
+                                        <img src="genreimg/oversea1-2.jpg" alt="">                                                                        
+                                    </div>                                
+                                    <div class="gb_thumb_title"></div>
+                                    <div class="gb_thumb_title_txt"> 
+                                        <h1 class="gb_genre">해외도서</h1> 
+                                        <span>#시/에세이</span>
+                                        <span>#소설</span>
+                                        <span>#정치/문화</span>
+                                        <span>#여행</span>                                    
+                                    </div>                         
+                                </div>
+                                <div class="gb_tagList">                                    
+                                    <p class="gb_tagList_txt">
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        더보기</p>                                
+                                </div>       
+                            </div>                            
+                        </a>
+                    </li>
+                    <li class="gb_item">
+                        <a href="genre.html"> 
+                            <div class="gb_box">                            
+                                <div class="gb_thumb">
+                                    <div class="gb_thumb_cont">                                                                       
+                                        <img src="genreimg/ebook1-1.jpg" alt="">                                                                        
+                                    </div>                                
+                                    <div class="gb_thumb_title"></div>
+                                    <div class="gb_thumb_title_txt"> 
+                                        <h1 class="gb_genre">eBook</h1> 
+                                        <span>#시/에세이</span>
+                                        <span>#소설</span>
+                                        <span>#정치/문화</span>
+                                        <span>#여행</span>                                    
+                                    </div>                         
+                                </div>
+                                <div class="gb_tagList">                                    
+                                    <p class="gb_tagList_txt">
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        더보기</p>                                
+                                </div>         
+                            </div>                            
+                        </a>
+                    </li>
+                    <li class="gb_item">
+                        <a href="genre.html"> 
+                            <div class="gb_box">                            
+                                <div class="gb_thumb">
+                                    <div class="gb_thumb_cont">                                                                       
+                                        <img src="genreimg/webbook1-1.jpg" alt="">                                                                        
+                                    </div>                                
+                                    <div class="gb_thumb_title"></div>
+                                    <div class="gb_thumb_title_txt"> 
+                                        <h1 class="gb_genre">아동도서</h1> 
+                                        <span>#시/에세이</span>
+                                        <span>#소설</span>
+                                        <span>#정치/문화</span>
+                                        <span>#여행</span>                                    
+                                    </div>                         
+                                </div>
+                                <div class="gb_tagList">                                    
+                                    <p class="gb_tagList_txt">
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                        더보기</p>                                
+                                </div>          
+                            </div>                            
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- -------------------------------백진주 끝 ---------------------------------------------->
+
+        <!-- reivew section start -->
+        <!--/////////////////// 양희시작//////////////////////// -->
+        <div class="reviewBook pointer">
+            <p class="reviewtitle">REVIEW</p>
+
+            <div class="reviewcarousel">
+                <div class="reviewboxs">
+                    <div class="reviewbox one">
+                        <div class="topimg">
+                            <img src="reviewimage/img1.jpg" alt="x">
+                        </div>
+                        <div class="bottomtext">
+                            <div class="lefttext">
+                                <i class="uil uil-user-circle"></i>
+                                <span class="name">모찌집사</span>
+                            </div>
+                            <div class="righttext">
+                                <i class="uil uil-heart"></i>
+                                <span id="cnt1"></span>
+                                <i class="uil uil-location-arrow-alt"></i>
+                                <span id="cnt2"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reviewbox two">
+                        <div class="topimg">
+                            <img src="reviewimage/img2.jpg" alt="x">
+                        </div>
+                        <div class="bottomtext">
+                            <div class="lefttext">
+                                <i class="uil uil-user-circle"></i>
+                                <span class="name">고먐미</span>
+                            </div>
+                            <div class="righttext">
+                                <i class="uil uil-heart"></i>
+                                <span id="cnt3"></span>
+                                <i class="uil uil-location-arrow-alt"></i>
+                                <span id="cnt4"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reviewbox thr">
+                        <div class="topimg">
+                            <img src="reviewimage/img3.jpg" alt="x">
+                        </div>
+                        <div class="bottomtext">
+                            <div class="lefttext">
+                                <i class="uil uil-user-circle"></i>
+                                <span class="name">나비</span>
+                            </div>
+                            <div class="righttext">
+                                <i class="uil uil-heart"></i>
+                                <span></span>
+                                <i class="uil uil-location-arrow-alt"></i>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reviewbox four">
+                        <div class="topimg">
+                            <img src="reviewimage/img4.jpg" alt="x">
+                        </div>
+                        <div class="bottomtext">
+                            <div class="lefttext">
+                                <i class="uil uil-user-circle"></i>
+                                <span class="name">냥냥펀치</span>
+                            </div>
+                            <div class="righttext">
+                                <i class="uil uil-heart"></i>
+                                <span></span>
+                                <i class="uil uil-location-arrow-alt"></i>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reviewbox five">
+                        <div class="topimg">
+                            <img src="reviewimage/img5.jpg" alt="x">
+                        </div>
+                        <div class="bottomtext">
+                            <div class="lefttext">
+                                <i class="uil uil-user-circle"></i>
+                                <span class="name">냐옹이</span>
+                            </div>
+                            <div class="righttext">
+                                <i class="uil uil-heart"></i>
+                                <span></span>
+                                <i class="uil uil-location-arrow-alt"></i>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="arrowsY">
+                <i class="uil uil-angle-left-b" id="arrowleft"></i>
+                <i class="uil uil-angle-right-b" id="arrowright"></i>
+            </div>
+
+        </div>
+        <!--/////////////////// 양희 끝//////////////////////// -->
+        <!-- review section end -->
+
+        <!-- footer start -->
+        <div class="footer">
+            <div class="icons">
+                <div class="iconFrame">
+                    <i class="fa-brands fa-facebook-f ficon"></i>
+                </div>
+                <div class="iconFrame">
+                    <i class="fa-brands fa-instagram ficon"></i>
+                </div>
+                <div class="iconFrame">
+                    <i class="fa-brands fa-twitter ficon"></i>
+                </div>
+                <div class="iconFrame">
+                    <i class="fa-solid fa-map-location-dot ficon"></i>
+                </div>
+            </div>
+            <div class="footerScroll">
+                <ul>
+                    <li>HOME</li>
+                    <li>|</li>
+                    <li>신간도서</li>
+                    <li>|</li>
+                    <li>장르별 도서</li>
+                    <li>|</li>
+                    <li>리뷰</li>
+                </ul>
+            </div>
+        </div>
+        <!-- footer end -->
+
+        <!-- loading img section start -->
+        <div class="loadingImg">
+            <img src="loading.gif" alt="">
+        </div>
+        <!-- loading img section end -->
+
+        <!-- js file link -->
+        <script src="script.js"></script>
+
+</body>
+
+</html>
