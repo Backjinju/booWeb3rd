@@ -119,9 +119,92 @@ function registActive(){
 //     }
         
 // },5000)
+let fontEle_1 = document.querySelector("#font1");
+let fontEle_2 = document.querySelector("#font2");
+let fontEle_3 = document.querySelector("#font3");
+let fontEle_4 = document.querySelector("#font4");
+let fontcount = 0
+ setInterval(function(){
+    fontcount++
+     if(fontcount === 1){
+        setTimeout(function(){
+            fontEle_1.style.transition = "1s"
+            fontEle_1.style.opacity = "1"
+            fontEle_1.style.transform = "translateY(-100px)"
+        },400)
+        setTimeout(function(){
+            fontEle_2.style.transition = "1s"
+            fontEle_2.style.opacity = "1";
+            fontEle_2.style.transform = "translateY(-100px)"
+        },600)
+     }
+     fontEle_1.style.opacity = "0"
+     fontEle_2.style.opacity = "0"
+     if(fontcount === 2){
+        setTimeout(function(){
+            fontEle_3.style.transition = "1s"
+            fontEle_3.style.opacity = "1"
+            fontEle_3.style.transform = "translateY(-100px)"
+        },400)
+        setTimeout(function(){
+            fontEle_4.style.transition = "1s"
+            fontEle_4.style.opacity = "1"
+            fontEle_4.style.transform = "translateY(-100px)"
+        },600)
+        
+     }
+        fontEle_3.style.opacity = "0"
+        fontEle_4.style.opacity = "0"
+
+
+        if(fontcount === 3){
+            setTimeout(function(){
+                fontcount = 0
+            })
+        } 
+    },5000)
+
+
+
+
+
+
+
 
 //베스트 셀러 큰 이미지
+let sellItem = document.querySelectorAll(".slideItem");
+let sellEle = document.querySelectorAll(".sellEle");
+let sellwarp = document.querySelector(".bestSeller-sell-warp")
+let child = sellwarp.firstElementChild.cloneNode(true);
+sellwarp.appendChild(child);
 
+let sellCount = 0
+ setInterval(function(){
+
+     if(sellItem.length > sellCount){
+         sellItem[sellCount].style.opacity = "0";
+
+     }
+     if(sellCount === 0){
+        sellItem[1].style.opacity = "1"
+     }   
+     if(sellCount ===1){
+        sellItem[2].style.opacity = "1"
+     } 
+     if(sellCount ===2){
+        sellItem[0].style.opacity = "1"
+     }
+    setTimeout(function(){
+        if(sellCount === 3){
+                sellCount = 0
+         }
+        },101)
+     
+ 
+    console.log(sellCount)
+     sellCount++
+
+    },5000)
 
 //네비바 픽스드 이벤트
 let scrollNav_bar = document.querySelector(".nav-bar"); 
@@ -143,6 +226,7 @@ let scrollpotint = document.querySelectorAll(".pointer");
 let first = scrollpotint[0].offsetTop
 let second = scrollpotint[1].offsetTop
 let third = scrollpotint[2].offsetTop
+let fourth = scrollpotint[3].offsetTop
 
 scrollele[0].addEventListener("click",function(){
     window.scrollTo({top:first,behavior:"smooth"});
@@ -152,6 +236,9 @@ scrollele[1].addEventListener("click",function(){
 })
 scrollele[2].addEventListener("click",function(){
     window.scrollTo({top:third,behavior:"smooth"});
+})
+scrollele[3].addEventListener("click",function(){
+    window.scrollTo({top:fourth,behavior:"smooth"});
 })
 
 
