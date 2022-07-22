@@ -168,40 +168,48 @@
             <img src="loadingBook.gif" class="loadingBook" alt="">
             <!-- login Form -->
             <div class="loginForm">
-                <!-- form title -->
-                <p class="loginFormTitle">Sign Up</p>
                 <!-- input content -->
                 <div class="loginFormContent">
+                    
+                    <p class="loginFormTitle">Sign Up<i class="fa-solid fa-xmark" id="signUpXmark"></i></p>
                     <input type="text" class="legId" placeholder="ID">
+                    <p class="smallText">영문과 숫자만으로 작성해 주세요.(6~20자)</p>
                     <input type="text" class="legPasswd" placeholder="비밀번호">
+                    <p class="smallText">대/소문자, 숫자, 특수문자의 조합으로 작성해 주세요.(8~16자)</p>
                     <input type="password" class="legPasswdCheck" placeholder="비밀번호 재확인">
+                    <p class="smallText"></p>
                     <input type="text" class="legName" placeholder="이름">
+                    <p class="smallText">이름은 한글로 입력해 주세요.</p>
                     <div class="birthBox">
                         <input type="text" name="" class="legYear" placeholder="연도(4자)">
                         <select name="" id="" class="legMonth">
                             <option value="month" disabled selected>월</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
+                            <option value="1">1월</option>
+                            <option value="2">2월</option>
+                            <option value="3">3월</option>
+                            <option value="4">4월</option>
+                            <option value="5">5월</option>
+                            <option value="6">6월</option>
+                            <option value="7">7월</option>
+                            <option value="8">8월</option>
+                            <option value="9">9월</option>
+                            <option value="10">10월</option>
+                            <option value="11">11월</option>
+                            <option value="12">12월</option>
                         </select>
                         <input type="text" class="legDay" placeholder="일">
                     </div>
+                    <p class = "smallText" id="yearText">&nbsp;</p>
+                    <p class = "smallText" id="dayText">&nbsp;</p>
                     <input type="text" class="legIdentity" placeholder="주민등록번호">
+                    <p class="smallText"></p>
                     <!-- 주소 검색 기능... 넣을 수 있을지 미지수 -->
                     <div class="addressBox">
                         <input type="text" class="legAddress" placeholder="주소">
                         <button class="addressBtn">주소 검색</button>
                     </div>
                     <input type="text" class="legPhone" placeholder="전화 번호">
+                    <p class="smallText">하이픈(-)을 포함하여 입력해 주세요.</p>
                     <button class="legBtn">가입하기</button>
                     <!--
                         아이디 
