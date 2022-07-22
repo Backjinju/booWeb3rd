@@ -392,104 +392,100 @@ scrollTop 은 윈도우에서 스크롤의 위치가 가장 상위에 있다는 
 
 ////////////////////////양희시작///////////////////////////////
 
-// 양쪽 화살표 클릭하면 넘어가기(4개씩) > 캐러셀
-// 클릭하면 모달창뜨게하기
-// 좋아요 누르면 하트 색꽉차게
 
-var slidesY = document.querySelector('.reviewboxs'), //리뷰박스틀
-    slideY = document.querySelectorAll('.reviewbox'), //리뷰박스하나하나
-    slideCountY = slideY.length, //슬라이드개수
-    slideWidthY = 250, 
-    slideMarginY = 30,  
-    currentIdxY = 0, 
-    preBtnY = document.querySelector('.uil-angle-left-b'),
-    nextBtnY = document.querySelector('.uil-angle-right-b');
+let boxs = document.querySelectorAll('.topimg');
+let modalY = document.querySelector('.modalbg');
+let modalview = document.querySelector('.modalview');
+let close = document.querySelector('.close-area');
+let modalimg = document.querySelector('.modalimg');
+let heart = document.querySelectorAll('.uil-heart');
 
-
-    makeCloneY();
-
-    //양쪽으로 5개씩 복제 총 15개
-    function makeCloneY(){
-
-        for(let i = 0; i < slideCountY; i++)
-        {
-            var cloneSlideY = slideY[i].cloneNode(true);
-            cloneSlideY.classList.add('cloneY');
-            slidesY.appendChild(cloneSlideY); 
-        }
-        for(let j = slideCountY-1; j >= 0; j--)
-        {
-            var cloneSlideY = slideY[j].cloneNode(true);
-            cloneSlideY.classList.add('cloneYH');
-            slidesY.prepend(cloneSlideY);
-        }
-
-        updateWidthY();
-        setInitialPosY();
-
-        //새로고침했을 때 이동하는게 보이는 것을 방지
-        setTimeout(function(){
-            slidesY.classList.add('animatedY');
-        }, 100);
-    }
-
-    //너비를 늘어난 개수만큼 조절
-    function updateWidthY(){
-        var currentSlideY = document.querySelectorAll('.reviewbox');
-        // console.log(currentSlideY);
-        var newSlideCountY = currentSlideY.length;
-        var newWidthY = ((slideWidthY + slideMarginY) * newSlideCountY - slideMarginY) + "px";
-        slidesY.style.width = newWidthY;
-    }
-
-
-    //복제한 것부터가 아니라 가운데부터 위치해 있기 위해
-    function setInitialPosY(){
-        var initialTranslateValueY = -(slideWidthY + slideMarginY) * slideCountY;
-        slidesY.style.transform = "translateX(" + initialTranslateValueY+ "px)";
-    }
-
-    //버튼을 눌렀을 때 이동 > 이벤트 구현 시작
-    nextBtnY.addEventListener('click', function(){
-        // moveSlideY라는 함수 생성하기
-        moveSlideY(currentIdxY + 1);
-    });
-
-    preBtnY.addEventListener('click', function(){
-        //moveSlideY라는 함수 생성하기
-        moveSlideY(currentIdxY - 1);
+for(let i = 0; i< boxs.length; i++){
+    boxs[i].addEventListener('click', function(e){
+        modalY.style.display = 'flex';
+        modalimg.src = e.target.src;
+        // console.log(e.target);
     })
+}
 
-    //moveSlideY함수 기능
-    function moveSlideY(numY){
-        slidesY.style.left =  -numY * (slideWidthY + slideMarginY) + "px";
-        currentIdxY = numY;
-        if(currentIdxY == slideCountY || currentIdxY == -slideCountY) {
-            //0으로 되돌아가기
-            setTimeout(function(){
-                slidesY.classList.remove('animatedY');
-                slidesY.style.left = '0px';
-                currentIdxY = 0;
-            },500);
-            //다시 animatedY효과추가
-            setTimeout(function(){
-                slidesY.classList.add('animatedY');
-            },500); 
-        } 
+close.addEventListener('click', function(){
+    modalY.style.display = 'none';
+})
+
+modalY.addEventListener('click', function(e){
+    // modalY.style.display = 'none';
+    // console.log(event.target.className);
+
+    //조건문을 사용!
+    if(e.target.className == 'modalbg')
+    {
+        modalY.style.display = 'none';
     }
-    
-
-//고쳐야 할 것
-//무한으로 돌아가는 것처럼 보이는 것
-//첫번째 클릭 때 transition이 적용없이 이동하는 것
-
-// let heart = document.querySelector('.uil-heart');
-// let arrow = document.querySelector('.uil-location-arrow-alt');
+})
 
 
-// heart.addEventListener('click', function(){
+//좋아요 수up, 하트 색칠해지는
 
-// });
+let cnt1 = document.querySelector('#cnt1');
+
+// cnt1.innerHTML = localStorage.cnt[0];
+
+for(let i = 0; i <heart.length; i++)
+{
+    heart[i].addEventListener('click', function(e1){
+        // localStorage.cnt[0] = 43;
+        // Number(localStorage.cnt[0]) + 1
+        // console.log(localStorage.cnt[0]);
+
+
+        //애니메이션으로 scale 조절 & opacity
+
+
+
+        // if(typeof(Storage) !== "undefined")
+        // {
+        //     if(localStorage.cnt)
+        //     {
+        //         localStorage.cnt = Number(localStorage.cnt) + 1;
+        //     }
+        //     else
+        //     {
+        //         localStorage.cnt = 0;
+        //     }
+
+        //     cnt1.innerHTML = localStorage.cnt;
+
+        // } else {
+        //     alert("응 돌아가");
+        // }
+        cnt1.innerHTML = heartCount(0);
+        cnt2.innerHTML = heartCount(1);
+
+    })
+}
+
+// function heartCount(i){
+//     if(typeof(Storage) !== "undefined")
+//         {
+//             if(localStorage.cnt[i])
+//             {
+//                 localStorage.cnt[i] = Number(localStorage.cnt[i]) + 1;
+//             }
+//             else
+//             {
+//                 localStorage.cnt[i] = 0;
+//             }
+
+        
+//         } else {
+//             alert("응 돌아가");
+//         }
+
+//         return localStorage.cnt[i];
+// }
+
+
+
 
 
 
