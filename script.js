@@ -382,14 +382,88 @@ footerScroll.addEventListener('click',function(e){
 //     }
         
 // },5000)
+
+let hoverEle = document.querySelector(".hoverEle");
+let dropdown = document.querySelector(".nav-bar-dropdown");
+let dropdown_mo = document.querySelector(".nav-bar-modal");
+
+hoverEle.addEventListener("mouseover",function(){
+    dropdown.style.display = "flex"
+    dropdown_mo.style.display = "block"
+
+})
+dropdown.addEventListener("mouseleave",function(){
+    dropdown.style.display = "none"
+    dropdown_mo.style.display = "none"
+})
+
+
+
 let fontEle_1 = document.querySelector("#font1");
 let fontEle_2 = document.querySelector("#font2");
 let fontEle_3 = document.querySelector("#font3");
 let fontEle_4 = document.querySelector("#font4");
+let fontEle_5 = document.querySelector("#font5");
+let fontEle_6 = document.querySelector("#font6");
 let fontcount = 0
+
+if(fontcount === 0){
+    setTimeout(function(){
+        fontEle_1.style.transition = "1s"
+        fontEle_1.style.opacity = "1"
+        fontEle_1.style.transform = "translateY(-100px)"
+    },400)
+    setTimeout(function(){
+        fontEle_2.style.transition = "1s"
+        fontEle_2.style.opacity = "1";
+        fontEle_2.style.transform = "translateY(-100px)"
+    },600)
+    
+}
+
  setInterval(function(){
-    fontcount++
+
+    if(fontcount === 0){
+        fontEle_1.style.opacity = "0"
+        fontEle_2.style.opacity = "0"
+        fontEle_5.style.transform = "translateY(0px)";
+        fontEle_6.style.transform = "translateY(0px)";
+  
+    setTimeout(function(){
+        fontEle_3.style.transition = "1s"
+        fontEle_3.style.opacity = "1"
+        fontEle_3.style.transform = "translateY(-100px)"
+    },400)
+    setTimeout(function(){
+        fontEle_4.style.transition = "1s"
+        fontEle_4.style.opacity = "1";
+        fontEle_4.style.transform = "translateY(-100px)"
+    },600)
+    }
      if(fontcount === 1){
+        fontEle_3.style.opacity = "0"
+        fontEle_4.style.opacity = "0"
+        fontEle_1.style.transform = "translateY(0px)";
+        fontEle_2.style.transform = "translateY(0px)";
+        setTimeout(function(){
+            fontEle_5.style.transition = "1s"
+            fontEle_5.style.opacity = "1"
+            fontEle_5.style.transform = "translateY(-100px)"
+        },400)
+        setTimeout(function(){
+            fontEle_6.style.transition = "1s"
+            fontEle_6.style.opacity = "1";
+            fontEle_6.style.transform = "translateY(-100px)"
+        },600)
+
+     }
+     
+     if(fontcount === 2){
+        fontEle_5.style.opacity = "0"
+        fontEle_6.style.opacity = "0"
+        fontEle_3.style.transform = "translateY(0px)";
+        fontEle_4.style.transform = "translateY(0px)";
+
         setTimeout(function(){
             fontEle_1.style.transition = "1s"
             fontEle_1.style.opacity = "1"
@@ -397,42 +471,22 @@ let fontcount = 0
         },400)
         setTimeout(function(){
             fontEle_2.style.transition = "1s"
-            fontEle_2.style.opacity = "1";
+            fontEle_2.style.opacity = "1"
             fontEle_2.style.transform = "translateY(-100px)"
         },600)
-     }
-     fontEle_1.style.opacity = "0"
-     fontEle_2.style.opacity = "0"
-     if(fontcount === 2){
-        setTimeout(function(){
-            fontEle_3.style.transition = "1s"
-            fontEle_3.style.opacity = "1"
-            fontEle_3.style.transform = "translateY(-100px)"
-        },400)
-        setTimeout(function(){
-            fontEle_4.style.transition = "1s"
-            fontEle_4.style.opacity = "1"
-            fontEle_4.style.transform = "translateY(-100px)"
-        },600)
+       
         
      }
-        fontEle_3.style.opacity = "0"
-        fontEle_4.style.opacity = "0"
+    
 
-
-        if(fontcount === 3){
+        if(fontcount === 2){
             setTimeout(function(){
                 fontcount = 0
-            })
-        } 
+            },200)
+        }
+        fontcount++
+
     },5000)
-
-
-
-
-
-
-
 
 //베스트 셀러 큰 이미지
 let sellItem = document.querySelectorAll(".slideItem");
@@ -464,7 +518,6 @@ let sellCount = 0
         },101)
      
  
-    console.log(sellCount)
      sellCount++
 
     },5000)
