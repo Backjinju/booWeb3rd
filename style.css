@@ -463,11 +463,7 @@ li {
     right: 0px;
 } */
 /* ///////////////////////수근 끝/////////////////////////////////////// */
-.genreBook{
-    border: 1px solid black;
-    width: 100%;
-    height: 800px; 
-}
+
 /* //////////////////////////////////양희 시작///////////////////////////////////// */
 .reviewBook{
     /* border: 1px solid green; */
@@ -698,7 +694,24 @@ li {
 
 /* ///////////////////////백진주 영역 시작--------------------------------------------------- */
 /* 장르별 도서 */
-.gb_mtit{
+.genreBook{    
+    width: 80%;
+    height: 800px; 
+}
+/* 타이틀 변경 */
+.genreBook_pointer_title {
+    padding: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    color: rgb(117, 117, 118);
+    margin: 50px 0px;
+}
+.genreBook_pointer_title:hover {
+    color: black;
+}
+
+/* 타이틀 변경전 */
+/* .gb_mtit{
     font-size: 2.5rem;
     padding: 20px 0px;
     text-align: center;
@@ -721,7 +734,7 @@ li {
     margin: 0 16px;
     height: 2px;
     background: #1E90FF;
-}
+} */
 .gb_cont{
     display: flex;
     justify-content: center; 
@@ -732,7 +745,8 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;   
+    flex-wrap: wrap;
+    
 }
 
 .gb_item {
@@ -755,7 +769,7 @@ li {
 }
 .gb_thumb_title{
     position: absolute;
-    width: 180px;
+    width: 30%;
     height: 230px;
     top:0px;
     background-color: rgb(27, 27, 27);
@@ -840,15 +854,11 @@ li {
     flex-wrap: wrap;
     width: 100%;
     height: 300px;    
-    /* background-color: blueviolet; */
     overflow: scroll;
     background-color: aqua;
     margin-top: 20px;
 }
 
-/* .genre_mid_slide::-webkit-scrollbar {
-    display: none; Chrome, Safari, Opera
-} */
 .genre_mid_slide_box{
     text-align: center;
     width: 200px;
@@ -871,8 +881,50 @@ li {
 .genre_doc_box{
     position: absolute;
     top:160px;
-
 }
+
+/* 탭메뉴 */
+.tabmenu_list{
+    list-style:none;
+}
+
+.tabmenu{ 
+  max-width:1000px; 
+  position:relative; 
+}
+.tabmenu ul li{
+  display:  inline-block;
+  width:33.33%; 
+  float:left;  
+  text-align:center; 
+  background :#f9f9f9;
+  line-height:40px;
+}
+.tabmenu label{
+  display:block;
+  width:100%; 
+  height:40px;
+  line-height:40px;
+}
+.tabmenu input{
+    display:none;
+}
+.tabCon{
+  display:none; 
+  padding: 20px;
+  position:absolute; 
+  left:0; top:40px; 
+  width: 1000px;
+  height: 500px;
+  border : 5px solid #f9f9f9;
+}
+.tabmenu input:checked ~ label{
+  background:#ccc;
+}
+.tabmenu input:checked ~ .tabCon{
+  display:block;
+}
+
 /* ///////////////////////백진주 영역 끝--------------------------------------------------- */
 
 /* //////이상호////////////////////////////////////////////////// */
