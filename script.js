@@ -18,6 +18,7 @@ let modalBtn = document.querySelector('.modalBtn')
 let loadingBook = document.querySelector('.loadingBook')
 let loginForm = document.querySelector('.loginForm')
 let loginFormContent = document.querySelector('.loginFormContent')
+let signUpXmark = document.querySelector('#signUpXmark')
 
 window.onload = () => {
     loadingPage();
@@ -27,7 +28,7 @@ function loadingFadeout(){
     loading.classList.add('fadeOut')
 }
 function loadingPage(){
-    setTimeout(loadingFadeout,5) // 테스트할 때 로딩화면 기다리기 싫어서 0.05초로 만들어 둠
+    setTimeout(loadingFadeout,50) // 테스트할 때 로딩화면 기다리기 싫어서 0.05초로 만들어 둠
 }
 
 loginIcon.addEventListener('click',function(){
@@ -36,19 +37,302 @@ loginIcon.addEventListener('click',function(){
     }
 })
 
+let timeOutClear1;
+let timeOutClear2;
+let timeOutClear3;
+let timeOutClear4;
+let timeOutClear5;
+
 xmark.addEventListener('click',function(){
-    loginModal.style.display = 'none'
+    clearTimeout(timeOutClear1);
+    clearTimeout(timeOutClear2);
+    clearTimeout(timeOutClear3);
+    clearTimeout(timeOutClear4);
+    clearTimeout(timeOutClear5);
+    modalClose();
+})
+
+signUpXmark.addEventListener('click', function(){
+    clearTimeout(timeOutClear1);
+    clearTimeout(timeOutClear2);
+    clearTimeout(timeOutClear3);
+    clearTimeout(timeOutClear4);
+    clearTimeout(timeOutClear5);
+    modalClose();
 })
 
 loginModal.addEventListener('click', function(){
     if(event.target.className == 'loginModal'){
-        loginModal.style.display = 'none'
-        lgModal.classList.remove('active')
-        modalBtn.classList.remove('active')
-        signUp.classList.remove('signUpActive')
-        loginForm.classList.remove('active')
+        clearTimeout(timeOutClear1);
+        clearTimeout(timeOutClear2);
+        clearTimeout(timeOutClear3);
+        clearTimeout(timeOutClear4);
+        clearTimeout(timeOutClear5);
+        modalClose();
     }
 })
+
+
+signUp.addEventListener('click', function(){
+    loadingBook.style.zIndex = '1';
+    loginForm.style.backgroundColor = 'white'
+    lgModal.classList.add('active')
+    modalBtn.classList.add('active')
+    signUp.classList.add('signUpActive')
+    timeOutClear1 = setTimeout(registLoading,500)
+    timeOutClear2 = setTimeout(registLoadingEnd,2400)
+    timeOutClear3 = setTimeout(lgmodalMin,2500)
+    timeOutClear4 = setTimeout(registActive,2700)
+    timeOutClear5 = setTimeout(function(){
+        loginFormContent.style.opacity = '1'
+    },4000)
+})
+
+function registLoading(){
+    loadingBook.style.opacity = '1'
+}
+function registLoadingEnd(){
+    loadingBook.style.opacity = '0'
+}
+
+function lgmodalMin(){
+    lgModal.style.width = '1px'
+    lgModal.style.height = '1px'
+}
+
+function registActive(){
+    loginForm.classList.add('active')
+}
+
+function modalClose(){
+    loginModal.style.display = 'none'
+    lgModal.classList.remove('active')
+    modalBtn.classList.remove('active')
+    signUp.classList.remove('signUpActive')
+    loginForm.classList.remove('active')
+    loginForm.style.backgroundColor = 'rgb(64, 135, 201)'
+    lgModal.style.width = '400px'
+    lgModal.style.height = '550px'
+    loginFormContent.style.opacity = '0'
+    loadingBook.style.opacity = '0'
+    loadingBook.style.zIndex = '-1';
+}
+
+
+////////////-------Sign up 유효성 검사 시작----//////////////
+
+/////////////////////////정규표현식///////////////////////////////////////////
+const ID_CHECK = /^[a-zA-Z0-9]*$/;
+//숫자와 영문(대/소문자)만
+const PW_CHECK = /(?=.*\d)+(?=.*[~`!@#$%\^&*()-+=])+(?=.*[a-z])(?=.*[A-Z])+.{0,}$/
+//영문(대/소문자), 숫자, 특수문자를 한 개 이상 사용
+const NAME_CHECK = /^[가-힣]*$/;
+//한글만 사용
+const IDENTITY_CHECK = /\d{6}\-[1-4]\d{6}/;
+//하이픈 뒤에 첫자리엔 1~4 사이 숫자만
+const PHONENUMBER_CHECK = /^\d{2,3}-\d{3,4}-\d{4}$/;
+//앞자리는 2~3자리의 숫자 / 중간자리는 3~4자리의 숫자
+const NUM_CHECK = /^[0-9]*$/;
+//숫자만 체크
+///////////////////////////////////////////////////////////////////
+
+let legId = document.querySelector('.legId');
+let legPw = document.querySelector('.legPasswd');
+let legPwCk = document.querySelector('.legPasswdCheck');
+let nameCheck = document.querySelector('.legName');
+let year = document.querySelector('.legYear');
+let yearText = document.querySelector('#yearText')
+let dayText = document.querySelector('#dayText')
+let day = document.querySelector('.legDay')
+let identity = document.querySelector('.legIdentity')
+let legPhone = document.querySelector('.legPhone')
+
+if(typeof(Storage)!== 'undefined'){
+    sessionStorage.legId = legId.value;
+    if (legId.value === 'undefined') {
+        //세션스토리지에 undefined가 들어 있다면
+        //undefined가 뜨지않게 하기 위해서 공백을 넣음
+        legId.value = '';
+    } else {
+        legId.value = sessionStorage.legId;
+    }
+    legId.addEventListener('keyup', function(){
+        sessionStorage.legId = legId.value;
+        if(legId.value.length == 0){
+            legId.nextElementSibling.innerHTML = '영문과 숫자만으로 작성해 주세요.(6~20자)'
+            legId.nextElementSibling.style.color = '#1E90FF'
+        } else if (ID_CHECK.test(legId.value) != true){
+            legId.nextElementSibling.innerHTML = "영문 혹은 숫자가 아닙니다."
+            legId.nextElementSibling.style.color = "crimson"
+        } else if (legId.value.length > 20 || legId.value.length < 6) {
+            legId.nextElementSibling.innerHTML = "6~20자 사이로 입력해 주세요."
+            legId.nextElementSibling.style.color = "orangered"
+        } else {
+            legId.nextElementSibling.innerHTML = "사용 가능"
+            legId.nextElementSibling.style.color = "rgb(19, 168, 99)"
+        }
+    })
+    legPw.addEventListener('keyup', function () {
+        if (legPw.value.length == 0) {
+            legPw.nextElementSibling.innerHTML = '대/소문자, 숫자, 특수문자의 조합으로 작성해 주세요.(8~16자)'
+            legPw.nextElementSibling.style.color = '#1E90FF'
+        } else if (PW_CHECK.test(legPw.value) != true) {
+            legPw.nextElementSibling.innerHTML = "대문자,특수문자,숫자를 반드시 하나 이상 포함해 주세요."
+            legPw.nextElementSibling.style.color = "crimson"
+        } else if (legPw.value.length > 16 || legPw.value.length < 8) {
+            legPw.nextElementSibling.innerHTML = "8~16자 사이로 입력해 주세요."
+            legPw.nextElementSibling.style.color = "orangered"
+        } else {
+            legPw.nextElementSibling.innerHTML = "사용 가능"
+            legPw.nextElementSibling.style.color = "rgb(19, 168, 99)"
+        }
+        if (legPwCk.value.length == 0) {
+            legPwCk.nextElementSibling.innerHTML = '비밀번호를 다시 한번 입력해 주세요.'
+            legPwCk.nextElementSibling.style.color = '#1E90FF'
+        } else if (legPw.value != legPwCk.value) {
+            legPwCk.nextElementSibling.innerHTML = "입력하신 비밀번호와 일치하지 않습니다."
+            legPwCk.nextElementSibling.style.color = "crimson"
+        } else {
+            legPwCk.nextElementSibling.innerHTML = "입력하신 비밀번호와 일치합니다."
+            legPwCk.nextElementSibling.style.color = "rgb(19, 168, 99)"
+        }
+    })
+
+    legPwCk.addEventListener('keyup', function () {
+        if (legPwCk.value.length == 0) {
+            legPwCk.nextElementSibling.innerHTML = '비밀번호를 다시 한번 입력해 주세요.'
+            legPwCk.nextElementSibling.style.color = '#1E90FF'
+        } else if (legPw.value != legPwCk.value) {
+            legPwCk.nextElementSibling.innerHTML = "입력하신 비밀번호와 일치하지 않습니다."
+            legPwCk.nextElementSibling.style.color = "crimson"
+        } else {
+            legPwCk.nextElementSibling.innerHTML = "입력하신 비밀번호와 일치합니다."
+            legPwCk.nextElementSibling.style.color = "rgb(19, 168, 99)"
+        }
+    })
+
+    
+    nameCheck.value = sessionStorage.nameCheck;
+    if (nameCheck.value === 'undefined') {
+        nameCheck.value = '';
+    } else {
+        nameCheck.value = sessionStorage.nameCheck;
+    }
+
+    nameCheck.addEventListener('keyup', function () {
+        sessionStorage.nameCheck = nameCheck.value;
+        if (nameCheck.value.length == 0) {
+            nameCheck.nextElementSibling.innerHTML = '이름은 한글로 입력해 주세요.'
+            nameCheck.nextElementSibling.style.color = '#1E90FF'
+        } else if (NAME_CHECK.test(nameCheck.value) != true) {
+            nameCheck.nextElementSibling.innerHTML = "이름은 영문 혹은 한글로만 입력해 주세요."
+            nameCheck.nextElementSibling.style.color = "crimson"
+        } else if (nameCheck.value.length < 2) {
+            nameCheck.nextElementSibling.innerHTML = "2글자 이상 입력해 주세요."
+            nameCheck.nextElementSibling.style.color = "orangered"
+        } else {
+            nameCheck.nextElementSibling.innerHTML = "사용 가능"
+            nameCheck.nextElementSibling.style.color = "rgb(19, 168, 99)"
+        }
+    })
+    
+    let now = new Date();
+    let nowYear = now.getFullYear();
+    // 연도를 받아서 변수에 저장
+
+    year.value = sessionStorage.year;
+    if (year.value === 'undefined') {
+        year.value = '';
+    } else {
+        year.value = sessionStorage.year;
+    }
+
+    year.addEventListener('keyup', function () {
+        sessionStorage.year = year.value
+        if (NUM_CHECK.test(year.value) != true) {
+            yearText.innerHTML = '연도는 숫자로 입력해 주세요.'
+            yearText.style.color = "crimson"
+        } else if (year.value > nowYear) {
+            yearText.innerHTML = '연도가 ' + nowYear + '년을 넘었습니다.'
+            yearText.style.color = "orangered"
+        } else if (year.value.length == 4) {
+            yearText.innerHTML = '완료'
+            yearText.style.color = "rgb(19, 168, 99)"
+        } else {
+            yearText.innerHTML = '&nbsp;'
+            yearText.style.color = 'rgb(24, 65, 199)'
+        }
+    })
+    day.value = sessionStorage.day;
+    if (day.value === 'undefined') {
+        day.value = '';
+    } else {
+        day.value = sessionStorage.day;
+    }
+
+    day.addEventListener('keyup', function () {
+        sessionStorage.day = day.value
+        // console.log(day.value)
+        if (NUM_CHECK.test(day.value) != true) {
+            dayText.innerHTML = '일자는 숫자로 입력해 주세요.'
+            dayText.style.color = "crimson"
+        } else if (day.value.length == 0) {
+            dayText.innerHTML = '&nbsp;'
+            dayText.style.color = 'rgb(24, 65, 199)'
+        } else if (day.value > 31 || day.value < 1) {
+            dayText.innerHTML = '일자의 범위가 잘못 됐습니다.'
+            dayText.style.color = "orangered"
+        } else {
+            dayText.innerHTML = '사용 가능'
+            dayText.style.color = "rgb(19, 168, 99)"
+        }
+    })
+
+    identity.addEventListener('keyup', function () {
+        // console.log(IDENTITY_CHECK.test(identity.value))
+        if (identity.value.length == 0) {
+            identity.nextElementSibling.innerHTML = '하이픈(-)을 포함하여 입력해 주세요.'
+            identity.nextElementSibling.style.color = '#1E90FF';
+        } else if (IDENTITY_CHECK.test(identity.value) != true) {
+            identity.nextElementSibling.innerHTML = "주민등록 번호를 제대로 입력해 주세요."
+            identity.nextElementSibling.style.color = "crimson";
+        } else if (identity.value.split("")[7] == 1 || identity.value.split("")[7] == 3) {
+            //하이픈 뒤 첫 숫자가 1,3일 때 남자 표시를 띄움
+            // male.style.visibility = 'visible'
+            // female.style.visibility = 'hidden'
+            identity.nextElementSibling.innerHTML = "사용 가능"
+            identity.nextElementSibling.style.color = "rgb(19, 168, 99)"
+        } else if (identity.value.split("")[7] == 2 || identity.value.split("")[7] == 4) {
+            //하이픈 뒤 첫 숫자가 2,4일 때 여자 표시를 띄움
+            // female.style.visibility = 'visible'
+            // male.style.visibility = 'hidden'
+            identity.nextElementSibling.innerHTML = "사용 가능"
+            identity.nextElementSibling.style.color = "rgb(19, 168, 99)"
+        }
+    })
+
+    
+    legPhone.value = sessionStorage.legPhone;
+    if (legPhone.value === 'undefined') {
+        legPhone.value = '';
+    } else {
+        legPhone.value = sessionStorage.legPhone;
+    }
+
+    legPhone.addEventListener('keyup', function () {
+        sessionStorage.legPhone = legPhone.value
+        if (legPhone.value.length == 0) {
+            legPhone.nextElementSibling.innerHTML = '하이픈(-)을 포함해서 입력해 주세요.'
+            legPhone.nextElementSibling.style.color = '#1E90FF';
+        } else if (PHONENUMBER_CHECK.test(legPhone.value) != true) {
+            legPhone.nextElementSibling.innerHTML = '번호를 정확히 입력해 주세요'
+            legPhone.nextElementSibling.style.color = 'crimson'
+        } else {
+            legPhone.nextElementSibling.innerHTML = '사용 가능'
+            legPhone.nextElementSibling.style.color = "rgb(19, 168, 99)"
+        }
+    })
+}
 
 
 footerScroll.addEventListener('click',function(e){
@@ -67,28 +351,7 @@ footerScroll.addEventListener('click',function(e){
     }
 })
 
-
-signUp.addEventListener('click', function(){
-    loginForm.style.backgroundColor = 'white'
-    lgModal.classList.add('active')
-    modalBtn.classList.add('active')
-    signUp.classList.add('signUpActive')
-    setTimeout(registLoading,500)
-    setTimeout(registLoadingEnd,2400)
-    setTimeout(registActive,2600)
-})
-
-function registLoading(){
-    loadingBook.style.opacity = '1'
-}
-function registLoadingEnd(){
-    loadingBook.style.opacity = '0'
-}
-
-function registActive(){
-    loginForm.classList.add('active')
-    loginFormContent.style.opacity = '1'
-}
+////////////-------Sign up 유효성 검사 끝--------///////////
 
 ////////////////////////////상호////////////////////////////
 // 베스트셀러 책 캐러셀
@@ -445,104 +708,100 @@ scrollTop 은 윈도우에서 스크롤의 위치가 가장 상위에 있다는 
 
 ////////////////////////양희시작///////////////////////////////
 
-// 양쪽 화살표 클릭하면 넘어가기(4개씩) > 캐러셀
-// 클릭하면 모달창뜨게하기
-// 좋아요 누르면 하트 색꽉차게
 
-var slidesY = document.querySelector('.reviewboxs'), //리뷰박스틀
-    slideY = document.querySelectorAll('.reviewbox'), //리뷰박스하나하나
-    slideCountY = slideY.length, //슬라이드개수
-    slideWidthY = 250, 
-    slideMarginY = 30,  
-    currentIdxY = 0, 
-    preBtnY = document.querySelector('.uil-angle-left-b'),
-    nextBtnY = document.querySelector('.uil-angle-right-b');
+let boxs = document.querySelectorAll('.topimg');
+let modalY = document.querySelector('.modalbg');
+let modalview = document.querySelector('.modalview');
+let close = document.querySelector('.close-area');
+let modalimg = document.querySelector('.modalimg');
+let heart = document.querySelectorAll('.uil-heart');
 
-
-    makeCloneY();
-
-    //양쪽으로 5개씩 복제 총 15개
-    function makeCloneY(){
-
-        for(let i = 0; i < slideCountY; i++)
-        {
-            var cloneSlideY = slideY[i].cloneNode(true);
-            cloneSlideY.classList.add('cloneY');
-            slidesY.appendChild(cloneSlideY); 
-        }
-        for(let j = slideCountY-1; j >= 0; j--)
-        {
-            var cloneSlideY = slideY[j].cloneNode(true);
-            cloneSlideY.classList.add('cloneYH');
-            slidesY.prepend(cloneSlideY);
-        }
-
-        updateWidthY();
-        setInitialPosY();
-
-        //새로고침했을 때 이동하는게 보이는 것을 방지
-        setTimeout(function(){
-            slidesY.classList.add('animatedY');
-        }, 100);
-    }
-
-    //너비를 늘어난 개수만큼 조절
-    function updateWidthY(){
-        var currentSlideY = document.querySelectorAll('.reviewbox');
-        // console.log(currentSlideY);
-        var newSlideCountY = currentSlideY.length;
-        var newWidthY = ((slideWidthY + slideMarginY) * newSlideCountY - slideMarginY) + "px";
-        slidesY.style.width = newWidthY;
-    }
-
-
-    //복제한 것부터가 아니라 가운데부터 위치해 있기 위해
-    function setInitialPosY(){
-        var initialTranslateValueY = -(slideWidthY + slideMarginY) * slideCountY;
-        slidesY.style.transform = "translateX(" + initialTranslateValueY+ "px)";
-    }
-
-    //버튼을 눌렀을 때 이동 > 이벤트 구현 시작
-    nextBtnY.addEventListener('click', function(){
-        // moveSlideY라는 함수 생성하기
-        moveSlideY(currentIdxY + 1);
-    });
-
-    preBtnY.addEventListener('click', function(){
-        //moveSlideY라는 함수 생성하기
-        moveSlideY(currentIdxY - 1);
+for(let i = 0; i< boxs.length; i++){
+    boxs[i].addEventListener('click', function(e){
+        modalY.style.display = 'flex';
+        modalimg.src = e.target.src;
+        // console.log(e.target);
     })
+}
 
-    //moveSlideY함수 기능
-    function moveSlideY(numY){
-        slidesY.style.left =  -numY * (slideWidthY + slideMarginY) + "px";
-        currentIdxY = numY;
-        if(currentIdxY == slideCountY || currentIdxY == -slideCountY) {
-            //0으로 되돌아가기
-            setTimeout(function(){
-                slidesY.classList.remove('animatedY');
-                slidesY.style.left = '0px';
-                currentIdxY = 0;
-            },500);
-            //다시 animatedY효과추가
-            setTimeout(function(){
-                slidesY.classList.add('animatedY');
-            },500); 
-        } 
+close.addEventListener('click', function(){
+    modalY.style.display = 'none';
+})
+
+modalY.addEventListener('click', function(e){
+    // modalY.style.display = 'none';
+    // console.log(event.target.className);
+
+    //조건문을 사용!
+    if(e.target.className == 'modalbg')
+    {
+        modalY.style.display = 'none';
     }
-    
-
-//고쳐야 할 것
-//무한으로 돌아가는 것처럼 보이는 것
-//첫번째 클릭 때 transition이 적용없이 이동하는 것
-
-// let heart = document.querySelector('.uil-heart');
-// let arrow = document.querySelector('.uil-location-arrow-alt');
+})
 
 
-// heart.addEventListener('click', function(){
+//좋아요 수up, 하트 색칠해지는
 
-// });
+let cnt1 = document.querySelector('#cnt1');
+
+// cnt1.innerHTML = localStorage.cnt[0];
+
+for(let i = 0; i <heart.length; i++)
+{
+    heart[i].addEventListener('click', function(e1){
+        // localStorage.cnt[0] = 43;
+        // Number(localStorage.cnt[0]) + 1
+        // console.log(localStorage.cnt[0]);
+
+
+        //애니메이션으로 scale 조절 & opacity
+
+
+
+        // if(typeof(Storage) !== "undefined")
+        // {
+        //     if(localStorage.cnt)
+        //     {
+        //         localStorage.cnt = Number(localStorage.cnt) + 1;
+        //     }
+        //     else
+        //     {
+        //         localStorage.cnt = 0;
+        //     }
+
+        //     cnt1.innerHTML = localStorage.cnt;
+
+        // } else {
+        //     alert("응 돌아가");
+        // }
+        cnt1.innerHTML = heartCount(0);
+        cnt2.innerHTML = heartCount(1);
+
+    })
+}
+
+// function heartCount(i){
+//     if(typeof(Storage) !== "undefined")
+//         {
+//             if(localStorage.cnt[i])
+//             {
+//                 localStorage.cnt[i] = Number(localStorage.cnt[i]) + 1;
+//             }
+//             else
+//             {
+//                 localStorage.cnt[i] = 0;
+//             }
+
+        
+//         } else {
+//             alert("응 돌아가");
+//         }
+
+//         return localStorage.cnt[i];
+// }
+
+
+
 
 
 

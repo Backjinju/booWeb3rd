@@ -85,13 +85,15 @@ body{
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    transition: 0.5s ease;
 }
 
 .loginModal .loadingBook{
-    position: fixed;
+    position: absolute;
     opacity: 0;
     transition: 0.3s;
     width: 200px;
+    z-index: -1;
 }
 
 .loginModal .modalTitle{
@@ -198,39 +200,53 @@ body{
     align-items: center;
     flex-direction: column;
     position: fixed;
-    background-color: white;
     border-radius: 10px;
     z-index: 1;
     overflow: hidden;
     width: 1px;
     height: 1px;
+    /* display: none; */
     /* width: 500px;
     height: 800px; */
-    background-color:rgb(64, 135, 201);
+    background-color: rgb(64, 135, 201);
+    background-image: url(loginFormBackground.jpg);
+    background-size: cover;
+    background-position: 0 230px;
+    background-repeat: no-repeat;
+    opacity: 0.95;
 }
 
 .loginFormTitle{
     width: 100%;
-    padding: 15px;
+    padding: 5px;
     text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
 }
 
+#signUpXmark{
+    color: black;
+    font-size: 1.7rem;
+    position: relative;
+    right: 5px;
+    top: -15px;
+}
+
 .loginForm .loginFormContent{
     opacity: 0;
-    width: 80%;
+    width: 70%;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;
     /* background-color: coral; */
+    transition: 0.5s;
 }
 
 .loginFormContent input{
     width: 100%;
     border: none;
     margin: 5px 0;
-    padding: 20px 10px;    
+    padding: 10px 5px;    
     border-radius: 1px;
     background-color: transparent;
     border-bottom: 1px solid rgba(0, 0, 0, 0.39);
@@ -238,49 +254,69 @@ body{
     outline: none;
 }
 
+.loginFormContent .smallText{
+    font-size: 0.8rem;
+    opacity: 0.8;
+    color: #1E90FF;
+    margin: 3px 5px;
+}
+
 .loginFormContent input::placeholder{
     font-size: 1.1rem;
 }
 
+.birthBox{
+    display: flex;
+    justify-content: center;
+}
+
 .loginFormContent .legYear{
-    width: 128px;
-    margin-right: 20px;
+    width: 35%;
+    margin-right: 15px;
 }
 
 .loginFormContent .legMonth{
-    padding: 19px;
-    width: 90px;
-    margin-right: 20px;
+    padding: 10px;
+    width: 22%;
+    margin-right: 15px;
     border-radius: 1px;
     border: none;
     font-size: 1.1rem;
     color: rgba(0, 0, 0, 0.7);
+    outline: none;
+    background-color: transparent;
 }
 .loginFormContent .legDay{
-    width: 128px;
+    width:35%;
 }
 
 .loginFormContent .legAddress{
-    width: 300px;
+    width: 70%;
+}
+
+.addressBox{
+    width: 100%;
 }
 
 .loginFormContent .addressBtn{
-    width: 115px;
-    height: 60px;
+    width: 25%;
+    height: 45px;
     border: none;
     border-radius: 1px;
     background-color: #1E90FF;
     color: white;
+    margin-left: 13px;
 }
 
 .legBtn{
     border: none;
     width: 100%;
-    height: 80px;
+    height: 60px;
     font-size: 1.3rem;
     background-color: #1E90FF;
     color: white;
     border-radius: 2px;
+    margin-top: 15px;
 }
 
 
@@ -306,28 +342,31 @@ body{
 
 /* /////////////////////수근/////////////////////////// */
 .newBook {
-    width: 80%;
+    width: 1600px;
     height: 500px;
     margin-top: 50px;
     position: relative;
     background-color:#FFF;
+
     
 }
 li {
     list-style: none;
 }
 .newBook_title {
+    margin-top: 1px;
     padding: 10px;
-    text-align: center;
-    color: rgb(117, 117, 118);
     margin-top: 20px;
+    color: rgb(117, 118, 118);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 .newBook_title:hover {
     color: black;
 }
 .newBook_slide_wrapper {
     position: relative;
-    width: 1200px;
+    width: 1600px;
     overflow: hidden;
     height: 400px;
     margin: 50px auto;
@@ -342,12 +381,12 @@ li {
 
 }
 .newBook_slides li{
-    width: 260px;
+    width: 300px;
     height: 500px;
     float: left;
 }
 .newBook_slides li:not(:last-child) {
-    margin-right: 60px;
+    margin-right: 50px;
 }
 .newBook_slides li .img_box {
     width: 200px;
@@ -391,6 +430,8 @@ li {
     color: white;
 }
 .imgContent div:hover {
+    border: 1px solid black;
+    transition: all 0.35s;
     background-color: white;    
     color: black;
 }
@@ -427,66 +468,44 @@ li {
     right: 0px;
 } */
 /* ///////////////////////수근 끝/////////////////////////////////////// */
-.genreBook{
-    border: 1px solid black;
-    width: 100%;
-    height: 800px; 
-}
+
 /* //////////////////////////////////양희 시작///////////////////////////////////// */
 .reviewBook{
     /* border: 1px solid green; */
+    padding: 10px 0;
     background-color: white;
-    width: 100%;
+    width: 80%;
     height: 800px;
 }
 .reviewtitle{
-    display: flex;
-    flex-basis: 100%;
-    align-items: center;
-    color: #1E90FF;
-    font-size: 1.5rem;
-    margin: 8px 0;
-    letter-spacing: 5px;
-    font-family: 'Times New Roman', Times, serif;
-    padding-top: 5vh;
+    padding: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    color: rgb(117, 117, 118);
 }
-.reviewtitle::before{
-    content: "";
-    flex-grow: 1;
-    margin: 0 16px;
-    background: #1E90FF;
-    height: 2px;
+.reviewtitle:hover{
+    color: black
 }
-.reviewtitle::after{
-    content: "";
-    flex-grow: 1;
-    margin: 0 16px;
-    background: #1E90FF;
-    height: 2px;
-}
-/* ----------캐러셀------------- */
 .reviewcarousel{
-    width: 90%;
+    width: 100%;
     height: 40%;
-    overflow: hidden;
-    transform: translate(4.5vw,0);
-    z-index: 10;
-    position: relative;
+    /* overflow: hidden; */
+    /* z-index: 10; */
+    /* position: relative; */
     /* border: 1px solid black; */
 }
 .reviewboxs{
     width: 100%;
     height: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     position: relative;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
-.reviewboxs.animatedY{
-    transition: .5s ease-out;
-}
+
 .reviewbox{
     /* width: 13vw; */
     width: 250px;
@@ -496,9 +515,9 @@ li {
     border-radius: 5px;
     box-shadow: 0 1px 2px gray;
 }
-.reviewbox:hover .topimg img{
+/* .reviewbox:hover .topimg img{
     opacity: 0.5;
-}
+} */
 .reviewbox .topimg{
     height: 80%;
 }
@@ -533,24 +552,73 @@ li {
 }
 .righttext .uil-heart{
     color: red;
+    font-size: 1.7rem;
 }
-/* -------화살표---------- */
-.arrowsY{
+.righttext .fa-heart{
+    color: red;
+    font-size: 1.5rem;
+}
+.listnumber{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
-#arrowleft{
-    font-size: 2rem;
+.listnumber span{
+    padding: 0 20px;
+    font-weight: bold;
     cursor: pointer;
-    position: relative;
-    bottom: 19vh;
 }
-#arrowright{
-    font-size: 2rem;
-    cursor: pointer;   
-    position: relative;
-    bottom: 19vh;
+.listnumber span:hover{
+    color: #1E90FF;
 }
+/* 모달창 */
+.modalbg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    z-index: 500;
+    /* overflow: hidden; */
+    /* transition: 1s; */
+}
+.modalview{
+    width: 40%;
+    height: 60%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.leftimg{
+    /* border: 1px solid red; */
+    border-right: 1px solid gray;
+    display: flex;
+    align-items: center;
+}
+.leftimg img{
+    width: 100%;
+}
+
+.rightcontent{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+}
+.close-area{
+    /* border: 1px solid red; */
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
 
 /* //////////////////////////////양희 끝/////////////////////////////////// */
 
@@ -633,7 +701,24 @@ li {
 
 /* ///////////////////////백진주 영역 시작--------------------------------------------------- */
 /* 장르별 도서 */
-.gb_mtit{
+.genreBook{    
+    width: 80%;
+    height: 800px; 
+}
+/* 타이틀 변경 */
+.genreBook_pointer_title {
+    padding: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    color: rgb(117, 117, 118);
+    margin: 50px 0px;
+}
+.genreBook_pointer_title:hover {
+    color: black;
+}
+
+/* 타이틀 변경전 */
+/* .gb_mtit{
     font-size: 2.5rem;
     padding: 20px 0px;
     text-align: center;
@@ -656,7 +741,7 @@ li {
     margin: 0 16px;
     height: 2px;
     background: #1E90FF;
-}
+} */
 .gb_cont{
     display: flex;
     justify-content: center; 
@@ -667,7 +752,8 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;   
+    flex-wrap: wrap;
+    
 }
 
 .gb_item {
@@ -690,7 +776,7 @@ li {
 }
 .gb_thumb_title{
     position: absolute;
-    width: 180px;
+    width: 30%;
     height: 230px;
     top:0px;
     background-color: rgb(27, 27, 27);
@@ -775,15 +861,11 @@ li {
     flex-wrap: wrap;
     width: 100%;
     height: 300px;    
-    /* background-color: blueviolet; */
     overflow: scroll;
     background-color: aqua;
     margin-top: 20px;
 }
 
-/* .genre_mid_slide::-webkit-scrollbar {
-    display: none; Chrome, Safari, Opera
-} */
 .genre_mid_slide_box{
     text-align: center;
     width: 200px;
@@ -806,8 +888,50 @@ li {
 .genre_doc_box{
     position: absolute;
     top:160px;
-
 }
+
+/* 탭메뉴 */
+.tabmenu_list{
+    list-style:none;
+}
+
+.tabmenu{ 
+  max-width:1000px; 
+  position:relative; 
+}
+.tabmenu ul li{
+  display:  inline-block;
+  width:33.33%; 
+  float:left;  
+  text-align:center; 
+  background :#f9f9f9;
+  line-height:40px;
+}
+.tabmenu label{
+  display:block;
+  width:100%; 
+  height:40px;
+  line-height:40px;
+}
+.tabmenu input{
+    display:none;
+}
+.tabCon{
+  display:none; 
+  padding: 20px;
+  position:absolute; 
+  left:0; top:40px; 
+  width: 1000px;
+  height: 500px;
+  border : 5px solid #f9f9f9;
+}
+.tabmenu input:checked ~ label{
+  background:#ccc;
+}
+.tabmenu input:checked ~ .tabCon{
+  display:block;
+}
+
 /* ///////////////////////백진주 영역 끝--------------------------------------------------- */
 
 /* //////이상호////////////////////////////////////////////////// */
