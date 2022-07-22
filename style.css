@@ -821,8 +821,8 @@ li {
     text-shadow: 0 0 5px rgb(70, 70, 70);
     overflow:hidden;
     white-space:nowrap;
-    animation: typing 10s steps(27) forwards, 
-                blink .8s step-end infinite;
+    animation: typing 5s steps(27) forwards, 
+                blink .4s step-end infinite;
     animation-iteration-count: infinite;
 }
 @keyframes blink{
@@ -852,7 +852,67 @@ li {
 }
 
 /* 장르별 도서 새페이지영역*/
-
+/* 타이틀 */
+.genre_main_section{
+    width: 80%;
+    
+    /* background-color: rgb(242, 251, 255); */
+}
+/* 탭메뉴 */
+.tabmenu{ 
+  width:80%;
+  height: 900px; 
+  background-color: rgb(242, 251, 255);
+  margin: auto;
+  position:relative; 
+}
+.tabmenu_list{
+    list-style:none;
+}
+.tabmenu ul li{
+  display:  inline-block;
+  width:25%;
+  height: 50px; 
+  float:left;  
+  text-align:center; 
+  background: linear-gradient(to left, #feffff,rgb(216, 215, 255));
+  color:rgb(50, 156, 255);
+  
+  /* line-height:40px; */
+  /* border: 1px solid black; */
+}
+.tabmenu label{
+  display:block;
+  width:100%; 
+  height:50px;
+  line-height:40px;
+  cursor: pointer;
+}
+.tabmenu input{
+    display:none;
+}
+.tabCon{
+  display:none; 
+  padding: 10px;
+  position:absolute; 
+  left:0; top:50px; 
+  width: 100%;
+  height: 800px;
+  
+  
+}
+.btnCon label:hover{
+    height: 50px;
+}
+.tabmenu input:checked ~ label{    
+    font-size: 1.5rem;
+    color: rgb(119, 148, 245);
+    cursor: pointer;
+}
+.tabmenu input:checked ~ .tabCon{
+  display:block;
+}
+/* 탭메뉴 안 책 리스트 */
 .genre_mid_slide{
     display: flex;
     align-items: center;
@@ -860,77 +920,62 @@ li {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    height: 300px;    
-    overflow: scroll;
-    background-color: aqua;
+    height: 750px;
     margin-top: 20px;
 }
 
 .genre_mid_slide_box{
-    text-align: center;
-    width: 200px;
-    height: 250px;
-    margin: 10px;
-    border: 3px solid rgb(75, 75, 75);
-    position: relative;
     
+    width: 180px;
+    height: 230px;
+    margin: 20px;
+    /* border: 3px solid rgb(75, 75, 75); */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    
+}
+.genre_mid_slide_box:hover{
+    border: 1px solid rgb(202, 202, 202);
+    box-shadow: 3px 3px 3px rgb(104, 104, 104);
+}
+.genre_mid_slide_box:hover .genre_doc_box{
+    width: 100%;
+    height: 70px;
+    
+    background-color: #333;
 }
 .genre_thumb{
     position: absolute;
+    width:100%;
+    height:100%;    
     top:0;
     left:0;    
 }
-
 .genre_thumb img{
-    width:194px;
-    height:150px;
+    width:100%;
+    height:100%;
 }
 .genre_doc_box{
     position: absolute;
-    top:160px;
+    bottom:0px;    
+    
+    height: 0px;
+    background-color: black;
+    transition: all 0.9s;
+    display: flex;
+
+}
+.genre_doc_box div{
+    width: 80px;
+    height: 40px;
+    background-color: black;
+    border: 1px solid white;
+    margin: 10px;
+    color: white;
+
 }
 
-/* 탭메뉴 */
-.tabmenu_list{
-    list-style:none;
-}
-
-.tabmenu{ 
-  max-width:1000px; 
-  position:relative; 
-}
-.tabmenu ul li{
-  display:  inline-block;
-  width:33.33%; 
-  float:left;  
-  text-align:center; 
-  background :#f9f9f9;
-  line-height:40px;
-}
-.tabmenu label{
-  display:block;
-  width:100%; 
-  height:40px;
-  line-height:40px;
-}
-.tabmenu input{
-    display:none;
-}
-.tabCon{
-  display:none; 
-  padding: 20px;
-  position:absolute; 
-  left:0; top:40px; 
-  width: 1000px;
-  height: 500px;
-  border : 5px solid #f9f9f9;
-}
-.tabmenu input:checked ~ label{
-  background:#ccc;
-}
-.tabmenu input:checked ~ .tabCon{
-  display:block;
-}
 
 /* ///////////////////////백진주 영역 끝--------------------------------------------------- */
 
