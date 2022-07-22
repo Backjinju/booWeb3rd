@@ -342,28 +342,29 @@ body{
 
 /* /////////////////////수근/////////////////////////// */
 .newBook {
-    width: 80%;
+    width: 1600px;
     height: 500px;
     margin-top: 50px;
     position: relative;
-    background-color:#CCFFFF;
+    background-color:#fff;
     
 }
 li {
     list-style: none;
 }
 .newBook_title {
+    margin-top: 1px;
     padding: 10px;
+    color: rgb(117, 118, 118);
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    color: rgb(117, 117, 118);
 }
 .newBook_title:hover {
     color: black;
 }
 .newBook_slide_wrapper {
     position: relative;
-    width: 1200px;
+    width: 1600px;
     overflow: hidden;
     height: 400px;
     margin: 50px auto;
@@ -378,12 +379,12 @@ li {
 
 }
 .newBook_slides li{
-    width: 260px;
+    width: 300px;
     height: 500px;
     float: left;
 }
 .newBook_slides li:not(:last-child) {
-    margin-right: 60px;
+    margin-right: 50px;
 }
 .newBook_slides li .img_box {
     width: 200px;
@@ -427,6 +428,8 @@ li {
     color: white;
 }
 .imgContent div:hover {
+    border: 1px solid black;
+    transition: all 0.35s;
     background-color: white;    
     color: black;
 }
@@ -496,9 +499,11 @@ li {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    /* position: relative; */
+    position: relative;
     /* border: 1px solid red; */
 }
+
+
 .reviewbox{
     /* width: 13vw; */
     width: 250px;
