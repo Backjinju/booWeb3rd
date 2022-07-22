@@ -122,12 +122,16 @@ function registActive(){
 
 let hoverEle = document.querySelector(".hoverEle");
 let dropdown = document.querySelector(".nav-bar-dropdown");
+let dropdown_mo = document.querySelector(".nav-bar-modal");
 
 hoverEle.addEventListener("mouseover",function(){
     dropdown.style.display = "flex"
+    dropdown_mo.style.display = "block"
+
 })
 dropdown.addEventListener("mouseleave",function(){
     dropdown.style.display = "none"
+    dropdown_mo.style.display = "none"
 })
 
 
