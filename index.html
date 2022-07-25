@@ -18,7 +18,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
-    
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -29,10 +28,16 @@
             <!-- logo & login section start -->
             <div class="headerTop">
                 <div class="logoFrame">
-                    <img src="logo.png" alt="" id="logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="" id="logo">
+                    </a>
                 </div>
                 <div class="loginIcon">
-                    <i class="fa-solid fa-user"></i>
+                    <div class="iconsBox">
+                        <i class="fa-solid fa-user loginBtn"></i>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
                 </div>
             </div>
             <!-- logo & login section end -->
@@ -248,14 +253,20 @@
                         </select>
                         <input type="text" class="legDay" placeholder="일">
                     </div>
-                    <p class = "smallText" id="yearText">&nbsp;</p>
-                    <p class = "smallText" id="dayText">&nbsp;</p>
-                    <input type="text" class="legIdentity" placeholder="주민등록번호">
-                    <p class="smallText"></p>
-                    <!-- 주소 검색 기능... 넣을 수 있을지 미지수 -->
+                    <div class="birthTextBox">
+                        <p class = "smallText" id="yearText">&nbsp;</p>
+                        <p class = "smallText" id="dayText">&nbsp;</p>
+                    </div>
+                    <dev class="identityBox">
+                        <input type="text" class="legIdentity" placeholder="주민등록번호">
+                        <p class="smallText">하이픈(-)을 포함해서 입력해 주세요.</p>
+                        <i class="fa-solid fa-mars"></i>
+                        <i class="fa-solid fa-venus"></i>
+                    </dev>
                     <div class="addressBox">
                         <input type="text" class="legAddress" placeholder="주소">
                         <button class="addressBtn">주소 검색</button>
+                        <input type="text" class="legDetailAddress" placeholder="상세 주소">
                     </div>
                     <input type="text" class="legPhone" placeholder="전화 번호">
                     <p class="smallText">하이픈(-)을 포함하여 입력해 주세요.</p>
@@ -714,7 +725,7 @@
 
         <!-- js file link -->
         <script src="script.js"></script>
-
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </body>
 
 </html>
