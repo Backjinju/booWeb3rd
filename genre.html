@@ -2,364 +2,692 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"> -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"> -->
 </head>
 
 <body>
-    <div class="container">
-         <!-- header section start -->
-         <div class="header">
-            <!-- logo & login section start -->
-            <div class="headerTop">
-                <div class="logo"></div>
-                <div class="loginIcon"></div>
-            </div>
-            <!-- logo & login section end -->
+	<div class="container">
+		<!-- header section start -->
+		<div class="header pointer">
+			<!-- logo & login section start -->
+			<div class="headerTop">
+				<div class="logoFrame">
+					<img src="logo.png" alt="" id="logo">
+				</div>
+				<div class="loginIcon">
+					<i class="fa-solid fa-user"></i>
+				</div>
+			</div>
+			<!-- logo & login section end -->
 
-            <!-- header navBar start -->
-            <div class="nav">
+			<!-- header navBar start -->
+			<div class="nav">
+				<div class="nav-bar">
 
-            </div>
-            <!-- header navBar end -->
+					<!--메뉴바-->
+					<span class="scroll-ele">home</span>
 
-            <!-- header bestSeller start -->
-            <div class="bestSeller">
+					<span class="scroll-ele">newBook</span>
 
-            </div>
-            <!-- header bestSeller end -->
-        </div>
+					<span class="scroll-ele hoverEle">generBook</span>
 
-        <!-- 백진주 시작 -->
+					<span class="scroll-ele">reviwBook</span>
+					<div class="nav-bar-dropdown">
+						<!--메뉴바 드롭다운-->
+						<div>
+							<a href="">
+								<img src="dropdown1.jpeg" alt="">
 
-    <!-- 도서목록  국내도서 타이틀 -->
-	<div class="genre_main_section">
-		<div class="genre_tit_box">
-			<h3>국내도서</h3>
-			<p>다양한 국내도서 정보를 확인하세요</p>
+								<span>fiction</span>
+							</a>
+							<a href="">
+								<img src="dropdown1.jpeg" alt="">
+
+								<span>fantasy</span>
+							</a>
+							<a href="">
+								<img src="dropdown1.jpeg" alt="">
+
+								<span>magazine</span>
+							</a>
+							<a href="">
+								<img src="dropdown1.jpeg" alt="">
+
+								<span>comicbook</span>
+							</a>
+						</div>
+					</div>
+
+					<div class="nav-bar-modal"></div>
+					<!--드롭다운 하단 가리개-->
+				</div>
+
+			</div>
+
+			<!-- header navBar end -->
+
+			<!-- header bestSeller start -->
+			<div class="bestSeller">
+
+			</div>
+			<!-- header bestSeller end -->
 		</div>
-    <!-- 도서목록 리스트 국내도서 세부 리스트 -->
-		<!-- <div class="genre_mid_slide">			
-			<div class="genre_mid_slide_box">	
-				<div class="genre_thumb">
-					<img src="genreimg/local_인문_최재천의공부.jpg" alt="">						
-				</div>
-				<div class="genre_doc_box">
-					<strong>[인문]최재천의 공부</strong>
-					<p>삶을 위한 공부를 말하다</p>
-				</div>				
-			</div>
-			<div class="genre_mid_slide_box">
-				<div class="genre_thumb">
-					<img src="genreimg/local_인문_무엇이옳은가.jpg" alt="">
-				</div>
-				<div class="genre_doc_box">
-					<strong>[인문]무엇이 옳은가</strong>
-					<p>궁극의 질문들, 우리의 방향이 되다</p>
-				</div>				
-			</div>
-			<div class="genre_mid_slide_box">
-				<div class="genre_thumb">
-					<img src="genreimg/local_인문_내가틀릴수도있습니다.jpg" alt="">
-				</div>
-				<div class="genre_doc_box">
-					<strong>[인문]내가틀릴수도있습니다</strong>
-					<p>숲속의 현자가 전하는 마지막 인생 수업</p>
-				</div>
-			</div>
-			<div class="genre_mid_slide_box">
-                <div class="genre_thumb">
-					<img src="genreimg/local_역사_조선시대사가기록화.jpg" alt="">						
-				</div>
-				<div class="genre_doc_box">
-					<strong>[역사]조선시대사가기록화</strong>
-					<p>한국 미술사의 새로운 세계!</p>
-				</div>
-			</div>
-			<div class="genre_mid_slide_box">				
-				<div class="genre_thumb">
-					<img src="genreimg/local_역사_세계사를바꾼커피이야기.jpg" alt="">
-				</div>
-				<div class="genre_doc_box">
-					<strong>[역사] 세계사를바꾼커피이야기</strong>
-					<p>욕망을억제하기위한검은음료</p>
-				</div>
-			</div>
-			<div class="genre_mid_slide_box">			
-				<div class="genre_thumb">
-					<img src="genreimg/local_역사_꺼꾸로읽는세계사.jpg" alt="">
-				</div>
-				<div class="genre_doc_box">
-					<strong>[역사]꺼꾸로읽는세계사</strong>
-					<p>베스트셀러의귀환</p>
-				</div>
-			</div>
-            <div class="genre_mid_slide_box">
-                <div class="genre_thumb">
-					<img src="genreimg/local_여행_에이든국내여행가이드북.jpg" alt="">						
-				</div>
-				<div class="genre_doc_box">
-					<strong>[여행]에이든국내여행가이드북</strong>
-					<p>가장 완벽한 가이드북</p>
-				</div>
-			</div>
-			<div class="genre_mid_slide_box">
-				<div class="genre_thumb">
-					<img src="genreimg/local_여행_무작정따라하기하와이.jpg" alt="">
-				</div>
-				<div class="genre_doc_box">
-					<strong>[여행]무작정따라하기하와이</strong>
-					<p>테마와 코스 정보가 2배!</p>
-				</div>
-			</div>
-			<div class="genre_mid_slide_box">
-                <div class="genre_thumb">
-					<img src="genreimg/local_여행_교과서가쉬워지는주말여행.jpg" alt="">
-				</div>
-				<div class="genre_doc_box">
-					<strong>[여행]교과서가쉬워지는주말여행</strong>
-					<p>자기주도여행</p>
-				</div>				
-			</div>
-            <div class="genre_mid_slide_box">	
-				<div class="genre_thumb">
-					<img src="genreimg/local_시_자기돌봄의시.jpg" alt="">						
-				</div>
-				<div class="genre_doc_box">
-					<strong>[시/에세이]자기돌봄의시</strong>
-					<p>지금 내 마음에 필요한 시를 엮다</p>
-				</div>
-			</div>
-			<div class="genre_mid_slide_box">
-				<div class="genre_thumb">
-					<img src="genreimg/local_시_우리가함께장마를볼수도있겠습니다.jpg" alt="">
-				</div>
-				<div class="genre_doc_box">
-					<strong>[시/에세이]우리가함께장마를볼수도있겠습니다</strong>
-					<p>문학과 지성의 최고봉</p>
-				</div>
-			</div>
-			<div class="genre_mid_slide_box">			
-				<div class="genre_thumb">
-					<img src="genreimg/local_시_늙어가는길.jpg" alt="">
-				</div>
-				<div class="genre_doc_box">
-					<strong>[시/에세이]늙어가는길</strong>
-					<p>진솔한 노인의 노래</p>
-				</div>
-			</div>
-            <div class="genre_mid_slide_box">
-				<div class="genre_thumb">
-					<img src="genreimg/local_사회_어떤호소의말들.jpg" alt="">						
-				</div>
-				<div class="genre_doc_box">
-					<strong>[사회]]어떤호소의말들</strong>
-					<p>사건 너머의 이야기</p>
-				</div>
-			</div>
-			<div class="genre_mid_slide_box">
-				<div class="genre_thumb">
-					<img src="genreimg/local_사회_당신이지금껏오해한세상을지배한단어들.jpg" alt="">
-				</div>
-				<div class="genre_doc_box">
-					<strong>[사회]당신이지금껏오해한세상을지배한단어들</strong>
-					<p>논쟁의 대상인 단어들!</p>
-				</div>
-			</div>
-			<div class="genre_mid_slide_box">
-				<div class="genre_thumb">
-					<img src="genreimg/local_사회_기후미룰수없는오늘.jpg" alt="">
-				</div>
-				<div class="genre_doc_box">
-					<strong>[사회]기후 1.5℃ 미룰 수 없는 오늘</strong>
-					<p>단 하나의 선택지, 탄소중립!</p>
-				</div>				
+
+		<!-- 백진주 시작 -->
+
+		<!-- 도서목록  국내도서 타이틀 -->
+		
+		
+		<div class="genre_main_section">
+			<!-- <div class="genre_tit_box">
+				<h3>국내도서</h3>
+				<p>다양한 국내도서 정보를 확인하세요</p>
 			</div> -->
+			<div class="genreBook_pointer_title">
+				<h1 class="gb_mtit">장르별 도서</h1>
+			</div>  				          
+
 			<div class="tabmenu">
 				<ul class="tabmenu_list">
-				  <li id="tab1" class="btnCon"> <input type="radio" checked name="tabmenu" id="tabmenu1">
-					<label for="tabmenu1">menu1</label>
-					<div class="tabCon" >
-						<div class="genre_mid_slide">			
-							<div class="genre_mid_slide_box">	
-								<div class="genre_thumb">
-									<img src="genreimg/local_인문_최재천의공부.jpg" alt="">						
+					<li id="tab1" class="btnCon"> <input type="radio" checked name="tabmenu" id="tabmenu1">
+						<label for="tabmenu1">국내도서</label>
+						<div class="tabCon">
+							<div class="genre_mid_slide">
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_인문_최재천의공부.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<!-- <strong>[인문]최재천의 공부</strong>
+										<p>삶을 위한 공부를 말하다</p> -->
+										<div>장바구니</div>
+										<div>내서재</div>
+									</div>
 								</div>
-								<div class="genre_doc_box">
-									<strong>[인문]최재천의 공부</strong>
-									<p>삶을 위한 공부를 말하다</p>
-								</div>				
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_인문_무엇이옳은가.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[인문]무엇이 옳은가</strong>
+										<p>궁극의 질문들, 우리의 방향이 되다</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_인문_내가틀릴수도있습니다.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[인문]내가틀릴수도있습니다</strong>
+										<p>숲속의 현자가 전하는 마지막 인생 수업</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_역사_조선시대사가기록화.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[역사]조선시대사가기록화</strong>
+										<p>한국 미술사의 새로운 세계!</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_역사_세계사를바꾼커피이야기.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[역사] 세계사를바꾼커피이야기</strong>
+										<p>욕망을억제하기위한검은음료</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_역사_꺼꾸로읽는세계사.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[역사]꺼꾸로읽는세계사</strong>
+										<p>베스트셀러의귀환</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_여행_에이든국내여행가이드북.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[여행]에이든국내여행가이드북</strong>
+										<p>가장 완벽한 가이드북</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_여행_무작정따라하기하와이.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[여행]무작정따라하기하와이</strong>
+										<p>테마와 코스 정보가 2배!</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_여행_교과서가쉬워지는주말여행.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[여행]교과서가쉬워지는주말여행</strong>
+										<p>자기주도여행</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_시_자기돌봄의시.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[시/에세이]자기돌봄의시</strong>
+										<p>지금 내 마음에 필요한 시를 엮다</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_시_우리가함께장마를볼수도있겠습니다.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[시/에세이]우리가함께장마를볼수도있겠습니다</strong>
+										<p>문학과 지성의 최고봉</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_시_늙어가는길.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[시/에세이]늙어가는길</strong>
+										<p>진솔한 노인의 노래</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_사회_어떤호소의말들.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[사회]]어떤호소의말들</strong>
+										<p>사건 너머의 이야기</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_사회_당신이지금껏오해한세상을지배한단어들.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[사회]당신이지금껏오해한세상을지배한단어들</strong>
+										<p>논쟁의 대상인 단어들!</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_사회_기후미룰수없는오늘.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[사회]기후 1.5℃ 미룰 수 없는 오늘</strong>
+										<p>단 하나의 선택지, 탄소중립!</p>
+									</div>
+								</div>
 							</div>
-							<div class="genre_mid_slide_box">
-								<div class="genre_thumb">
-									<img src="genreimg/local_인문_무엇이옳은가.jpg" alt="">
+
+					</li>
+					<li id="tab2" class="btnCon"><input type="radio" name="tabmenu" id="tabmenu2">
+						<label for="tabmenu2">해외도서</label>
+						<div class="tabCon">
+							<div class="genre_mid_slide">
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_여행_에이든국내여행가이드북.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[여행]에이든국내여행가이드북</strong>
+										<p>가장 완벽한 가이드북</p>
+									</div>
 								</div>
-								<div class="genre_doc_box">
-									<strong>[인문]무엇이 옳은가</strong>
-									<p>궁극의 질문들, 우리의 방향이 되다</p>
-								</div>				
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_여행_무작정따라하기하와이.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[여행]무작정따라하기하와이</strong>
+										<p>테마와 코스 정보가 2배!</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_여행_교과서가쉬워지는주말여행.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[여행]교과서가쉬워지는주말여행</strong>
+										<p>자기주도여행</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_시_자기돌봄의시.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[시/에세이]자기돌봄의시</strong>
+										<p>지금 내 마음에 필요한 시를 엮다</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_시_우리가함께장마를볼수도있겠습니다.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[시/에세이]우리가함께장마를볼수도있겠습니다</strong>
+										<p>문학과 지성의 최고봉</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_시_늙어가는길.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[시/에세이]늙어가는길</strong>
+										<p>진솔한 노인의 노래</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_사회_어떤호소의말들.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[사회]]어떤호소의말들</strong>
+										<p>사건 너머의 이야기</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_사회_당신이지금껏오해한세상을지배한단어들.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[사회]당신이지금껏오해한세상을지배한단어들</strong>
+										<p>논쟁의 대상인 단어들!</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_사회_기후미룰수없는오늘.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[사회]기후 1.5℃ 미룰 수 없는 오늘</strong>
+										<p>단 하나의 선택지, 탄소중립!</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_인문_최재천의공부.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[인문]최재천의 공부</strong>
+										<p>삶을 위한 공부를 말하다</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_인문_무엇이옳은가.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[인문]무엇이 옳은가</strong>
+										<p>궁극의 질문들, 우리의 방향이 되다</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_인문_내가틀릴수도있습니다.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[인문]내가틀릴수도있습니다</strong>
+										<p>숲속의 현자가 전하는 마지막 인생 수업</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_역사_조선시대사가기록화.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[역사]조선시대사가기록화</strong>
+										<p>한국 미술사의 새로운 세계!</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_역사_세계사를바꾼커피이야기.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[역사] 세계사를바꾼커피이야기</strong>
+										<p>욕망을억제하기위한검은음료</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_역사_꺼꾸로읽는세계사.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[역사]꺼꾸로읽는세계사</strong>
+										<p>베스트셀러의귀환</p>
+									</div>
+								</div>
+						</div>
+
+					</li>
+					<li id="tab3" class="btnCon"><input type="radio" name="tabmenu" id="tabmenu3">
+						<label for="tabmenu3">eBook</label>
+						<div class="tabCon">
+							<div class="genre_mid_slide">
+								
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_사회_어떤호소의말들.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[사회]]어떤호소의말들</strong>
+										<p>사건 너머의 이야기</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_사회_당신이지금껏오해한세상을지배한단어들.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[사회]당신이지금껏오해한세상을지배한단어들</strong>
+										<p>논쟁의 대상인 단어들!</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_사회_기후미룰수없는오늘.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[사회]기후 1.5℃ 미룰 수 없는 오늘</strong>
+										<p>단 하나의 선택지, 탄소중립!</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_인문_최재천의공부.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[인문]최재천의 공부</strong>
+										<p>삶을 위한 공부를 말하다</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_인문_무엇이옳은가.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[인문]무엇이 옳은가</strong>
+										<p>궁극의 질문들, 우리의 방향이 되다</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_인문_내가틀릴수도있습니다.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[인문]내가틀릴수도있습니다</strong>
+										<p>숲속의 현자가 전하는 마지막 인생 수업</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_역사_조선시대사가기록화.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[역사]조선시대사가기록화</strong>
+										<p>한국 미술사의 새로운 세계!</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_역사_세계사를바꾼커피이야기.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[역사] 세계사를바꾼커피이야기</strong>
+										<p>욕망을억제하기위한검은음료</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_역사_꺼꾸로읽는세계사.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[역사]꺼꾸로읽는세계사</strong>
+										<p>베스트셀러의귀환</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_여행_에이든국내여행가이드북.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[여행]에이든국내여행가이드북</strong>
+										<p>가장 완벽한 가이드북</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_여행_무작정따라하기하와이.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[여행]무작정따라하기하와이</strong>
+										<p>테마와 코스 정보가 2배!</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_여행_교과서가쉬워지는주말여행.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[여행]교과서가쉬워지는주말여행</strong>
+										<p>자기주도여행</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_시_자기돌봄의시.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[시/에세이]자기돌봄의시</strong>
+										<p>지금 내 마음에 필요한 시를 엮다</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_시_우리가함께장마를볼수도있겠습니다.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[시/에세이]우리가함께장마를볼수도있겠습니다</strong>
+										<p>문학과 지성의 최고봉</p>
+									</div>
+								</div>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_시_늙어가는길.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[시/에세이]늙어가는길</strong>
+										<p>진솔한 노인의 노래</p>
+									</div>
+								</div>
 							</div>
-							<div class="genre_mid_slide_box">
-								<div class="genre_thumb">
-									<img src="genreimg/local_인문_내가틀릴수도있습니다.jpg" alt="">
+
+					</li>
+					<li id="tab1" class="btnCon"> <input type="radio" checked name="tabmenu" id="tabmenu4">
+						<label for="tabmenu4">웹소설</label>
+						<div class="tabCon">
+							<div class="genre_mid_slide">
+								
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_여행_교과서가쉬워지는주말여행.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[여행]교과서가쉬워지는주말여행</strong>
+										<p>자기주도여행</p>
+									</div>
 								</div>
-								<div class="genre_doc_box">
-									<strong>[인문]내가틀릴수도있습니다</strong>
-									<p>숲속의 현자가 전하는 마지막 인생 수업</p>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_시_자기돌봄의시.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[시/에세이]자기돌봄의시</strong>
+										<p>지금 내 마음에 필요한 시를 엮다</p>
+									</div>
 								</div>
-							</div>
-							<div class="genre_mid_slide_box">
-								<div class="genre_thumb">
-									<img src="genreimg/local_역사_조선시대사가기록화.jpg" alt="">						
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_인문_최재천의공부.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[인문]최재천의 공부</strong>
+										<p>삶을 위한 공부를 말하다</p>
+									</div>
 								</div>
-								<div class="genre_doc_box">
-									<strong>[역사]조선시대사가기록화</strong>
-									<p>한국 미술사의 새로운 세계!</p>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_인문_무엇이옳은가.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[인문]무엇이 옳은가</strong>
+										<p>궁극의 질문들, 우리의 방향이 되다</p>
+									</div>
 								</div>
-							</div>
-							<div class="genre_mid_slide_box">				
-								<div class="genre_thumb">
-									<img src="genreimg/local_역사_세계사를바꾼커피이야기.jpg" alt="">
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_인문_내가틀릴수도있습니다.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[인문]내가틀릴수도있습니다</strong>
+										<p>숲속의 현자가 전하는 마지막 인생 수업</p>
+									</div>
 								</div>
-								<div class="genre_doc_box">
-									<strong>[역사] 세계사를바꾼커피이야기</strong>
-									<p>욕망을억제하기위한검은음료</p>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_역사_조선시대사가기록화.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[역사]조선시대사가기록화</strong>
+										<p>한국 미술사의 새로운 세계!</p>
+									</div>
 								</div>
-							</div>
-							<div class="genre_mid_slide_box">			
-								<div class="genre_thumb">
-									<img src="genreimg/local_역사_꺼꾸로읽는세계사.jpg" alt="">
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_역사_세계사를바꾼커피이야기.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[역사] 세계사를바꾼커피이야기</strong>
+										<p>욕망을억제하기위한검은음료</p>
+									</div>
 								</div>
-								<div class="genre_doc_box">
-									<strong>[역사]꺼꾸로읽는세계사</strong>
-									<p>베스트셀러의귀환</p>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_역사_꺼꾸로읽는세계사.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[역사]꺼꾸로읽는세계사</strong>
+										<p>베스트셀러의귀환</p>
+									</div>
 								</div>
-							</div>
-							<div class="genre_mid_slide_box">
-								<div class="genre_thumb">
-									<img src="genreimg/local_여행_에이든국내여행가이드북.jpg" alt="">						
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_여행_에이든국내여행가이드북.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[여행]에이든국내여행가이드북</strong>
+										<p>가장 완벽한 가이드북</p>
+									</div>
 								</div>
-								<div class="genre_doc_box">
-									<strong>[여행]에이든국내여행가이드북</strong>
-									<p>가장 완벽한 가이드북</p>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_여행_무작정따라하기하와이.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[여행]무작정따라하기하와이</strong>
+										<p>테마와 코스 정보가 2배!</p>
+									</div>
 								</div>
-							</div>
-							<div class="genre_mid_slide_box">
-								<div class="genre_thumb">
-									<img src="genreimg/local_여행_무작정따라하기하와이.jpg" alt="">
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_시_우리가함께장마를볼수도있겠습니다.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[시/에세이]우리가함께장마를볼수도있겠습니다</strong>
+										<p>문학과 지성의 최고봉</p>
+									</div>
 								</div>
-								<div class="genre_doc_box">
-									<strong>[여행]무작정따라하기하와이</strong>
-									<p>테마와 코스 정보가 2배!</p>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_시_늙어가는길.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[시/에세이]늙어가는길</strong>
+										<p>진솔한 노인의 노래</p>
+									</div>
 								</div>
-							</div>
-							<div class="genre_mid_slide_box">
-								<div class="genre_thumb">
-									<img src="genreimg/local_여행_교과서가쉬워지는주말여행.jpg" alt="">
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_사회_어떤호소의말들.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[사회]]어떤호소의말들</strong>
+										<p>사건 너머의 이야기</p>
+									</div>
 								</div>
-								<div class="genre_doc_box">
-									<strong>[여행]교과서가쉬워지는주말여행</strong>
-									<p>자기주도여행</p>
-								</div>				
-							</div>
-							<div class="genre_mid_slide_box">	
-								<div class="genre_thumb">
-									<img src="genreimg/local_시_자기돌봄의시.jpg" alt="">						
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_사회_당신이지금껏오해한세상을지배한단어들.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[사회]당신이지금껏오해한세상을지배한단어들</strong>
+										<p>논쟁의 대상인 단어들!</p>
+									</div>
 								</div>
-								<div class="genre_doc_box">
-									<strong>[시/에세이]자기돌봄의시</strong>
-									<p>지금 내 마음에 필요한 시를 엮다</p>
+								<div class="genre_mid_slide_box">
+									<div class="genre_thumb">
+										<img src="genreimg/local_사회_기후미룰수없는오늘.jpg" alt="">
+									</div>
+									<div class="genre_doc_box">
+										<strong>[사회]기후 1.5℃ 미룰 수 없는 오늘</strong>
+										<p>단 하나의 선택지, 탄소중립!</p>
+									</div>
 								</div>
-							</div>
-							<div class="genre_mid_slide_box">
-								<div class="genre_thumb">
-									<img src="genreimg/local_시_우리가함께장마를볼수도있겠습니다.jpg" alt="">
-								</div>
-								<div class="genre_doc_box">
-									<strong>[시/에세이]우리가함께장마를볼수도있겠습니다</strong>
-									<p>문학과 지성의 최고봉</p>
-								</div>
-							</div>
-							<div class="genre_mid_slide_box">			
-								<div class="genre_thumb">
-									<img src="genreimg/local_시_늙어가는길.jpg" alt="">
-								</div>
-								<div class="genre_doc_box">
-									<strong>[시/에세이]늙어가는길</strong>
-									<p>진솔한 노인의 노래</p>
-								</div>
-							</div>
-							<div class="genre_mid_slide_box">
-								<div class="genre_thumb">
-									<img src="genreimg/local_사회_어떤호소의말들.jpg" alt="">						
-								</div>
-								<div class="genre_doc_box">
-									<strong>[사회]]어떤호소의말들</strong>
-									<p>사건 너머의 이야기</p>
-								</div>
-							</div>
-							<div class="genre_mid_slide_box">
-								<div class="genre_thumb">
-									<img src="genreimg/local_사회_당신이지금껏오해한세상을지배한단어들.jpg" alt="">
-								</div>
-								<div class="genre_doc_box">
-									<strong>[사회]당신이지금껏오해한세상을지배한단어들</strong>
-									<p>논쟁의 대상인 단어들!</p>
-								</div>
-							</div>
-							<div class="genre_mid_slide_box">
-								<div class="genre_thumb">
-									<img src="genreimg/local_사회_기후미룰수없는오늘.jpg" alt="">
-								</div>
-								<div class="genre_doc_box">
-									<strong>[사회]기후 1.5℃ 미룰 수 없는 오늘</strong>
-									<p>단 하나의 선택지, 탄소중립!</p>
-								</div>				
-							</div>
-					</div>
-					
-				  </li>
-				  <li id="tab2" class="btnCon"><input type="radio" name="tabmenu" id="tabmenu2">
-					<label for="tabmenu2">menu2</label>
-					<div class="tabCon" >ddddd.</div>
-					
-				  </li>    
-				  <li id="tab3" class="btnCon"><input type="radio" name="tabmenu" id="tabmenu3">
-					<label for="tabmenu3">menu3</label>
-					<div class="tabCon" >dddd</div>
-					
-				  </li>
-				  <li id="tab1" class="btnCon"> <input type="radio" checked name="tabmenu" id="tabmenu1">
-					<label for="tabmenu1">menu1</label>
-					<div class="tabCon" >ddddd</div>
-					
-				  </li>
+						</div>
+
+					</li>
 				</ul>
-			  </div>
-
-			
-
-
-
-
-		
-
-
- 
-
-
-
 			</div>
-        
-                <!-- 백진주 끝 -->
 
-     <!-- js file link -->
-        <script src="script.js"></script>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+
+		<!-- 백진주 끝 -->
+
+		<!-- js file link -->
+		<script src="script.js"></script>
+	</div>
 </body>
 
 </html>
