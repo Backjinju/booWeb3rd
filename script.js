@@ -387,6 +387,7 @@ let bookitem = document.querySelectorAll(".bookItem");
 let bookslider = document.querySelector(".bestSeller-book-move");
 let bookwarp = document.querySelector(".bestSeller-book-warp");
 let bookfirstChild = bookslider.firstElementChild.cloneNode(true);
+bookslider.appendChild(bookfirstChild)
 let booklastChild = bookslider.lastChild.cloneNode(true);
 
 
@@ -403,62 +404,37 @@ setInterval(function(){
         setTimeout(function(){
             bookslider.style.transition = "0s";
             bookslider.style.transform = "translate3d(0px,0px,0px)";
-        },100)
+        },300)
         i = 0;
     }       
 },5000)
 
 
-
-//광고 이벤트
-window.addEventListener("scroll",function(){
-    this.setTimeout(function(){
-        if(window.pageYOffset > 80){
-            bookslider.style.opacity = "1";
-            bookwarp.style.transition = "1.5s";
-            bookwarp.style.transform = "translate(160px , 0px)"; 
-            bookwarp.style.boxShadow = "0px 2px 5px 2px rgba(0, 0, 0, 0.1)";
-         
-        }
-        else if(window.pageYOffset < 70){
-            bookslider.style.opacity = "0";
-            bookwarp.style.transition = "0s";
-            bookwarp.style.transform = "translate(0px , 0px)";
-     
-
-           
-        }
-    },500)
-    
-
-});
-
-//  window.addEventListener("scroll",function(){
-  
-
-//         if(window.pageYOffset > 80){
-//             bookwarp.style.transform = "translate(160px , 0px)";
-        
-//         }
-//         if(window.pageYOffset < 70){
-//             bookBtn.style.opacity = "1";
-//             bookBtn.style.transition = "0.5s";
-//         }
-        
-    
-// },2500)
- 
-
-
-
 //광고 삭제 버튼
 let bookBtn = document.querySelector("#bestSeller-book-btn");
-
+let bookmove = document.querySelector(".bestSeller-book");
+let bookicon = document.querySelector("#icon")
+let flag = false;
     bookBtn.addEventListener("click",function(){
-        bookwarp.style.opacity = "0";
-        bookwarp.style.transition = "0s";
-        bookBtn.style.display = "none"
-        bookBtn.style.transition = "0s";
+        if(flag === false){
+            bookmove.style.left ="-200px";
+            bookBtn.style.left = "-50px";
+            bookmove.style.transition = "0.5s"
+            bookBtn.style.transition = "0.5s"
+            bookicon.className = "fa-solid fa-angle-right";
+
+            flag = true;
+        }
+        else if(flag === true){
+            bookmove.style.left = "0px";
+            bookBtn.style.left = "150px";
+            bookmove.style.transition = "0.5s"
+            bookBtn.style.transition = "0.5s"
+            bookicon.className = "fa-solid fa-angle-right";
+            bookicon.className = "fa-solid fa-angle-left";
+            flag = false;
+        }
+       
     })
 
 
