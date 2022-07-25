@@ -862,7 +862,7 @@ li {
     position: relative;
     width: 600px;
     height: 230px;
-    margin: 10px 10px;
+    margin: 40px 80px;
 }
 .gb_thumb{
     width: 100%;
@@ -1274,7 +1274,7 @@ a{
     height: 310px;
     position: fixed;   
     z-index: 90;
-    transform: translate(100px, 250px);
+    transform: translate(-780px, 250px);
 }
 .bestSeller-book-warp{
     width: 130px;

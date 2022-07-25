@@ -814,6 +814,84 @@ SGslides.addEventListener('mouseleave',function(){
 })
 
 
+
+////// 수근///////////////
+
+// var slides = document.querySelector('.slides'),
+//     slide = document.querySelectorAll('.slides li'),
+//     currentIdx =0;
+//     slideWidth = 1300,
+//     slideMargin = 10,
+//     slideCount = slide.length,
+//     prevBtn = document.querySelector('.prev'),
+//     nextBtn = document.querySelector('.next');
+
+//     makeClone();
+
+//     function makeClone() {
+//         for(var i=0; i < slideCount; i++) {
+//             var cloneSlide = slide[i].cloneNode(true);
+//             cloneSlide.classList.add('clone');
+//             slides.appendChild(cloneSlide);
+//         }
+//         for(var i= slideCount-1; i >= 0; i--) {
+//             var cloneSlide = slide[i].cloneNode(true);
+//             cloneSlide.classList.add('clone');
+//             slides.prepend(cloneSlide);
+//         }
+//         updateWidth();
+//         setInitialPos();
+//     }
+//     function updateWidth() {
+//         var currentSlides = document.querySelectorAll('.slides li');
+//         var newSlideCount = currentSlides.length;
+        
+//         var newWidth = (slideWidth + slideMargin) * newSlideCount - slideMargin + 'px';
+//         slides.style.width = newWidth; 
+//     }
+//     function setInitialPos() {
+//         var initialTranslateValue = -(slideWidth + slideMargin) * slideCount;
+//         slides.style.transform = 'translateX(' +initialTranslateValue+ 'px)'
+//     }
+
+//     nextBtn.addEventListener('click', function(){
+//         moveSlide(currentIdx +1);
+//     })
+
+//     prevBtn.addEventListener('click', function(){
+//         moveSlide(currentIdx -1);
+//     })
+
+//     function moveSlide(num) {
+//         slides.style.left = -num * (slideWidth + slideMargin) + 'px';
+//         currentIdx = num;
+//         if(currentIdx == slideCount || currentIdx == -slideCount) {
+//                 slides.style.left = '0px';
+//                 currentIdx = 0;
+//         }
+
+//     }
+// let timer1 = undefined;
+// function autoSlide(){
+//     if(timer1 == undefined){
+//         timer1 = setInterval(function(){
+//             moveSlide(currentIdx +1);
+//         },3000);
+//     }
+// }
+// autoSlide();
+// function stopSlide(){
+//     clearInterval(timer1);
+//     timer1 = undefined;
+// }
+// slides.addEventListener('mouseenter',function(){
+//     stopSlide();
+// })
+// slides.addEventListener('mouseleave',function(){
+//     autoSlide();
+// })
+
+
 ///////////////////////////////////////
 //////////////////진주//////////////////
 
