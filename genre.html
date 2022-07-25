@@ -1,84 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
-	<!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"> -->
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>GBooks Homepage</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+		<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+	
+	
+		<link rel="stylesheet" href="style.css">
+	</head>
 
 <body>
 	<div class="container">
-		<!-- header section start -->
-		<div class="header pointer">
-			<!-- logo & login section start -->
-			<div class="headerTop">
-				<div class="logoFrame">
-					<a href="index.html">
-						<img src="logo.png" alt="" id="logo">
-					</a>
-				</div>
-				<div class="loginIcon">
-					<i class="fa-solid fa-user"></i>
-				</div>
-			</div>
-			<!-- logo & login section end -->
+        <!-- header section start -->
+        <div class="header pointer">
+            <!-- logo & login section start -->
+            <div class="headerTop">
+                <div class="logoFrame">
+                    <a href="index.html">
+                        <img src="logo.png" alt="" id="logo">
+                    </a>
+                </div>
+                <div class="loginIcon">
+                    <div class="iconsBox">
+                        <i class="fa-solid fa-user loginBtn"></i>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- logo & login section end -->
 
-			<!-- header navBar start -->
-			<div class="nav">
-				<div class="nav-bar">
+            <!-- header navBar start -->
+            <div class="nav">
+                <div class="nav-bar">
 
-					<!--메뉴바-->
-					<span class="scroll-ele">home</span>
+                    <!--메뉴바-->
+                    <span class="scroll-ele">HOME</span>
 
-					<span class="scroll-ele">newBook</span>
+                    <span class="scroll-ele">신간도서</span>
 
-					<span class="scroll-ele hoverEle">generBook</span>
+                    <span class="scroll-ele hoverEle">장르별도서</span>
 
-					<span class="scroll-ele">reviwBook</span>
-					<div class="nav-bar-dropdown">
-						<!--메뉴바 드롭다운-->
-						<div>
-							<a href="">
-								<img src="dropdown1.jpeg" alt="">
+                    <span class="scroll-ele">REVIEW</span>
+                    <div class="nav-bar-dropdown">
+                        <!--메뉴바 드롭다운-->
+                        <div>
+                            <a href="">
+                                <img src="header3.jpeg" alt="">
 
-								<span>fiction</span>
-							</a>
-							<a href="">
-								<img src="dropdown1.jpeg" alt="">
+                                <span>국내도서</span>
+                            </a>
+                            <a href="">
+                                <img src="dropdown1.jpeg" alt="">
 
-								<span>fantasy</span>
-							</a>
-							<a href="">
-								<img src="dropdown1.jpeg" alt="">
+                                <span>해외도서</span>
+                            </a>
+                            <a href="">
+                                <img src="header9.jpeg" alt="">
 
-								<span>magazine</span>
-							</a>
-							<a href="">
-								<img src="dropdown1.jpeg" alt="">
+                                <span>전자책</span>
+                            </a>
+                            <a href="">
+                                <img src="header5.jpeg" alt="">
 
-								<span>comicbook</span>
-							</a>
-						</div>
-					</div>
+                                <span>웹소설</span>
+                            </a>
+                        </div>
+                    </div>
 
-					<div class="nav-bar-modal"></div>
-					<!--드롭다운 하단 가리개-->
-				</div>
+                    <div class="nav-bar-modal"></div>
+                    <!--드롭다운 하단 가리개-->
+                </div>
 
-			</div>
+            </div>
+        
+            <!-- header navBar end -->
 
-			<!-- header navBar end -->
+            <!-- header bestSeller start -->
+            <div class="bestSeller">
+                <!-- 베스트셀러 캐러셀 -->
+                <div class="bestSeller-sell-warp">
+                    <!-- 오버플로우 히든 디브 -->
+                    <div class="slideItem">
+                        <img src="headerColor1.png" alt="" class="sellEle">
+                    </div>
 
-			<!-- header bestSeller start -->
-			<div class="bestSeller">
+                    <div class="slideItem">
+                        <img src="headerColor2.jpeg" alt="" class="sellEle">
+                    </div>
 
-			</div>
-			<!-- header bestSeller end -->
-		</div>
+                    <div class="slideItem">
+                        <img src="headerColor3.png" alt="" class="sellEle">
+                    </div>
+
+                    <div class="slideItem">
+                        <img src="headerColor1.png" alt="" class="sellEle">
+                    </div>
+
+                    <div id="font-warp">
+                        <div class="bestSeller-text text1">
+                            <h1 id="font1">이달의
+                                <span class="ani-1">베</span>
+
+                                <span class="ani-2">스</span>
+
+                                <span class="ani-3">트</span>
+                                셀러
+                            </h1>
+                            <h6 id="font2">추천추천추천</h6>
+                        </div>
+
+                        <div class="bestSeller-text text2">
+                            <h1 id="font3">이달의
+                                <span class="ani-1">베</span>
+
+                                <span class="ani-2">스</span>
+
+                                <span class="ani-3">트</span>
+                                셀러2
+                            </h1>
+                            <h6 id="font4">추천추천추천2</h6>
+                        </div>
+
+                        <div class="bestSeller-text text3">
+                            <h1 id="font5">이달의
+
+                                <span class="ani-1">베</span>
+
+                                <span class="ani-2">스</span>
+
+                                <span class="ani-3">트</span>
+                                셀러3
+                            </h1>
+                            <h6 id="font6">추천추천추천4</h6>
+                        </div>
+                    </div>
+
+                    <div id="bestSeller-sell-img">
+                        <div class="bestSeller-sell-ele ele-1">
+                            <img src="header1.jpeg" alt="" class="headerimg-1">
+                        </div>
+
+                        <div class="bestSeller-sell-ele ele-2">
+                            <img src="header2.jpeg" alt="" class="headerimg-2">
+                        </div>
+
+                        <div class="bestSeller-sell-ele ele-3">
+                            <img src="header3.jpeg" alt="" class="headerimg-3">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bestSeller-book">
+                    <!-- 베스트셀러 책 이미지 -->
+                    <div class="bestSeller-book-warp">
+                        <!-- 베스트셀러 캐러셀 -->
+                        <div class="bestSeller-book-move">
+                            <div class="bookItem">
+                                <img src="header5.jpeg" alt="">
+                            </div>
+
+                            <div class="bookItem">
+                                <img src="header1.jpeg" alt="">
+                            </div>
+
+                            <div class="bookItem">
+                                <img src="header4.jpeg" alt="">
+                            </div>
+
+                        </div>
+                        <button id="bestSeller-book-btn"><i class="fa-solid fa-x"></i></button>
+                    </div>
+                </div>
+
+                <!-- header bestSeller end -->
+            </div>
+            <!-- header section end -->
+        </div>
+
 
 		<!-- 백진주 시작 -->
 
@@ -96,7 +209,7 @@
 
 			<div class="tabmenu">
 				<ul class="tabmenu_list">
-					<li id="tab1" class="btnCon"> <input type="radio" checked name="tabmenu" id="tabmenu1">
+					<li id="tab1" class="btnCon"><input type="radio" checked name="tabmenu" id="tabmenu1" checked="checked">
 						<label for="tabmenu1">국내도서</label>
 						<div class="tabCon">
 							<div class="genre_mid_slide">
@@ -107,17 +220,29 @@
 									<div class="genre_doc_box">
 										<!-- <strong>[인문]최재천의 공부</strong>
 										<p>삶을 위한 공부를 말하다</p> -->
-										<div>장바구니</div>
-										<div>내서재</div>
-									</div>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
+									</div>								
 								</div>
 								<div class="genre_mid_slide_box">
 									<div class="genre_thumb">
 										<img src="genreimg/local_인문_무엇이옳은가.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[인문]무엇이 옳은가</strong>
-										<p>궁극의 질문들, 우리의 방향이 되다</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -125,8 +250,14 @@
 										<img src="genreimg/local_인문_내가틀릴수도있습니다.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[인문]내가틀릴수도있습니다</strong>
-										<p>숲속의 현자가 전하는 마지막 인생 수업</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -134,8 +265,14 @@
 										<img src="genreimg/local_역사_조선시대사가기록화.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[역사]조선시대사가기록화</strong>
-										<p>한국 미술사의 새로운 세계!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -143,8 +280,14 @@
 										<img src="genreimg/local_역사_세계사를바꾼커피이야기.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[역사] 세계사를바꾼커피이야기</strong>
-										<p>욕망을억제하기위한검은음료</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -152,8 +295,14 @@
 										<img src="genreimg/local_역사_꺼꾸로읽는세계사.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[역사]꺼꾸로읽는세계사</strong>
-										<p>베스트셀러의귀환</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -161,8 +310,14 @@
 										<img src="genreimg/local_여행_에이든국내여행가이드북.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[여행]에이든국내여행가이드북</strong>
-										<p>가장 완벽한 가이드북</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -170,8 +325,14 @@
 										<img src="genreimg/local_여행_무작정따라하기하와이.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[여행]무작정따라하기하와이</strong>
-										<p>테마와 코스 정보가 2배!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -179,8 +340,14 @@
 										<img src="genreimg/local_여행_교과서가쉬워지는주말여행.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[여행]교과서가쉬워지는주말여행</strong>
-										<p>자기주도여행</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -188,8 +355,14 @@
 										<img src="genreimg/local_시_자기돌봄의시.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[시/에세이]자기돌봄의시</strong>
-										<p>지금 내 마음에 필요한 시를 엮다</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -197,8 +370,14 @@
 										<img src="genreimg/local_시_우리가함께장마를볼수도있겠습니다.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[시/에세이]우리가함께장마를볼수도있겠습니다</strong>
-										<p>문학과 지성의 최고봉</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -206,8 +385,14 @@
 										<img src="genreimg/local_시_늙어가는길.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[시/에세이]늙어가는길</strong>
-										<p>진솔한 노인의 노래</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -215,8 +400,14 @@
 										<img src="genreimg/local_사회_어떤호소의말들.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[사회]]어떤호소의말들</strong>
-										<p>사건 너머의 이야기</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -224,8 +415,14 @@
 										<img src="genreimg/local_사회_당신이지금껏오해한세상을지배한단어들.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[사회]당신이지금껏오해한세상을지배한단어들</strong>
-										<p>논쟁의 대상인 단어들!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -233,8 +430,14 @@
 										<img src="genreimg/local_사회_기후미룰수없는오늘.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[사회]기후 1.5℃ 미룰 수 없는 오늘</strong>
-										<p>단 하나의 선택지, 탄소중립!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 							</div>
@@ -249,8 +452,14 @@
 										<img src="genreimg/local_여행_에이든국내여행가이드북.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[여행]에이든국내여행가이드북</strong>
-										<p>가장 완벽한 가이드북</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -258,8 +467,14 @@
 										<img src="genreimg/local_여행_무작정따라하기하와이.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[여행]무작정따라하기하와이</strong>
-										<p>테마와 코스 정보가 2배!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -267,8 +482,14 @@
 										<img src="genreimg/local_여행_교과서가쉬워지는주말여행.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[여행]교과서가쉬워지는주말여행</strong>
-										<p>자기주도여행</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -276,8 +497,14 @@
 										<img src="genreimg/local_시_자기돌봄의시.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[시/에세이]자기돌봄의시</strong>
-										<p>지금 내 마음에 필요한 시를 엮다</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -285,8 +512,14 @@
 										<img src="genreimg/local_시_우리가함께장마를볼수도있겠습니다.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[시/에세이]우리가함께장마를볼수도있겠습니다</strong>
-										<p>문학과 지성의 최고봉</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -294,8 +527,14 @@
 										<img src="genreimg/local_시_늙어가는길.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[시/에세이]늙어가는길</strong>
-										<p>진솔한 노인의 노래</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -303,8 +542,14 @@
 										<img src="genreimg/local_사회_어떤호소의말들.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[사회]]어떤호소의말들</strong>
-										<p>사건 너머의 이야기</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -312,8 +557,14 @@
 										<img src="genreimg/local_사회_당신이지금껏오해한세상을지배한단어들.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[사회]당신이지금껏오해한세상을지배한단어들</strong>
-										<p>논쟁의 대상인 단어들!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -321,8 +572,14 @@
 										<img src="genreimg/local_사회_기후미룰수없는오늘.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[사회]기후 1.5℃ 미룰 수 없는 오늘</strong>
-										<p>단 하나의 선택지, 탄소중립!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -330,8 +587,14 @@
 										<img src="genreimg/local_인문_최재천의공부.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[인문]최재천의 공부</strong>
-										<p>삶을 위한 공부를 말하다</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -339,8 +602,14 @@
 										<img src="genreimg/local_인문_무엇이옳은가.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[인문]무엇이 옳은가</strong>
-										<p>궁극의 질문들, 우리의 방향이 되다</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -348,8 +617,14 @@
 										<img src="genreimg/local_인문_내가틀릴수도있습니다.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[인문]내가틀릴수도있습니다</strong>
-										<p>숲속의 현자가 전하는 마지막 인생 수업</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -357,8 +632,14 @@
 										<img src="genreimg/local_역사_조선시대사가기록화.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[역사]조선시대사가기록화</strong>
-										<p>한국 미술사의 새로운 세계!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -366,8 +647,14 @@
 										<img src="genreimg/local_역사_세계사를바꾼커피이야기.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[역사] 세계사를바꾼커피이야기</strong>
-										<p>욕망을억제하기위한검은음료</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -375,8 +662,14 @@
 										<img src="genreimg/local_역사_꺼꾸로읽는세계사.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[역사]꺼꾸로읽는세계사</strong>
-										<p>베스트셀러의귀환</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 						</div>
@@ -392,8 +685,14 @@
 										<img src="genreimg/local_사회_어떤호소의말들.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[사회]]어떤호소의말들</strong>
-										<p>사건 너머의 이야기</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -401,8 +700,14 @@
 										<img src="genreimg/local_사회_당신이지금껏오해한세상을지배한단어들.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[사회]당신이지금껏오해한세상을지배한단어들</strong>
-										<p>논쟁의 대상인 단어들!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -410,8 +715,14 @@
 										<img src="genreimg/local_사회_기후미룰수없는오늘.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[사회]기후 1.5℃ 미룰 수 없는 오늘</strong>
-										<p>단 하나의 선택지, 탄소중립!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -419,8 +730,14 @@
 										<img src="genreimg/local_인문_최재천의공부.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[인문]최재천의 공부</strong>
-										<p>삶을 위한 공부를 말하다</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -428,8 +745,14 @@
 										<img src="genreimg/local_인문_무엇이옳은가.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[인문]무엇이 옳은가</strong>
-										<p>궁극의 질문들, 우리의 방향이 되다</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -437,8 +760,14 @@
 										<img src="genreimg/local_인문_내가틀릴수도있습니다.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[인문]내가틀릴수도있습니다</strong>
-										<p>숲속의 현자가 전하는 마지막 인생 수업</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -446,8 +775,14 @@
 										<img src="genreimg/local_역사_조선시대사가기록화.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[역사]조선시대사가기록화</strong>
-										<p>한국 미술사의 새로운 세계!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -455,8 +790,14 @@
 										<img src="genreimg/local_역사_세계사를바꾼커피이야기.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[역사] 세계사를바꾼커피이야기</strong>
-										<p>욕망을억제하기위한검은음료</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -464,8 +805,14 @@
 										<img src="genreimg/local_역사_꺼꾸로읽는세계사.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[역사]꺼꾸로읽는세계사</strong>
-										<p>베스트셀러의귀환</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -473,8 +820,14 @@
 										<img src="genreimg/local_여행_에이든국내여행가이드북.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[여행]에이든국내여행가이드북</strong>
-										<p>가장 완벽한 가이드북</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -482,8 +835,14 @@
 										<img src="genreimg/local_여행_무작정따라하기하와이.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[여행]무작정따라하기하와이</strong>
-										<p>테마와 코스 정보가 2배!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -491,8 +850,14 @@
 										<img src="genreimg/local_여행_교과서가쉬워지는주말여행.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[여행]교과서가쉬워지는주말여행</strong>
-										<p>자기주도여행</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -500,8 +865,14 @@
 										<img src="genreimg/local_시_자기돌봄의시.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[시/에세이]자기돌봄의시</strong>
-										<p>지금 내 마음에 필요한 시를 엮다</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -509,8 +880,14 @@
 										<img src="genreimg/local_시_우리가함께장마를볼수도있겠습니다.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[시/에세이]우리가함께장마를볼수도있겠습니다</strong>
-										<p>문학과 지성의 최고봉</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -518,14 +895,20 @@
 										<img src="genreimg/local_시_늙어가는길.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[시/에세이]늙어가는길</strong>
-										<p>진솔한 노인의 노래</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 							</div>
 
 					</li>
-					<li id="tab1" class="btnCon"> <input type="radio" checked name="tabmenu" id="tabmenu4">
+					<li id="tab4" class="btnCon"><input type="radio" checked name="tabmenu" id="tabmenu4">
 						<label for="tabmenu4">웹소설</label>
 						<div class="tabCon">
 							<div class="genre_mid_slide">
@@ -535,8 +918,14 @@
 										<img src="genreimg/local_여행_교과서가쉬워지는주말여행.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[여행]교과서가쉬워지는주말여행</strong>
-										<p>자기주도여행</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -544,8 +933,14 @@
 										<img src="genreimg/local_시_자기돌봄의시.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[시/에세이]자기돌봄의시</strong>
-										<p>지금 내 마음에 필요한 시를 엮다</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -553,8 +948,14 @@
 										<img src="genreimg/local_인문_최재천의공부.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[인문]최재천의 공부</strong>
-										<p>삶을 위한 공부를 말하다</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -562,8 +963,14 @@
 										<img src="genreimg/local_인문_무엇이옳은가.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[인문]무엇이 옳은가</strong>
-										<p>궁극의 질문들, 우리의 방향이 되다</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -571,8 +978,14 @@
 										<img src="genreimg/local_인문_내가틀릴수도있습니다.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[인문]내가틀릴수도있습니다</strong>
-										<p>숲속의 현자가 전하는 마지막 인생 수업</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -580,8 +993,14 @@
 										<img src="genreimg/local_역사_조선시대사가기록화.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[역사]조선시대사가기록화</strong>
-										<p>한국 미술사의 새로운 세계!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -589,8 +1008,14 @@
 										<img src="genreimg/local_역사_세계사를바꾼커피이야기.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[역사] 세계사를바꾼커피이야기</strong>
-										<p>욕망을억제하기위한검은음료</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -598,8 +1023,14 @@
 										<img src="genreimg/local_역사_꺼꾸로읽는세계사.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[역사]꺼꾸로읽는세계사</strong>
-										<p>베스트셀러의귀환</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -607,8 +1038,14 @@
 										<img src="genreimg/local_여행_에이든국내여행가이드북.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[여행]에이든국내여행가이드북</strong>
-										<p>가장 완벽한 가이드북</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -616,8 +1053,14 @@
 										<img src="genreimg/local_여행_무작정따라하기하와이.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[여행]무작정따라하기하와이</strong>
-										<p>테마와 코스 정보가 2배!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -625,8 +1068,14 @@
 										<img src="genreimg/local_시_우리가함께장마를볼수도있겠습니다.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[시/에세이]우리가함께장마를볼수도있겠습니다</strong>
-										<p>문학과 지성의 최고봉</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -634,8 +1083,14 @@
 										<img src="genreimg/local_시_늙어가는길.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[시/에세이]늙어가는길</strong>
-										<p>진솔한 노인의 노래</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -643,8 +1098,14 @@
 										<img src="genreimg/local_사회_어떤호소의말들.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[사회]]어떤호소의말들</strong>
-										<p>사건 너머의 이야기</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -652,8 +1113,14 @@
 										<img src="genreimg/local_사회_당신이지금껏오해한세상을지배한단어들.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[사회]당신이지금껏오해한세상을지배한단어들</strong>
-										<p>논쟁의 대상인 단어들!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 								<div class="genre_mid_slide_box">
@@ -661,8 +1128,14 @@
 										<img src="genreimg/local_사회_기후미룰수없는오늘.jpg" alt="">
 									</div>
 									<div class="genre_doc_box">
-										<strong>[사회]기후 1.5℃ 미룰 수 없는 오늘</strong>
-										<p>단 하나의 선택지, 탄소중립!</p>
+										<div class="genre_doc_box_btn">																		
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt1">장바구니</p>	
+										</div>	
+										<div class="genre_doc_box_btn">																				
+											<div class="genre_doc_box_hover"></div>
+											<p class="genre_doc_box_btn_txt2">내서재</p>																							
+										</div>						
 									</div>
 								</div>
 						</div>
@@ -673,21 +1146,143 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 		</div>
 
 		<!-- 백진주 끝 -->
+		<!-- 김수근 시작-->
+
+		<!-- <div class="container_sg">
+			<div class="slide_title">
+				<h3>주간베스트 셀러</h3>
+			</div>
+			<div class="slide_wrapper">
+				<ul class="slides">
+					<li>
+						<div class="bestSeller_con">
+							<img src="bestsellerImg/불편한 편의점.jpg" >
+							<div class="bestSeller_text">
+								<p>힘겨운 시대를 살아가는 우리들에게 다가온 조금 특별한 편의점 이야기</p>
+								<h3>불편한 편의점(40만부 기념 벚꽃 에디션)</h3>
+								<p>판매가 : <span> 12500원</span></p>
+								<p>불편한데 자꾸 가고 싶은 편의점이 있다!
+									힘들게 살아낸 오늘을 위로하는 편의점의 밤</p>
+								<p>정체불명의 알바로부터 시작된 웃음과 감동의 나비효과
+									『망원동 브라더스』 김호연의 ‘동네 이야기’ 시즌 2</p>
+								<p>인간의 내밀한 욕망을 기발한 상상력으로 풀어낸 스릴러 장르를 오가며 독자적인 작품 세계를 쌓아올린 작품 </p>
+								<p>원 플러스 원의 기쁨, 삼각김밥 모양의 슬픔, 만 원에 네 번의 폭소가 터지는 곳!</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="bestSeller_con">
+							<img src="bestsellerImg/세상의 마지막 기차역.jpg" >
+							<div class="bestSeller_text">
+								<p> 현실과 판타지를 넘나드는 판타지 휴머니즘 소설 </p>
+								<h3>세상의 마지막 기차역</h3>
+								<p>판매가 : <span> 12000원</span></p>
+								<p>봄이 시작되는 3월, 급행열차 한 대가 탈선해 절벽 아래로 떨어졌다.</p>
+								<p>수많은 중상자를 낸 이 대형 사고 때문에 유가족은 순식간에 사랑하는 가족, 연인을 잃었다. </p>
+								<p>그렇게 두 달이 흘렀을까. 사람들 사이에서 이상한 소문이 돌기 시작하는데….</p>
+								<p>역에서 가장 가까운 역인 ‘니시유이가하마 역’에 가면 유령이 나타나 사고가 일어난 그날의 열차에 오르도록 도와준다는 것.</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="bestSeller_con">
+							<img src="bestsellerImg/어느 날 내 죽음에 네가 들어왔다.jpg" >
+							<div class="bestSeller_text">
+								<p>삶과 죽음, 과거와 현재를 넘나드는 시공초월 로맨스.</p>
+								<h3>어느 날 내 죽음에 네가 들어왔다</h3>
+								<p>판매가 : <span> 12300원</span></p>
+								<p>모든 걸 포기하려던 순간, 기적처럼 시작된 사랑에 관한 이야기. 
+								   </p>
+								<p>제8회 인터넷소설 대상 수상작. 죽고 싶어 하는 소녀 이치노세 쓰키미</p>
+								<p>사신에게 수명을 팔아넘긴 대가로 시간을 되돌릴 수 있는 은시계를 얻은 남자 아이바 준, 두 사람
+								</p>
+								<p> ‘죽음’에서 시작해 점차 ‘삶’으로 나아가는 독특한 이야기 구조로 사랑과 삶의 의미에 대해 다시 한번 생각해보게 하는 묵직한 여운
+									</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="bestSeller_con">
+							<img src="bestsellerImg/어서오세요 휴남동 서점입니다.jpg" >
+							<div class="bestSeller_text">
+								<p>크고 작은 상처와 희망을 가진 사람들이 휴남동 서점이라는 공간을 안식처</p>
+								<h3>어서오세요 휴남동 서점입니다</h3>
+								<p>판매가 : <span> 15000원</span></p>
+								<p>서울 어디에나 있을 것 같은 동네의 후미진 골목길. </p>   
+								<p>오가는 사람도 많지 않은 가정집들 사이에 평범한 동네 '휴남동 서점' 하나가 들어선다. </p>
+								<p>아무런 의욕도 보이지 않는 서점 주인 영주는 처음 몇 달간은 자신이 손님인 듯 일은 하지 않고 가만히 앉아 책만 읽는다. </p>
+								<p>자신이 꽤 건강해졌다는 사실을 깨닫는 순간 그 순간부터
+									휴남동 서점은 완전히 새로운 공간이 된다.</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="bestSeller_con">
+							<img src="bestsellerImg/작별인사.jpg" >
+							<div class="bestSeller_text">
+								<p>기억, 정체성, 죽음이라는 김영하의 주제가 『작별인사』에서는 근미래를 배경으로 새롭게 직조된다 </p>
+								<h3>이상한 과자 가게 전천당</h3>
+								<p>판매가 : <span> 12000원</span></p>
+								<p>그리 멀지 않은 미래를 배경으로, 별안간 삶이 송두리째 뒤흔들린 한 소년의 여정을 좇는다. </p>
+								<p>유명한 IT 기업의 연구원인 아버지와 쾌적하고 평화롭게 살아가던 철이</p>
+								<p>어느날 갑자기 수용소로 끌려가 혼돈의 세계에 맞닥뜨리게 되면서 정신적, 신체적 위기에 직면한다. </p>
+								<p> 동시에 자신처럼 사회에서 배제된 자들을 만나 처음으로 생생한 소속감을 느끼고 따뜻한 우정도 싹틔운다. </p>
+							</div>
+						</div>
+					</li>
+				</ul> 
+			</div>
+		
+			<p class="controls">
+				<span class="prev">&lt;</span>
+				<span class="next">&gt;</span>
+			</p>
+		</div> -->
+		
+			<!-- 김수근 끝-->
+
+		<!-- footer start -->
+		<div class="footer">
+			<div class="icons">
+				<div class="iconFrame">
+					<i class="fa-brands fa-facebook-f ficon"></i>
+				</div>
+				<div class="iconFrame">
+					<i class="fa-brands fa-instagram ficon"></i>
+				</div>
+				<div class="iconFrame">
+					<i class="fa-brands fa-twitter ficon"></i>
+				</div>
+				<div class="iconFrame">
+					<i class="fa-solid fa-map-location-dot ficon"></i>
+				</div>
+			</div>
+			<div class="footerScroll">
+				<ul>
+					<li>HOME</li>
+					<li>|</li>
+					<li>신간도서</li>
+					<li>|</li>
+					<li>장르별 도서</li>
+					<li>|</li>
+					<li>리뷰</li>
+				</ul>
+			</div>
+		</div>
+		<!-- footer end -->
+
+		<!-- loading img section start -->
+		<div class="loadingImg">
+			<img src="loading.gif" alt="">
+		</div>
+		<!-- loading img section end -->
 
 		<!-- js file link -->
+	
+		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 		<script src="script.js"></script>
 	</div>
 </body>

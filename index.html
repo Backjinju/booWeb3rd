@@ -23,85 +23,85 @@
 </head>
 
 <body>
-          <!-- login modal start -->
-        <!-- modal container -->
-        <div class="loginModal" style="display: none;">
-            <!-- login modal -->
-            <div class="lgModal">
-                <!-- x mark -->
-                <i class="fa-solid fa-xmark"></i>
-                <div class="modalTitle">Sign In</div>
-                <!-- id,password input box -->
-                <div class="inputBox">
-                    <div class="userNameBox">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" class="userName" placeholder="User Name">
-                    </div>
-                    <div class="passwdBox">
-                        <i class="fa-solid fa-lock"></i>
-                        <input type="password" class="passwd" placeholder="Password">
-                    </div>
-                    <button class="modalBtn">LOGIN</button>
+    <!-- login modal start -->
+    <!-- modal container -->
+    <div class="loginModal" style="display: none;">
+        <!-- login modal -->
+        <div class="lgModal">
+            <!-- x mark -->
+            <i class="fa-solid fa-xmark"></i>
+            <div class="modalTitle">Sign In</div>
+            <!-- id,password input box -->
+            <div class="inputBox">
+                <div class="userNameBox">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" class="userName" placeholder="User Name">
                 </div>
-                <!-- sign up button -->
-                <div class="modalCheckBox">
-                    <p id="signUp">SIGN UP</p>
+                <div class="passwdBox">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" class="passwd" placeholder="Password">
                 </div>
+                <button class="modalBtn">LOGIN</button>
             </div>
-            <!-- login modal ==> sign up modal loading img -->
-            <img src="loadingBook.gif" class="loadingBook" alt="">
-            <!-- login Form -->
-            <div class="loginForm">
-                <!-- input content -->
-                <div class="loginFormContent">
-                    
-                    <p class="loginFormTitle">Sign Up<i class="fa-solid fa-xmark" id="signUpXmark"></i></p>
-                    <input type="text" class="legId" placeholder="ID">
-                    <p class="smallText">영문과 숫자만으로 작성해 주세요.(6~20자)</p>
-                    <input type="text" class="legPasswd" placeholder="비밀번호">
-                    <p class="smallText">대/소문자, 숫자, 특수문자의 조합으로 작성해 주세요.(8~16자)</p>
-                    <input type="password" class="legPasswdCheck" placeholder="비밀번호 재확인">
-                    <p class="smallText"></p>
-                    <input type="text" class="legName" placeholder="이름">
-                    <p class="smallText">이름은 한글로 입력해 주세요.</p>
-                    <div class="birthBox">
-                        <input type="text" name="" class="legYear" placeholder="연도(4자)">
-                        <select name="" id="" class="legMonth">
-                            <option value="month" disabled selected>월</option>
-                            <option value="1">1월</option>
-                            <option value="2">2월</option>
-                            <option value="3">3월</option>
-                            <option value="4">4월</option>
-                            <option value="5">5월</option>
-                            <option value="6">6월</option>
-                            <option value="7">7월</option>
-                            <option value="8">8월</option>
-                            <option value="9">9월</option>
-                            <option value="10">10월</option>
-                            <option value="11">11월</option>
-                            <option value="12">12월</option>
-                        </select>
-                        <input type="text" class="legDay" placeholder="일">
-                    </div>
-                    <div class="birthTextBox">
-                        <p class = "smallText" id="yearText">&nbsp;</p>
-                        <p class = "smallText" id="dayText">&nbsp;</p>
-                    </div>
-                    <dev class="identityBox">
-                        <input type="text" class="legIdentity" placeholder="주민등록번호">
-                        <p class="smallText">하이픈(-)을 포함해서 입력해 주세요.</p>
-                        <i class="fa-solid fa-mars"></i>
-                        <i class="fa-solid fa-venus"></i>
-                    </dev>
-                    <div class="addressBox">
-                        <input type="text" class="legAddress" placeholder="주소">
-                        <button class="addressBtn">주소 검색</button>
-                        <input type="text" class="legDetailAddress" placeholder="상세 주소">
-                    </div>
-                    <input type="text" class="legPhone" placeholder="전화 번호">
-                    <p class="smallText">하이픈(-)을 포함하여 입력해 주세요.</p>
-                    <button class="legBtn">가입하기</button>
-                    <!--
+            <!-- sign up button -->
+            <div class="modalCheckBox">
+                <p id="signUp">SIGN UP</p>
+            </div>
+        </div>
+        <!-- login modal ==> sign up modal loading img -->
+        <img src="loadingBook.gif" class="loadingBook" alt="">
+        <!-- login Form -->
+        <div class="loginForm">
+            <!-- input content -->
+            <div class="loginFormContent">
+
+                <p class="loginFormTitle">Sign Up<i class="fa-solid fa-xmark" id="signUpXmark"></i></p>
+                <input type="text" class="legId" placeholder="ID">
+                <p class="smallText">영문과 숫자만으로 작성해 주세요.(6~20자)</p>
+                <input type="text" class="legPasswd" placeholder="비밀번호">
+                <p class="smallText">대/소문자, 숫자, 특수문자의 조합으로 작성해 주세요.(8~16자)</p>
+                <input type="password" class="legPasswdCheck" placeholder="비밀번호 재확인">
+                <p class="smallText"></p>
+                <input type="text" class="legName" placeholder="이름">
+                <p class="smallText">이름은 한글로 입력해 주세요.</p>
+                <div class="birthBox">
+                    <input type="text" name="" class="legYear" placeholder="연도(4자)">
+                    <select name="" id="" class="legMonth">
+                        <option value="month" disabled selected>월</option>
+                        <option value="1">1월</option>
+                        <option value="2">2월</option>
+                        <option value="3">3월</option>
+                        <option value="4">4월</option>
+                        <option value="5">5월</option>
+                        <option value="6">6월</option>
+                        <option value="7">7월</option>
+                        <option value="8">8월</option>
+                        <option value="9">9월</option>
+                        <option value="10">10월</option>
+                        <option value="11">11월</option>
+                        <option value="12">12월</option>
+                    </select>
+                    <input type="text" class="legDay" placeholder="일">
+                </div>
+                <div class="birthTextBox">
+                    <p class="smallText" id="yearText">&nbsp;</p>
+                    <p class="smallText" id="dayText">&nbsp;</p>
+                </div>
+                <dev class="identityBox">
+                    <input type="text" class="legIdentity" placeholder="주민등록번호">
+                    <p class="smallText">하이픈(-)을 포함해서 입력해 주세요.</p>
+                    <i class="fa-solid fa-mars"></i>
+                    <i class="fa-solid fa-venus"></i>
+                </dev>
+                <div class="addressBox">
+                    <input type="text" class="legAddress" placeholder="주소">
+                    <button class="addressBtn">주소 검색</button>
+                    <input type="text" class="legDetailAddress" placeholder="상세 주소">
+                </div>
+                <input type="text" class="legPhone" placeholder="전화 번호">
+                <p class="smallText">하이픈(-)을 포함하여 입력해 주세요.</p>
+                <button class="legBtn">가입하기</button>
+                <!--
                         아이디 
                         비밀번호
                         비밀번호 확인
@@ -111,10 +111,10 @@
                         핸드폰 번호
                         [가입] - 버튼
                      -->
-                </div>
             </div>
-
         </div>
+
+    </div>
     <div class="container">
         <!-- header section start -->
         <div class="header pointer">
@@ -133,12 +133,13 @@
                     </div>
                 </div>
             </div>
+            
             <!-- logo & login section end -->
 
             <!-- header navBar start -->
             <div class="nav">
                 <div class="nav-bar">
-                
+
                     <!--메뉴바-->
                     <span class="scroll-ele">HOME</span>
 
@@ -172,86 +173,89 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="nav-bar-modal"></div>
                     <!--드롭다운 하단 가리개-->
                 </div>
-                
+
             </div>
-            
+        
             <!-- header navBar end -->
 
             <!-- header bestSeller start -->
             <div class="bestSeller">
-                    <!-- 베스트셀러 캐러셀 -->
-                    <div class="bestSeller-sell-warp">
-                        <!-- 오버플로우 히든 디브 -->
-                            <div class="slideItem">
-                                <img src="headerColor1.png" alt="" class="sellEle">
-                            </div>
+                <!-- 베스트셀러 캐러셀 -->
+                <div class="bestSeller-sell-warp">
+                    <!-- 오버플로우 히든 디브 -->
+                    <div class="slideItem">
+                        <img src="headerColor1.png" alt="" class="sellEle">
+                    </div>
 
-                            <div class="slideItem">
-                                <img src="headerColor2.jpeg" alt="" class="sellEle">
-                            </div>
+                    <div class="slideItem">
+                        <img src="headerColor2.jpeg" alt="" class="sellEle">
+                    </div>
 
-                            <div class="slideItem">
-                                <img src="headerColor3.png" alt="" class="sellEle">
-                            </div>
+                    <div class="slideItem">
+                        <img src="headerColor3.png" alt="" class="sellEle">
+                    </div>
 
-                            <div class="slideItem">
-                                <img src="headerColor1.png" alt="" class="sellEle">
-                            </div>
-                            
-                        <div id="font-warp">
-                            <div class="bestSeller-text text1">
-                                <h1 id="font1">이달의 
-                                    <span class="ani-1">베</span>
-                                    
-                                    <span class="ani-2">스</span>
-                                    
-                                    <span class="ani-3">트</span>
-                                    셀러</h1>
-                                <h6 id="font2">추천추천추천</h6>
-                            </div>
+                    <div class="slideItem">
+                        <img src="headerColor1.png" alt="" class="sellEle">
+                    </div>
 
-                            <div class="bestSeller-text text2">
-                                <h1 id="font3">이달의
-                                    <span class="ani-1">베</span>
-                                    
-                                    <span class="ani-2">스</span>
-                                    
-                                    <span class="ani-3">트</span>
-                                     셀러2</h1>
-                                <h6 id="font4">추천추천추천2</h6>
-                            </div>
+                    <div id="font-warp">
+                        <div class="bestSeller-text text1">
+                            <h1 id="font1">이달의
+                                <span class="ani-1">베</span>
 
-                            <div class="bestSeller-text text3">
-                                <h1 id="font5">이달의 
-                                    
-                                    <span class="ani-1">베</span>
-                                    
-                                    <span class="ani-2">스</span>
-                                    
-                                    <span class="ani-3">트</span>
-                                    셀러3</h1>
-                                <h6 id="font6">추천추천추천4</h6>
-                            </div>
+                                <span class="ani-2">스</span>
+
+                                <span class="ani-3">트</span>
+                                셀러
+                            </h1>
+                            <h6 id="font2">추천추천추천</h6>
                         </div>
 
-                        <div id="bestSeller-sell-img">
-                            <div class="bestSeller-sell-ele ele-1">
-                                <img src="header1.jpeg" alt="" class="headerimg-1">
-                            </div>
-                            
-                            <div class="bestSeller-sell-ele ele-2">
-                                <img src="header2.jpeg" alt="" class="headerimg-2">
-                            </div>
-                            
-                            <div class="bestSeller-sell-ele ele-3">
-                                <img src="header3.jpeg" alt="" class="headerimg-3">
-                            </div>
+                        <div class="bestSeller-text text2">
+                            <h1 id="font3">이달의
+                                <span class="ani-1">베</span>
+
+                                <span class="ani-2">스</span>
+
+                                <span class="ani-3">트</span>
+                                셀러2
+                            </h1>
+                            <h6 id="font4">추천추천추천2</h6>
+                        </div>
+
+                        <div class="bestSeller-text text3">
+                            <h1 id="font5">이달의
+
+                                <span class="ani-1">베</span>
+
+                                <span class="ani-2">스</span>
+
+                                <span class="ani-3">트</span>
+                                셀러3
+                            </h1>
+                            <h6 id="font6">추천추천추천4</h6>
                         </div>
                     </div>
+
+                    <div id="bestSeller-sell-img">
+                        <div class="bestSeller-sell-ele ele-1">
+                            <img src="header1.jpeg" alt="" class="headerimg-1">
+                        </div>
+
+                        <div class="bestSeller-sell-ele ele-2">
+                            <img src="header2.jpeg" alt="" class="headerimg-2">
+                        </div>
+
+                        <div class="bestSeller-sell-ele ele-3">
+                            <img src="header3.jpeg" alt="" class="headerimg-3">
+                        </div>
+                    </div>
+                </div>
 
                 <div class="bestSeller-book">
                     <!-- 베스트셀러 책 이미지 -->
@@ -272,482 +276,488 @@
 
                         </div>
                         <button id="bestSeller-book-btn"><i class="fa-solid fa-x"></i></button>
-                    </div>        
+                    </div>
                 </div>
 
-            <!-- header bestSeller end -->
+                <!-- header bestSeller end -->
+            </div>
+            <!-- header section end -->
         </div>
-        <!-- header section end -->
+
+
+
+            <!-- 신간 도서 section start -->
+            <div class="newBook pointer">
+                <div class="newBook_title">
+                    <h1>이달의 신간 도서</h1>
+                </div>
+                <div class="newBook_slide_wrapper">
+                    <ul class="newBook_slides">
+                        <li>
+                            <div class="img_box">
+                                <img src="img_sugeun/가장 좋은 것을 너에게 줄개.jpg">
+                                <div class="imgOverlay">
+                                    <div class="imgContent">
+                                        <div>장바구니</div>
+                                        <div>내 서제</div>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <div class="img_box">
+                                <img src="img_sugeun/작고 똑똑한 심리책.jpg">
+                                <div class="imgOverlay">
+                                    <div class="imgContent">
+                                        <div>장바구니</div>
+                                        <div>내 서제</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img_box">
+                                <img src="img_sugeun/어느 도망자의 고백.jpg">
+                                <div class="imgOverlay">
+                                    <div class="imgContent">
+                                        <div>장바구니</div>
+                                        <div>내 서제</div>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <div class="img_box">
+                                <img src="img_sugeun/건강한 뇌과학.jpg">
+                                <div class="imgOverlay">
+                                    <div class="imgContent">
+                                        <div>장바구니</div>
+                                        <div>내 서제</div>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <div class="img_box">
+                                <img src="img_sugeun/영원한 우정으로.jpg">
+                                <div class="imgOverlay">
+                                    <div class="imgContent">
+                                        <div>장바구니</div>
+                                        <div>내 서제</div>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <div class="img_box">
+                                <img src="img_sugeun/마음을 업데이트할 시간입니다.jpg">
+                                <div class="imgOverlay">
+                                    <div class="imgContent">
+                                        <div>장바구니</div>
+                                        <div>내 서제</div>
+                                    </div>
+                                </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 신간 도서 section end -->
+
+
+            <!-- -------------------------------백진주 시작 ---------------------------------------------->
+            <!-- 장르별 도서 section start -->
+            <div class="genreBook pointer">
+                <div class="genreBook_pointer_title">
+                    <h1 class="gb_mtit">장르별 도서</h1>
+                </div>
+                <div class="gb_cont">
+                    <ul>
+                        <li class="gb_item">
+                            <a href="genre.html">
+                                <div class="gb_box">
+                                    <div class="gb_thumb">
+                                        <div class="gb_thumb_cont">
+                                            <img src="genreimg/local1-1.jpg" alt="">
+                                        </div>
+                                        <div class="gb_thumb_title"></div>
+                                        <div class="gb_thumb_title_txt">
+                                            <h1 class="gb_genre">국내도서</h1>
+                                            <span>#시/에세이</span>
+                                            <span>#소설</span>
+                                            <span>#정치/문화</span>
+                                            <span>#여행</span>
+                                        </div>
+                                    </div>
+                                    <div class="gb_tagList">
+                                        <p class="gb_tagList_txt">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            더보기
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="gb_item">
+                            <a href="genre.html">
+                                <div class="gb_box">
+                                    <div class="gb_thumb">
+                                        <div class="gb_thumb_cont">
+                                            <img src="genreimg/oversea1-3.JPG" alt="">
+                                        </div>
+                                        <div class="gb_thumb_title"></div>
+                                        <div class="gb_thumb_title_txt">
+                                            <h1 class="gb_genre">해외도서</h1>
+                                            <span>#시/에세이</span>
+                                            <span>#소설</span>
+                                            <span>#정치/문화</span>
+                                            <span>#여행</span>
+                                        </div>
+                                    </div>
+                                    <div class="gb_tagList">
+                                        <p class="gb_tagList_txt">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            더보기
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="gb_item">
+                            <a href="genre.html">
+                                <div class="gb_box">
+                                    <div class="gb_thumb">
+                                        <div class="gb_thumb_cont">
+                                            <img src="genreimg/ebook1-2.jpg" alt="">
+                                        </div>
+                                        <div class="gb_thumb_title"></div>
+                                        <div class="gb_thumb_title_txt">
+                                            <h1 class="gb_genre">eBook</h1>
+                                            <span>#일반</span>
+                                            <span>#로맨스</span>
+                                            <span>#판타지</span>
+                                            <span>#코믹스</span>
+                                        </div>
+                                    </div>
+                                    <div class="gb_tagList">
+                                        <p class="gb_tagList_txt">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            더보기
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="gb_item">
+                            <a href="genre.html">
+                                <div class="gb_box">
+                                    <div class="gb_thumb">
+                                        <div class="gb_thumb_cont">
+                                            <img src="genreimg/webbook1-2.jpg" alt="">
+                                        </div>
+                                        <div class="gb_thumb_title"></div>
+                                        <div class="gb_thumb_title_txt">
+                                            <h1 class="gb_genre">웹소설</h1>
+                                            <span>#웹소설</span>
+                                            <span>#웹툰</span>
+                                            <span>#자유연재</span>
+
+                                        </div>
+                                    </div>
+                                    <div class="gb_tagList">
+                                        <p class="gb_tagList_txt">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            더보기
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- -------------------------------백진주 끝 ---------------------------------------------->
+
+            <!-- reivew section start -->
+            <!--/////////////////// 양희시작//////////////////////// -->
+            <div class="reviewBook pointer">
+                <div class="reviewtitle">
+                    <h1>REVIEW</h1>
+                </div>
+
+                <div class="reviews">
+                    <div class="reviewboxs">
+                        <div class="reviewbox one">
+                            <div class="topimg">
+                                <img src="reviewimage/img1.jpg" alt="x">
+                            </div>
+                            <div class="bottomtext">
+                                <div class="lefttext">
+                                    <i class="uil uil-user-circle"></i>
+                                    <span class="name">ss**3ssy</span>
+                                </div>
+                                <div class="righttext">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <!-- <i class="fa-solid fa-heart"></i> -->
+                                    <span id="cnt1"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviewbox two">
+                            <div class="topimg">
+                                <img src="reviewimage/img2.jpg" alt="x">
+                            </div>
+                            <div class="bottomtext">
+                                <div class="lefttext">
+                                    <i class="uil uil-user-circle"></i>
+                                    <span class="name">el**antfly</span>
+                                </div>
+                                <div class="righttext">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span id="cnt2"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviewbox thr">
+                            <div class="topimg">
+                                <img src="reviewimage/img3.jpg" alt="x">
+                            </div>
+                            <div class="bottomtext">
+                                <div class="lefttext">
+                                    <i class="uil uil-user-circle"></i>
+                                    <span class="name">hy**9800</span>
+                                </div>
+                                <div class="righttext">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviewbox four">
+                            <div class="topimg">
+                                <img src="reviewimage/img4.jpg" alt="x">
+                            </div>
+                            <div class="bottomtext">
+                                <div class="lefttext">
+                                    <i class="uil uil-user-circle"></i>
+                                    <span class="name">ju**juno1</span>
+                                </div>
+                                <div class="righttext">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviewbox five">
+                            <div class="topimg">
+                                <img src="reviewimage/img5.jpg" alt="x">
+                            </div>
+                            <div class="bottomtext">
+                                <div class="lefttext">
+                                    <i class="uil uil-user-circle"></i>
+                                    <span class="name">al**holic0</span>
+                                </div>
+                                <div class="righttext">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reviews">
+                    <div class="reviewboxs">
+                        <div class="reviewbox one">
+                            <div class="topimg">
+                                <img src="reviewimage/img6.jpg" alt="x">
+                            </div>
+                            <div class="bottomtext">
+                                <div class="lefttext">
+                                    <i class="uil uil-user-circle"></i>
+                                    <span class="name">ja**man456</span>
+                                </div>
+                                <div class="righttext">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <!-- <i class="fa-solid fa-heart"></i> -->
+                                    <span id="cnt1"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviewbox two">
+                            <div class="topimg">
+                                <img src="reviewimage/img7.jpg" alt="x">
+                            </div>
+                            <div class="bottomtext">
+                                <div class="lefttext">
+                                    <i class="uil uil-user-circle"></i>
+                                    <span class="name">ka**ng05</span>
+                                </div>
+                                <div class="righttext">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span id="cnt2"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviewbox thr">
+                            <div class="topimg">
+                                <img src="reviewimage/img8.jpg" alt="x">
+                            </div>
+                            <div class="bottomtext">
+                                <div class="lefttext">
+                                    <i class="uil uil-user-circle"></i>
+                                    <span class="name">ti**iii</span>
+                                </div>
+                                <div class="righttext">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviewbox four">
+                            <div class="topimg">
+                                <img src="reviewimage/img9.jpg" alt="x">
+                            </div>
+                            <div class="bottomtext">
+                                <div class="lefttext">
+                                    <i class="uil uil-user-circle"></i>
+                                    <span class="name">ja**ae205</span>
+                                </div>
+                                <div class="righttext">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviewbox five">
+                            <div class="topimg">
+                                <img src="reviewimage/img10.jpg" alt="x">
+                            </div>
+                            <div class="bottomtext">
+                                <div class="lefttext">
+                                    <i class="uil uil-user-circle"></i>
+                                    <span class="name">aba**33</span>
+                                </div>
+                                <div class="righttext">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="listnumber">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                </div>
+            </div>
+
+            <div class="modalbg">
+                <div class="modalview">
+                    <div class="leftimg">
+                        <img src="reviewimage/img1.jpg" alt="" class="modalimg">
+                    </div>
+                    <div class="close-area">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                    <div class="rightcontent">
+                        <div class="starsY">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <span>4.5</span>
+                        </div>
+                        <div class="rightcontenttext">
+                            <!-- 글정보를 객체에 담아서 클릭하는 상자마다 다른 내용을 불러오는 식으로 변경할 것 -->
+                            <p>***님</p>
+                            <p>2022-07-25</p>
+                            <p>
+                                위로와 응원이 필요한 세상이다.
+                                코로나는 사람들에게 이러한 위로와 응원을 더욱 갈구하게 된 촉매제가 되었다.
+                                이 책은 한 불편한 편의점에서 서로가 서로에게 위로 받고 응원받으며 다시금 새로운 삶을 살아갈 용기를 얻게 되는 모습을 그리고 있다.
+                                2시간 남짓이면 읽히는 재미있는 소설책이지만 그 여운은 결코 가볍지 않다.
+                                결국 위로와 선이라는 건 내가 먼저 용기내어 손 내밀고, 누군가 한사람의 작은 선행이 나비효과가 되어 엄청난 파급력을 가지는 게 되는 것 아닐까?
+                                그리고 그 선행은 점점 더 많은 사람들을 선하게 만들고, 세상을 아름답게 만드는 작지만 큰 힘을 가지게 된다.
+                                사람들은 싫든 좋든 서로 서로 관계를 맺고 있고, 그 관계 속에서 희노애락을 느끼며 살아가고 있다.
+                                비록 나 라는 사람은 작고 보잘 것 없지만, 나의 작은 행동이 누군가에게 도움이 되고 위로가 되는 것을 경험하며 삶의 존재 가치를 깨닫게 되는 것이다.
+                                드라마 스물다섯 스물하나, 나의 해방일지... 그리고 불편한 편의점 까지..
+                                하루하루를 살아가는 평범한 우리에게 지금 그 모습으로 괜찮다고, 니가 어떤 모습이든 나는 널 끝까지 응원하겠다고..
+                                그렇게 누군가의 응원이 필요하고, 그 응원으로 다시금 용기얻어 오늘 하루를 이겨나가는 힘이 필요한 지금이다.
+                                봄 에디션 커버처럼 예쁘고 따뜻한 책 한권으로 위로 받았던 봄날의 향긋한 시간이었다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/////////////////// 양희 끝//////////////////////// -->
+            <!-- review section end -->
+
+            <!-- footer start -->
+            <div class="footer">
+                <div class="icons">
+                    <div class="iconFrame">
+                        <i class="fa-brands fa-facebook-f ficon"></i>
+                    </div>
+                    <div class="iconFrame">
+                        <i class="fa-brands fa-instagram ficon"></i>
+                    </div>
+                    <div class="iconFrame">
+                        <i class="fa-brands fa-twitter ficon"></i>
+                    </div>
+                    <div class="iconFrame">
+                        <i class="fa-solid fa-map-location-dot ficon"></i>
+                    </div>
+                </div>
+                <div class="footerScroll">
+                    <ul>
+                        <li>HOME</li>
+                        <li>|</li>
+                        <li>신간도서</li>
+                        <li>|</li>
+                        <li>장르별 도서</li>
+                        <li>|</li>
+                        <li>리뷰</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- footer end -->
+
+            <!-- loading img section start -->
+            <div class="loadingImg">
+                <img src="loading.gif" alt="">
+            </div>
+            <!-- loading img section end -->
+
+            <!-- js file link -->
+            <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+            <script src="script.js"></script>
         
-        
-  
-
-        <!-- 신간 도서 section start -->
-        <div class="newBook pointer">
-            <div class="newBook_title">
-                <h1>이달의 신간 도서</h1>
-            </div>
-            <div class="newBook_slide_wrapper">
-                <ul class="newBook_slides">
-                    <li>
-                        <div class="img_box">
-                            <img src="img_sugeun/가장 좋은 것을 너에게 줄개.jpg">
-                            <div class="imgOverlay">
-                                <div class="imgContent">
-                                 <div>장바구니</div>
-                                 <div>내 서제</div>         
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img_box">
-                            <img src="img_sugeun/작고 똑똑한 심리책.jpg">
-                            <div class="imgOverlay">
-                                <div class="imgContent">
-                                    <div>장바구니</div>
-                                    <div>내 서제</div>     
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img_box">
-                            <img src="img_sugeun/어느 도망자의 고백.jpg">
-                            <div class="imgOverlay">
-                                <div class="imgContent">
-                                    <div>장바구니</div>
-                                    <div>내 서제</div>   
-                                </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img_box">
-                            <img src="img_sugeun/건강한 뇌과학.jpg">
-                            <div class="imgOverlay">
-                                <div class="imgContent">
-                                    <div>장바구니</div>
-                                    <div>내 서제</div>   
-                                </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img_box">
-                            <img src="img_sugeun/영원한 우정으로.jpg">
-                            <div class="imgOverlay">
-                                <div class="imgContent">
-                                    <div>장바구니</div>
-                                    <div>내 서제</div>   
-                                </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img_box">
-                            <img src="img_sugeun/마음을 업데이트할 시간입니다.jpg">
-                            <div class="imgOverlay">
-                                <div class="imgContent">
-                                    <div>장바구니</div>
-                                    <div>내 서제</div>   
-                                </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- 신간 도서 section end -->
-
-
-        <!-- -------------------------------백진주 시작 ---------------------------------------------->
-        <!-- 장르별 도서 section start -->
-        <div class="genreBook pointer">
-            <div class="genreBook_pointer_title">
-                <h1 class="gb_mtit">장르별 도서</h1>
-            </div>            
-            <div class="gb_cont">
-                <ul>
-                    <li class="gb_item">
-                        <a href="genre.html"> 
-                            <div class="gb_box">                            
-                                <div class="gb_thumb">
-                                    <div class="gb_thumb_cont">                                                                       
-                                        <img src="genreimg/local1-1.jpg" alt="">                                                                        
-                                    </div>                                
-                                    <div class="gb_thumb_title"></div>
-                                    <div class="gb_thumb_title_txt"> 
-                                        <h1 class="gb_genre">국내도서</h1> 
-                                        <span>#시/에세이</span>
-                                        <span>#소설</span>
-                                        <span>#정치/문화</span>
-                                        <span>#여행</span>                                    
-                                    </div>                         
-                                </div>
-                                <div class="gb_tagList">                                    
-                                    <p class="gb_tagList_txt">
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        더보기</p>                                
-                                </div>     
-                            </div>                            
-                        </a>
-                    </li>
-                    <li class="gb_item">
-                        <a href="genre.html"> 
-                            <div class="gb_box">                            
-                                <div class="gb_thumb">
-                                    <div class="gb_thumb_cont">                                                                       
-                                        <img src="genreimg/oversea1-3.JPG" alt="">                                                                        
-                                    </div>                                
-                                    <div class="gb_thumb_title"></div>
-                                    <div class="gb_thumb_title_txt"> 
-                                        <h1 class="gb_genre">해외도서</h1> 
-                                        <span>#시/에세이</span>
-                                        <span>#소설</span>
-                                        <span>#정치/문화</span>
-                                        <span>#여행</span>                                    
-                                    </div>                         
-                                </div>
-                                <div class="gb_tagList">                                    
-                                    <p class="gb_tagList_txt">
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        더보기</p>                                
-                                </div>       
-                            </div>                            
-                        </a>
-                    </li>
-                    <li class="gb_item">
-                        <a href="genre.html"> 
-                            <div class="gb_box">                            
-                                <div class="gb_thumb">
-                                    <div class="gb_thumb_cont">                                                                       
-                                        <img src="genreimg/ebook1-2.jpg" alt="">                                                                        
-                                    </div>                                
-                                    <div class="gb_thumb_title"></div>
-                                    <div class="gb_thumb_title_txt"> 
-                                        <h1 class="gb_genre">eBook</h1> 
-                                        <span>#일반</span>
-                                        <span>#로맨스</span>
-                                        <span>#판타지</span>
-                                        <span>#코믹스</span>                                    
-                                    </div>                         
-                                </div>
-                                <div class="gb_tagList">                                    
-                                    <p class="gb_tagList_txt">
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        더보기</p>                                
-                                </div>         
-                            </div>                            
-                        </a>
-                    </li>
-                    <li class="gb_item">
-                        <a href="genre.html"> 
-                            <div class="gb_box">                            
-                                <div class="gb_thumb">
-                                    <div class="gb_thumb_cont">                                                                       
-                                        <img src="genreimg/webbook1-2.jpg" alt="">                                                                        
-                                    </div>                                
-                                    <div class="gb_thumb_title"></div>
-                                    <div class="gb_thumb_title_txt"> 
-                                        <h1 class="gb_genre">웹소설</h1> 
-                                        <span>#웹소설</span>
-                                        <span>#웹툰</span>
-                                        <span>#자유연재</span>
-                                    
-                                    </div>                         
-                                </div>
-                                <div class="gb_tagList">                                    
-                                    <p class="gb_tagList_txt">
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        <i class="fa-solid fa-angles-right"></i>
-                                        더보기</p>                                
-                                </div>          
-                            </div>                            
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- -------------------------------백진주 끝 ---------------------------------------------->
-
-        <!-- reivew section start -->
-        <!--/////////////////// 양희시작//////////////////////// -->
-        <div class="reviewBook pointer">
-            <div class="reviewtitle">
-                <h1>REVIEW</h1>
-            </div>
-
-            <div class="reviews">
-                <div class="reviewboxs">
-                    <div class="reviewbox one">
-                        <div class="topimg">
-                            <img src="reviewimage/img1.jpg" alt="x">
-                        </div>
-                        <div class="bottomtext">
-                            <div class="lefttext">
-                                <i class="uil uil-user-circle"></i>
-                                <span class="name">ss**3ssy</span>
-                            </div>
-                            <div class="righttext">
-                                <i class="fa-regular fa-heart"></i>
-                                <!-- <i class="fa-solid fa-heart"></i> -->
-                                <span id="cnt1"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reviewbox two">
-                        <div class="topimg">
-                            <img src="reviewimage/img2.jpg" alt="x">
-                        </div>
-                        <div class="bottomtext">
-                            <div class="lefttext">
-                                <i class="uil uil-user-circle"></i>
-                                <span class="name">el**antfly</span>
-                            </div>
-                            <div class="righttext">
-                                <i class="fa-regular fa-heart"></i>
-                                <span id="cnt2"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reviewbox thr">
-                        <div class="topimg">
-                            <img src="reviewimage/img3.jpg" alt="x">
-                        </div>
-                        <div class="bottomtext">
-                            <div class="lefttext">
-                                <i class="uil uil-user-circle"></i>
-                                <span class="name">hy**9800</span>
-                            </div>
-                            <div class="righttext">
-                                <i class="fa-regular fa-heart"></i>
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reviewbox four">
-                        <div class="topimg">
-                            <img src="reviewimage/img4.jpg" alt="x">
-                        </div>
-                        <div class="bottomtext">
-                            <div class="lefttext">
-                                <i class="uil uil-user-circle"></i>
-                                <span class="name">ju**juno1</span>
-                            </div>
-                            <div class="righttext">
-                                <i class="fa-regular fa-heart"></i>
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reviewbox five">
-                        <div class="topimg">
-                            <img src="reviewimage/img5.jpg" alt="x">
-                        </div>
-                        <div class="bottomtext">
-                            <div class="lefttext">
-                                <i class="uil uil-user-circle"></i>
-                                <span class="name">al**holic0</span>
-                            </div>
-                            <div class="righttext">
-                                <i class="fa-regular fa-heart"></i>
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="reviews">
-                <div class="reviewboxs">
-                    <div class="reviewbox one">
-                        <div class="topimg">
-                            <img src="reviewimage/img6.jpg" alt="x">
-                        </div>
-                        <div class="bottomtext">
-                            <div class="lefttext">
-                                <i class="uil uil-user-circle"></i>
-                                <span class="name">ja**man456</span>
-                            </div>
-                            <div class="righttext">
-                                <i class="fa-regular fa-heart"></i>
-                                <!-- <i class="fa-solid fa-heart"></i> -->
-                                <span id="cnt1"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reviewbox two">
-                        <div class="topimg">
-                            <img src="reviewimage/img7.jpg" alt="x">
-                        </div>
-                        <div class="bottomtext">
-                            <div class="lefttext">
-                                <i class="uil uil-user-circle"></i>
-                                <span class="name">ka**ng05</span>
-                            </div>
-                            <div class="righttext">
-                                <i class="fa-regular fa-heart"></i>
-                                <span id="cnt2"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reviewbox thr">
-                        <div class="topimg">
-                            <img src="reviewimage/img8.jpg" alt="x">
-                        </div>
-                        <div class="bottomtext">
-                            <div class="lefttext">
-                                <i class="uil uil-user-circle"></i>
-                                <span class="name">ti**iii</span>
-                            </div>
-                            <div class="righttext">
-                                <i class="fa-regular fa-heart"></i>
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reviewbox four">
-                        <div class="topimg">
-                            <img src="reviewimage/img9.jpg" alt="x">
-                        </div>
-                        <div class="bottomtext">
-                            <div class="lefttext">
-                                <i class="uil uil-user-circle"></i>
-                                <span class="name">ja**ae205</span>
-                            </div>
-                            <div class="righttext">
-                                <i class="fa-regular fa-heart"></i>
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reviewbox five">
-                        <div class="topimg">
-                            <img src="reviewimage/img10.jpg" alt="x">
-                        </div>
-                        <div class="bottomtext">
-                            <div class="lefttext">
-                                <i class="uil uil-user-circle"></i>
-                                <span class="name">aba**33</span>
-                            </div>
-                            <div class="righttext">
-                                <i class="fa-regular fa-heart"></i>
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="listnumber">
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-            </div>
-        </div>
-
-        <div class="modalbg">
-            <div class="modalview">
-                <div class="leftimg">
-                    <img src="reviewimage/img1.jpg" alt="" class="modalimg">
-                </div>
-                <div class="close-area">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-                <div class="rightcontent">
-                    <div class="starsY">
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-solid fa-star"></i>
-                     <i class="fa-solid fa-star-half-stroke"></i>
-                     <span>4.5</span>
-                    </div>
-                    <div class="rightcontenttext">
-                    <!-- 글정보를 객체에 담아서 클릭하는 상자마다 다른 내용을 불러오는 식으로 변경할 것 -->
-                    <p>***님</p>
-                    <p>2022-07-25</p>
-                    <p>
-                        위로와 응원이 필요한 세상이다.
-                        코로나는 사람들에게 이러한 위로와 응원을 더욱 갈구하게 된 촉매제가 되었다.
-                        이 책은 한 불편한 편의점에서 서로가 서로에게 위로 받고 응원받으며 다시금 새로운 삶을 살아갈 용기를 얻게 되는 모습을 그리고 있다.
-                        2시간 남짓이면 읽히는 재미있는 소설책이지만 그 여운은 결코 가볍지 않다.
-                        결국 위로와 선이라는 건 내가 먼저 용기내어 손 내밀고, 누군가 한사람의 작은 선행이 나비효과가 되어 엄청난 파급력을 가지는 게 되는 것 아닐까?             
-                        그리고 그 선행은 점점 더 많은 사람들을 선하게 만들고, 세상을 아름답게 만드는 작지만 큰 힘을 가지게 된다.
-                        사람들은 싫든 좋든 서로 서로 관계를 맺고 있고, 그 관계 속에서 희노애락을 느끼며 살아가고 있다.
-                        비록 나 라는 사람은 작고 보잘 것 없지만, 나의 작은 행동이 누군가에게 도움이 되고 위로가 되는 것을 경험하며 삶의 존재 가치를 깨닫게 되는 것이다.
-                        드라마 스물다섯 스물하나, 나의 해방일지... 그리고 불편한 편의점 까지..
-                        하루하루를 살아가는 평범한 우리에게 지금 그 모습으로 괜찮다고, 니가 어떤 모습이든 나는 널 끝까지 응원하겠다고..
-                        그렇게 누군가의 응원이 필요하고, 그 응원으로 다시금 용기얻어 오늘 하루를 이겨나가는 힘이 필요한 지금이다.   
-                        봄 에디션 커버처럼 예쁘고 따뜻한 책 한권으로 위로 받았던 봄날의 향긋한 시간이었다.
-                    </p>  
-                    </div> 
-                </div>
-            </div>
-        </div>
-        <!--/////////////////// 양희 끝//////////////////////// -->
-        <!-- review section end -->
-
-        <!-- footer start -->
-        <div class="footer">
-            <div class="icons">
-                <div class="iconFrame">
-                    <i class="fa-brands fa-facebook-f ficon"></i>
-                </div>
-                <div class="iconFrame">
-                    <i class="fa-brands fa-instagram ficon"></i>
-                </div>
-                <div class="iconFrame">
-                    <i class="fa-brands fa-twitter ficon"></i>
-                </div>
-                <div class="iconFrame">
-                    <i class="fa-solid fa-map-location-dot ficon"></i>
-                </div>
-            </div>
-            <div class="footerScroll">
-                <ul>
-                    <li>HOME</li>
-                    <li>|</li>
-                    <li>신간도서</li>
-                    <li>|</li>
-                    <li>장르별 도서</li>
-                    <li>|</li>
-                    <li>리뷰</li>
-                </ul>
-            </div>
-        </div>
-        <!-- footer end -->
-
-        <!-- loading img section start -->
-        <div class="loadingImg">
-            <img src="loading.gif" alt="">
-        </div>
-        <!-- loading img section end -->
-
-        <!-- js file link -->
-        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-        <script src="script.js"></script>
+    </div>    
 </body>
 
 </html>

@@ -808,7 +808,7 @@ li {
 /* 타이틀 변경 */
 .genreBook_pointer_title {
     padding: 10px;
-    border-top: 1px solid black;
+    /* border-top: 1px solid black; */
     border-bottom: 1px solid black;
     color: rgb(117, 117, 118);
     margin: 50px 0px;
@@ -864,7 +864,7 @@ li {
     position: relative;
     width: 600px;
     height: 230px;
-    margin: 10px 10px;
+    margin: 40px 80px;
 }
 .gb_thumb{
     width: 100%;
