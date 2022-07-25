@@ -5,12 +5,13 @@ let newBook = document.querySelector('.newBook')
 let genreBook = document.querySelector('.genreBook')
 let reviewBook = document.querySelector('.reviewBook')
 let loading = document.querySelector('.loadingImg')
-let loginIcon = document.querySelector('.loginIcon')
+let loginIcon = document.querySelector('.loginBtn')
 let loginModal = document.querySelector('.loginModal')
 let body = document.querySelector('body')
 let lgModal = document.querySelector('.lgModal')
 let xmark = document.querySelector('.fa-xmark')
 let signUp = document.querySelector('#signUp')
+let modalTitle = document.querySelector('.modalTitle')
 let modalCheckBox = document.querySelector('.modalCheckBox')
 let inputText = document.querySelector('.userName')
 let inputPasswd = document.querySelector('.passwd')
@@ -19,6 +20,9 @@ let loadingBook = document.querySelector('.loadingBook')
 let loginForm = document.querySelector('.loginForm')
 let loginFormContent = document.querySelector('.loginFormContent')
 let signUpXmark = document.querySelector('#signUpXmark')
+let legAddress = document.querySelector('.legAddress')
+let legDetailAddress = document.querySelector('.legDetailAddress')
+let addressBtn = document.querySelector('.addressBtn')
 
 window.onload = () => {
     loadingPage();
@@ -75,6 +79,9 @@ loginModal.addEventListener('click', function(){
 
 signUp.addEventListener('click', function(){
     loadingBook.style.zIndex = '1';
+    modalTitle.style.opacity = '0';
+    inputText.style.opacity = '0';
+    inputPasswd.style.opacity = '0';
     loginForm.style.backgroundColor = 'white'
     lgModal.classList.add('active')
     modalBtn.classList.add('active')
@@ -105,6 +112,9 @@ function registActive(){
 }
 
 function modalClose(){
+    modalTitle.style.opacity = '1';
+    inputText.style.opacity = '1';
+    inputPasswd.style.opacity = '1';
     loginModal.style.display = 'none'
     lgModal.classList.remove('active')
     modalBtn.classList.remove('active')
@@ -146,6 +156,8 @@ let dayText = document.querySelector('#dayText')
 let day = document.querySelector('.legDay')
 let identity = document.querySelector('.legIdentity')
 let legPhone = document.querySelector('.legPhone')
+let male = document.querySelector('.fa-mars')
+let female = document.querySelector('.fa-venus')
 
 if(typeof(Storage)!== 'undefined'){
     sessionStorage.legId = legId.value;
@@ -160,7 +172,7 @@ if(typeof(Storage)!== 'undefined'){
         sessionStorage.legId = legId.value;
         if(legId.value.length == 0){
             legId.nextElementSibling.innerHTML = '영문과 숫자만으로 작성해 주세요.(6~20자)'
-            legId.nextElementSibling.style.color = '#1E90FF'
+            legId.nextElementSibling.style.color = '#D2691E'
         } else if (ID_CHECK.test(legId.value) != true){
             legId.nextElementSibling.innerHTML = "영문 혹은 숫자가 아닙니다."
             legId.nextElementSibling.style.color = "crimson"
@@ -175,7 +187,7 @@ if(typeof(Storage)!== 'undefined'){
     legPw.addEventListener('keyup', function () {
         if (legPw.value.length == 0) {
             legPw.nextElementSibling.innerHTML = '대/소문자, 숫자, 특수문자의 조합으로 작성해 주세요.(8~16자)'
-            legPw.nextElementSibling.style.color = '#1E90FF'
+            legPw.nextElementSibling.style.color = '#D2691E'
         } else if (PW_CHECK.test(legPw.value) != true) {
             legPw.nextElementSibling.innerHTML = "대문자,특수문자,숫자를 반드시 하나 이상 포함해 주세요."
             legPw.nextElementSibling.style.color = "crimson"
@@ -188,7 +200,7 @@ if(typeof(Storage)!== 'undefined'){
         }
         if (legPwCk.value.length == 0) {
             legPwCk.nextElementSibling.innerHTML = '비밀번호를 다시 한번 입력해 주세요.'
-            legPwCk.nextElementSibling.style.color = '#1E90FF'
+            legPwCk.nextElementSibling.style.color = '#D2691E'
         } else if (legPw.value != legPwCk.value) {
             legPwCk.nextElementSibling.innerHTML = "입력하신 비밀번호와 일치하지 않습니다."
             legPwCk.nextElementSibling.style.color = "crimson"
@@ -201,7 +213,7 @@ if(typeof(Storage)!== 'undefined'){
     legPwCk.addEventListener('keyup', function () {
         if (legPwCk.value.length == 0) {
             legPwCk.nextElementSibling.innerHTML = '비밀번호를 다시 한번 입력해 주세요.'
-            legPwCk.nextElementSibling.style.color = '#1E90FF'
+            legPwCk.nextElementSibling.style.color = '#D2691E'
         } else if (legPw.value != legPwCk.value) {
             legPwCk.nextElementSibling.innerHTML = "입력하신 비밀번호와 일치하지 않습니다."
             legPwCk.nextElementSibling.style.color = "crimson"
@@ -223,7 +235,7 @@ if(typeof(Storage)!== 'undefined'){
         sessionStorage.nameCheck = nameCheck.value;
         if (nameCheck.value.length == 0) {
             nameCheck.nextElementSibling.innerHTML = '이름은 한글로 입력해 주세요.'
-            nameCheck.nextElementSibling.style.color = '#1E90FF'
+            nameCheck.nextElementSibling.style.color = '#D2691E'
         } else if (NAME_CHECK.test(nameCheck.value) != true) {
             nameCheck.nextElementSibling.innerHTML = "이름은 영문 혹은 한글로만 입력해 주세요."
             nameCheck.nextElementSibling.style.color = "crimson"
@@ -259,7 +271,7 @@ if(typeof(Storage)!== 'undefined'){
             yearText.innerHTML = '완료'
             yearText.style.color = "rgb(19, 168, 99)"
         } else {
-            yearText.innerHTML = '&nbsp;'
+            yearText.innerHTML = '연도의 범위가 잘못 됐습니다.'
             yearText.style.color = 'rgb(24, 65, 199)'
         }
     })
@@ -291,25 +303,35 @@ if(typeof(Storage)!== 'undefined'){
     identity.addEventListener('keyup', function () {
         // console.log(IDENTITY_CHECK.test(identity.value))
         if (identity.value.length == 0) {
-            identity.nextElementSibling.innerHTML = '하이픈(-)을 포함하여 입력해 주세요.'
-            identity.nextElementSibling.style.color = '#1E90FF';
+            identity.nextElementSibling.innerHTML = '하이픈(-)을 포함해서 입력해 주세요.'
+            identity.nextElementSibling.style.color = '#D2691E';
         } else if (IDENTITY_CHECK.test(identity.value) != true) {
             identity.nextElementSibling.innerHTML = "주민등록 번호를 제대로 입력해 주세요."
             identity.nextElementSibling.style.color = "crimson";
         } else if (identity.value.split("")[7] == 1 || identity.value.split("")[7] == 3) {
             //하이픈 뒤 첫 숫자가 1,3일 때 남자 표시를 띄움
-            // male.style.visibility = 'visible'
-            // female.style.visibility = 'hidden'
+            male.style.visibility = 'visible'
+            female.style.visibility = 'hidden'
             identity.nextElementSibling.innerHTML = "사용 가능"
             identity.nextElementSibling.style.color = "rgb(19, 168, 99)"
         } else if (identity.value.split("")[7] == 2 || identity.value.split("")[7] == 4) {
             //하이픈 뒤 첫 숫자가 2,4일 때 여자 표시를 띄움
-            // female.style.visibility = 'visible'
-            // male.style.visibility = 'hidden'
+            female.style.visibility = 'visible'
+            male.style.visibility = 'hidden'
             identity.nextElementSibling.innerHTML = "사용 가능"
             identity.nextElementSibling.style.color = "rgb(19, 168, 99)"
         }
     })
+
+    addressBtn.addEventListener('click',function(){
+        new daum.Postcode({
+            oncomplete: function(data) { //선택시 입력값 세팅
+                legAddress.value = data.address; // 주소 넣기
+                legDetailAddress.focus(); //상세입력 포커싱
+            }
+        }).open();
+    });
+    
 
     
     legPhone.value = sessionStorage.legPhone;
@@ -323,7 +345,7 @@ if(typeof(Storage)!== 'undefined'){
         sessionStorage.legPhone = legPhone.value
         if (legPhone.value.length == 0) {
             legPhone.nextElementSibling.innerHTML = '하이픈(-)을 포함해서 입력해 주세요.'
-            legPhone.nextElementSibling.style.color = '#1E90FF';
+            legPhone.nextElementSibling.style.color = '#D2691E';
         } else if (PHONENUMBER_CHECK.test(legPhone.value) != true) {
             legPhone.nextElementSibling.innerHTML = '번호를 정확히 입력해 주세요'
             legPhone.nextElementSibling.style.color = 'crimson'
