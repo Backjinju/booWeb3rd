@@ -72,6 +72,7 @@ body{
 .loginIcon .fa-user,.fa-cart-shopping,.fa-heart{
     font-size: 1.9rem;
     padding: 5px;
+    cursor: pointer;
 }
 
 .loginIcon:hover .iconsBox{
@@ -169,11 +170,8 @@ body{
     background-color: transparent;
 }
 
-.modalBtn{
-    background-color: white;
-}
-
 .inputBox .modalBtn{
+    background-color: white;
     width: 85%;
     padding: 5px;
     font-size: 2.4rem;
@@ -364,6 +362,7 @@ body{
     background-color: #FDE6BE;
     margin-left: 13px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .legBtn{
@@ -375,6 +374,7 @@ body{
     border-radius: 2px;
     font-weight: bold;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 
@@ -400,7 +400,7 @@ body{
 
 /* /////////////////////수근/////////////////////////// */
 .newBook {
-    width: 1500px;
+    width: 1600px;
     height: 500px;
     margin-top: 50px;
     position: relative;
@@ -416,7 +416,6 @@ li {
     padding: 10px;
     margin-top: 20px;
     color: rgb(117, 118, 118);
-    border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
 .newBook_title:hover {
@@ -424,7 +423,7 @@ li {
 }
 .newBook_slide_wrapper {
     position: relative;
-    width: 1320px;
+    width: 1325px;
     overflow: hidden;
     height: 400px;
     margin: 50px auto;
@@ -439,12 +438,12 @@ li {
 
 }
 .newBook_slides li{
-    width: 300px;
+    width: 200px;
     height: 500px;
     float: left;
 }
 .newBook_slides li:not(:last-child) {
-    margin-right: 30px;
+    margin-right: 75px;
 }
 .newBook_slides li .img_box {
     width: 200px;
@@ -802,13 +801,12 @@ li {
 /* ///////////////////////백진주 영역 시작--------------------------------------------------- */
 /* 장르별 도서 */
 .genreBook{    
-    width: 80%;
+    width: 1600px;
     height: 800px; 
 }
 /* 타이틀 변경 */
 .genreBook_pointer_title {
     padding: 10px;
-    border-top: 1px solid black;
     border-bottom: 1px solid black;
     color: rgb(117, 117, 118);
     margin: 50px 0px;

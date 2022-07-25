@@ -35,7 +35,7 @@ function loadingFadeout(){
     loadingContainer.classList.remove('loadingContainer')
 }
 function loadingPage(){
-    setTimeout(loadingFadeout,4500) // 테스트할 때 로딩화면 기다리기 싫어서 0.05초로 만들어 둠
+    setTimeout(loadingFadeout,45) // 테스트할 때 로딩화면 기다리기 싫어서 0.05초로 만들어 둠
 }
 
 loginIcon.addEventListener('click',function(){
@@ -727,8 +727,8 @@ let SGslides = document.querySelector('.newBook_slides'); //ul
 let SGslide = document.querySelectorAll('.newBook_slides li'); //li를 다 넣기 위해 All를 씀
 let SGcurrentIdx = 0; //클릭할때마다 이 값을 차감해서 슬라이드를 움직이기 위함
 let SGslideCount = SGslide.length; //li의 길이  
-let SGslideWidth = 300; //
-let SGslideMargin = 30;
+let SGslideWidth = 200; //
+let SGslideMargin = 75;
 // let SGprevBtn = document.querySelector('.prev');
 // let SGnextBtn = document.querySelector('.next');
 // let SGimg = document.querySelectorAll('.newBook_slides li img')
