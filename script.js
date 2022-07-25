@@ -395,16 +395,16 @@ scrollTop 은 윈도우에서 스크롤의 위치가 가장 상위에 있다는 
 
 let boxs = document.querySelectorAll('.topimg');
 let modalY = document.querySelector('.modalbg');
-let modalview = document.querySelector('.modalview');
 let close = document.querySelector('.close-area');
 let modalimg = document.querySelector('.modalimg');
-let heart = document.querySelectorAll('.uil-heart');
+let heart = document.querySelectorAll('.fa-regular');
 
+
+//모달창
 for(let i = 0; i< boxs.length; i++){
     boxs[i].addEventListener('click', function(e){
         modalY.style.display = 'flex';
         modalimg.src = e.target.src;
-        // console.log(e.target);
     })
 }
 
@@ -413,8 +413,6 @@ close.addEventListener('click', function(){
 })
 
 modalY.addEventListener('click', function(e){
-    // modalY.style.display = 'none';
-    // console.log(event.target.className);
 
     //조건문을 사용!
     if(e.target.className == 'modalbg')
@@ -424,65 +422,33 @@ modalY.addEventListener('click', function(e){
 })
 
 
-//좋아요 수up, 하트 색칠해지는
-
-let cnt1 = document.querySelector('#cnt1');
-
-// cnt1.innerHTML = localStorage.cnt[0];
+//하트 색칠해지는
 
 for(let i = 0; i <heart.length; i++)
 {
-    heart[i].addEventListener('click', function(e1){
-        // localStorage.cnt[0] = 43;
-        // Number(localStorage.cnt[0]) + 1
-        // console.log(localStorage.cnt[0]);
-
-
+    heart[i].addEventListener('click', function(e){
+        
         //애니메이션으로 scale 조절 & opacity
-
-
-
-        // if(typeof(Storage) !== "undefined")
-        // {
-        //     if(localStorage.cnt)
-        //     {
-        //         localStorage.cnt = Number(localStorage.cnt) + 1;
-        //     }
-        //     else
-        //     {
-        //         localStorage.cnt = 0;
-        //     }
-
-        //     cnt1.innerHTML = localStorage.cnt;
-
-        // } else {
-        //     alert("응 돌아가");
-        // }
-        cnt1.innerHTML = heartCount(0);
-        cnt2.innerHTML = heartCount(1);
-
+        //queryselectorAll은 배열, 인덱스로 요소 하나하나를 접근
+        //같다 > == or ===
+        if(heart[i].className == 'fa-regular fa-heart')
+        {
+            heart[i].className = 'fa-solid fa-heart';
+            heart[i].classList.add('animation');
+        }
+        else if(heart[i].className == 'fa-solid fa-heart animation')
+        {
+            heart[i].className = 'fa-regular fa-heart';
+        }
     })
 }
 
-// function heartCount(i){
-//     if(typeof(Storage) !== "undefined")
-//         {
-//             if(localStorage.cnt[i])
-//             {
-//                 localStorage.cnt[i] = Number(localStorage.cnt[i]) + 1;
-//             }
-//             else
-//             {
-//                 localStorage.cnt[i] = 0;
-//             }
+//좋아요 수 up
 
-        
-//         } else {
-//             alert("응 돌아가");
-//         }
+//페이징
 
-//         return localStorage.cnt[i];
-// }
+
+
 
 
 
