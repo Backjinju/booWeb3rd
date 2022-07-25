@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Gowun Dodum', sans-serif;
+
 }
 
 li{
@@ -11,6 +13,7 @@ li{
 body{
     display: flex;
     justify-content: center;
+    font-family: 'Do Hyeon', sans-serif;
 }
 .container{
     display: flex;
@@ -25,7 +28,7 @@ body{
 .header{
     /* border: 1px solid pink; */
     width: 100%;
-    height: 700px;
+    height: 440px;
 }
 
 /* ///////////////////////박성진 header logo&login START////////////////////// */
@@ -43,16 +46,40 @@ body{
 
 .headerTop .loginIcon{
     display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: right;
-    /* background-color: red; */
-    position: absolute;
-    right: 0;
-    top: 15px;
+    background-color: #ffd5a6e3;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: fixed;
+    right: 10px;
+    bottom: 15px;
+    z-index: 12;
+    overflow: hidden;
+    transition: 0.3s;
 }
 
-.loginIcon .fa-user{
+.iconsBox{
+    width: 150px;
+    transform: translate(43px,0);
+    display: flex;
+    transition: 0.3s;
+}
+
+.loginIcon .fa-user,.fa-cart-shopping,.fa-heart{
     font-size: 1.9rem;
     padding: 5px;
+}
+
+.loginIcon:hover .iconsBox{
+    transform: translate(20px,0);
+}
+
+.loginIcon:hover{
+    width: 150px;
+    border-radius: 30px;
 }
 
 .loginModal{
@@ -80,18 +107,20 @@ body{
     width: 400px;
     height: 550px;
     border-radius: 10px;
-    background-color: rgb(64, 135, 201);
+    background-color: #FDE6BE;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    transition: 0.5s ease;
 }
 
 .loginModal .loadingBook{
-    position: fixed;
+    position: absolute;
     opacity: 0;
     transition: 0.3s;
     width: 200px;
+    z-index: -1;
 }
 
 .loginModal .modalTitle{
@@ -100,7 +129,7 @@ body{
     font-size: 3rem;
     padding: 20px;
     /* background-color: brown; */
-    color: white;
+    color: black;
 }
 
 .loginModal .inputBox{
@@ -115,7 +144,6 @@ body{
 .inputBox .fa-user, .inputBox .fa-lock{
     font-size: 2rem;
     transform: translate(0,5px);
-    color: white;
 }
 
 .inputBox input{
@@ -126,11 +154,10 @@ body{
     outline: none;
     background-color: transparent;
     font-size: 1.5rem;
-    color: white;
 }
 
 .inputBox input::placeholder{
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(59, 59, 59, 0.5);
 }
 
 .userName, .passwd{
@@ -150,7 +177,6 @@ body{
     padding: 5px;
     font-size: 2.4rem;
     margin-top: 40px;
-    color: rgb(64, 135, 201);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -170,7 +196,6 @@ body{
 #signUp{
     margin-top: 15px;
     font-size: 1.2rem;
-    color: rgb(64, 135, 201);
     padding: 5px;
     transform: translate(0,-5px);
     cursor: pointer;
@@ -198,39 +223,53 @@ body{
     align-items: center;
     flex-direction: column;
     position: fixed;
-    background-color: white;
     border-radius: 10px;
     z-index: 1;
     overflow: hidden;
     width: 1px;
     height: 1px;
+    /* display: none; */
     /* width: 500px;
     height: 800px; */
-    background-color:rgb(64, 135, 201);
+    background-color: rgb(64, 135, 201);
+    background-image: url(loginFormBackground.jpg);
+    background-size: cover;
+    background-position: 0 230px;
+    background-repeat: no-repeat;
+    opacity: 0.95;
 }
 
 .loginFormTitle{
     width: 100%;
-    padding: 15px;
+    padding: 5px;
     text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
 }
 
+#signUpXmark{
+    color: black;
+    font-size: 1.7rem;
+    position: relative;
+    right: 5px;
+    top: -15px;
+}
+
 .loginForm .loginFormContent{
     opacity: 0;
-    width: 80%;
+    width: 70%;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;
     /* background-color: coral; */
+    transition: 0.5s;
 }
 
 .loginFormContent input{
     width: 100%;
     border: none;
     margin: 5px 0;
-    padding: 20px 10px;    
+    padding: 10px 5px;    
     border-radius: 1px;
     background-color: transparent;
     border-bottom: 1px solid rgba(0, 0, 0, 0.39);
@@ -238,49 +277,101 @@ body{
     outline: none;
 }
 
+.loginFormContent .smallText{
+    font-size: 0.8rem;
+    opacity: 0.8;
+    color: #D2691E;
+    margin: 3px 5px;
+}
+
 .loginFormContent input::placeholder{
     font-size: 1.1rem;
 }
 
+.birthBox{
+    display: flex;
+    justify-content: center;
+}
+
 .loginFormContent .legYear{
-    width: 128px;
-    margin-right: 20px;
+    width: 35%;
+    margin-right: 15px;
 }
 
 .loginFormContent .legMonth{
-    padding: 19px;
-    width: 90px;
-    margin-right: 20px;
+    padding: 10px;
+    width: 22%;
+    margin-right: 15px;
     border-radius: 1px;
     border: none;
     font-size: 1.1rem;
     color: rgba(0, 0, 0, 0.7);
+    outline: none;
+    background-color: transparent;
 }
 .loginFormContent .legDay{
-    width: 128px;
+    width:35%;
+}
+                    
+.birthTextBox{
+    display: flex;
+}
+
+#yearText{
+    width: 160px;
+}
+
+#dayText{
+    width: 70px;
+    margin-left: 80px;
+}
+
+.identityBox{
+    position: relative;
+}
+
+.legIdentity ~.fa-mars{
+    position: absolute;
+    font-size: 1.6rem;
+    right: 0px;
+    top: 18px;
+    visibility: hidden;
+}
+.legIdentity ~.fa-venus{
+    position: absolute;
+    font-size: 1.6rem;
+    right: 0px;
+    top: 18px;
+    visibility: hidden;
 }
 
 .loginFormContent .legAddress{
-    width: 300px;
+    width: 70%;
+}
+
+.addressBox{
+    width: 100%;
 }
 
 .loginFormContent .addressBtn{
-    width: 115px;
-    height: 60px;
+    width: 25%;
+    height: 45px;
     border: none;
     border-radius: 1px;
-    background-color: #1E90FF;
-    color: white;
+    background-color: #FDE6BE;
+    margin-left: 13px;
+    font-weight: bold;
 }
 
 .legBtn{
     border: none;
     width: 100%;
-    height: 80px;
+    height: 60px;
     font-size: 1.3rem;
-    background-color: #1E90FF;
-    color: white;
+    background-color: #FDE6BE;
     border-radius: 2px;
+    font-weight: bold;
+    margin-top: 15px;
 }
 
 
@@ -306,28 +397,31 @@ body{
 
 /* /////////////////////수근/////////////////////////// */
 .newBook {
-    width: 80%;
+    width: 1600px;
     height: 500px;
     margin-top: 50px;
     position: relative;
-    background-color:#CCFFFF;
+    background-color:#FFF;
+
     
 }
 li {
     list-style: none;
 }
 .newBook_title {
+    margin-top: 1px;
     padding: 10px;
+    margin-top: 20px;
+    color: rgb(117, 118, 118);
     border-top: 1px solid black;
     border-bottom: 1px solid black;
-    color: rgb(117, 117, 118);
 }
 .newBook_title:hover {
     color: black;
 }
 .newBook_slide_wrapper {
     position: relative;
-    width: 1200px;
+    width: 1600px;
     overflow: hidden;
     height: 400px;
     margin: 50px auto;
@@ -342,12 +436,12 @@ li {
 
 }
 .newBook_slides li{
-    width: 260px;
+    width: 300px;
     height: 500px;
     float: left;
 }
 .newBook_slides li:not(:last-child) {
-    margin-right: 60px;
+    margin-right: 50px;
 }
 .newBook_slides li .img_box {
     width: 200px;
@@ -391,6 +485,8 @@ li {
     color: white;
 }
 .imgContent div:hover {
+    border: 1px solid black;
+    transition: all 0.35s;
     background-color: white;    
     color: black;
 }
@@ -427,11 +523,7 @@ li {
     right: 0px;
 } */
 /* ///////////////////////수근 끝/////////////////////////////////////// */
-.genreBook{
-    border: 1px solid black;
-    width: 100%;
-    height: 800px; 
-}
+
 /* //////////////////////////////////양희 시작///////////////////////////////////// */
 .reviewBook{
     padding: 10px 0;
@@ -466,6 +558,8 @@ li {
     /* position: relative; */
     /* border: 1px solid red; */
 }
+
+
 .reviewbox{
     /* width: 13vw; */
     width: 250px;
@@ -700,7 +794,24 @@ li {
 
 /* ///////////////////////백진주 영역 시작--------------------------------------------------- */
 /* 장르별 도서 */
-.gb_mtit{
+.genreBook{    
+    width: 80%;
+    height: 800px; 
+}
+/* 타이틀 변경 */
+.genreBook_pointer_title {
+    padding: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    color: rgb(117, 117, 118);
+    margin: 50px 0px;
+}
+.genreBook_pointer_title:hover {
+    color: black;
+}
+
+/* 타이틀 변경전 */
+/* .gb_mtit{
     font-size: 2.5rem;
     padding: 20px 0px;
     text-align: center;
@@ -723,7 +834,7 @@ li {
     margin: 0 16px;
     height: 2px;
     background: #1E90FF;
-}
+} */
 .gb_cont{
     display: flex;
     justify-content: center; 
@@ -734,7 +845,8 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;   
+    flex-wrap: wrap;
+    
 }
 
 .gb_item {
@@ -757,7 +869,7 @@ li {
 }
 .gb_thumb_title{
     position: absolute;
-    width: 180px;
+    width: 30%;
     height: 230px;
     top:0px;
     background-color: rgb(27, 27, 27);
@@ -802,8 +914,8 @@ li {
     text-shadow: 0 0 5px rgb(70, 70, 70);
     overflow:hidden;
     white-space:nowrap;
-    animation: typing 10s steps(27) forwards, 
-                blink .8s step-end infinite;
+    animation: typing 5s steps(27) forwards, 
+                blink .4s step-end infinite;
     animation-iteration-count: infinite;
 }
 @keyframes blink{
@@ -833,7 +945,67 @@ li {
 }
 
 /* 장르별 도서 새페이지영역*/
-
+/* 타이틀 */
+.genre_main_section{
+    width: 80%;
+    
+    /* background-color: rgb(242, 251, 255); */
+}
+/* 탭메뉴 */
+.tabmenu{ 
+  width:80%;
+  height: 900px; 
+  background-color: rgb(242, 251, 255);
+  margin: auto;
+  position:relative; 
+}
+.tabmenu_list{
+    list-style:none;
+}
+.tabmenu ul li{
+  display:  inline-block;
+  width:25%;
+  height: 50px; 
+  float:left;  
+  text-align:center; 
+  background: linear-gradient(to left, #feffff,rgb(216, 215, 255));
+  color:rgb(50, 156, 255);
+  
+  /* line-height:40px; */
+  /* border: 1px solid black; */
+}
+.tabmenu label{
+  display:block;
+  width:100%; 
+  height:50px;
+  line-height:40px;
+  cursor: pointer;
+}
+.tabmenu input{
+    display:none;
+}
+.tabCon{
+  display:none; 
+  padding: 10px;
+  position:absolute; 
+  left:0; top:50px; 
+  width: 100%;
+  height: 800px;
+  
+  
+}
+.btnCon label:hover{
+    height: 50px;
+}
+.tabmenu input:checked ~ label{    
+    font-size: 1.5rem;
+    color: rgb(119, 148, 245);
+    cursor: pointer;
+}
+.tabmenu input:checked ~ .tabCon{
+  display:block;
+}
+/* 탭메뉴 안 책 리스트 */
 .genre_mid_slide{
     display: flex;
     align-items: center;
@@ -841,43 +1013,68 @@ li {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
-    height: 300px;    
-    /* background-color: blueviolet; */
-    overflow: scroll;
-    background-color: aqua;
+    height: 750px;
     margin-top: 20px;
 }
 
-/* .genre_mid_slide::-webkit-scrollbar {
-    display: none; Chrome, Safari, Opera
-} */
 .genre_mid_slide_box{
-    text-align: center;
-    width: 200px;
-    height: 250px;
-    margin: 10px;
-    border: 3px solid rgb(75, 75, 75);
-    position: relative;
     
+    width: 180px;
+    height: 230px;
+    margin: 20px;
+    /* border: 3px solid rgb(75, 75, 75); */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    
+}
+.genre_mid_slide_box:hover{
+    border: 1px solid rgb(202, 202, 202);
+    box-shadow: 3px 3px 3px rgb(104, 104, 104);
+}
+.genre_mid_slide_box:hover .genre_doc_box{
+    width: 100%;
+    height: 70px;
+    
+    background-color: #333;
 }
 .genre_thumb{
     position: absolute;
+    width:100%;
+    height:100%;    
     top:0;
     left:0;    
 }
-
 .genre_thumb img{
-    width:194px;
-    height:150px;
+    width:100%;
+    height:100%;
 }
 .genre_doc_box{
     position: absolute;
-    top:160px;
+    bottom:0px;    
+    
+    height: 0px;
+    background-color: black;
+    transition: all 0.9s;
+    display: flex;
 
 }
+.genre_doc_box div{
+    width: 80px;
+    height: 40px;
+    background-color: black;
+    border: 1px solid white;
+    margin: 10px;
+    color: white;
+
+}
+
+
 /* ///////////////////////백진주 영역 끝--------------------------------------------------- */
 
 /* //////이상호////////////////////////////////////////////////// */
+
+
 a{
     text-decoration: none;
 }
@@ -902,23 +1099,26 @@ a{
     top: 0;
     padding: 20px;
     background-color: white;
-
 }
 .nav-bar > span{
     padding: 10px;
     margin: 0 30px;
+    font-size: 1.3rem;
+    font-weight: 600;
     cursor: pointer;
 }
 .nav-bar-fixed > span{
     padding: 10px;
     margin:  0 30px;
+    font-size: 1.3rem;
+    font-weight: 600;
     cursor: pointer;
 }
 .nav-bar-dropdown{
     /* 네비바 드롭다운 */
     display: flex;
     justify-content: center;
-    display: none;
+    opacity: 0;
     position: absolute;
     top: 70px;
     width: 100%; 
@@ -936,15 +1136,15 @@ a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 200px;
-    margin: 10px 20px;
+    width: 120px;
+    margin: 30px 30px;
 }
 .nav-bar-dropdown > div> a > img{ 
     width: 120px;
     border-radius: 5px;
 }
 .nav-bar-dropdown > div > a > span{
-    color: white;
+    color:rgba(0, 0, 0, 0.7);;
     position: relative;
     right: 10px;
     bottom: 180px;
@@ -980,16 +1180,36 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 595px;
+    height: 335px;
     width: 100%;
-
 }
 .bestSeller-sell-warp{
     display: flex;
     width: 100%;
-    height: 595px;
+    height: 335px;
     position: relative;
     overflow: hidden;
+}
+#bestSeller-sell-img{
+    width: 200px;
+    height: 300px;
+    z-index: 100;
+    position: relative;
+    left: 850px;
+    top: 20px;
+    border-top-left-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+
+}
+.bestSeller-sell-ele{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    opacity: 0;
+}
+.bestSeller-sell-ele > img{
+    width: 200px;
 
 }
 .slideItem{
@@ -999,18 +1219,21 @@ a{
 }
 .bestSeller-text{
     position: absolute;
-    top: 200px;
-    left: 60px;
-
+    top: 150px;
+    left: 250px;
 }
-.bestSeller-text > h1 , h6{
+.bestSeller-text > h1{
     color: white;
     font-size: 3rem;
     margin: 30px 0;
     opacity: 0;
-
-    
-
+}
+.bestSeller-text > h6{
+    color: white;
+    font-size: 2rem;
+    margin: 30px 0;
+    font-weight: 350;
+    opacity: 0;
 }
 .bestSeller-sell-warp > div:nth-child(1){
     z-index:3;
@@ -1024,32 +1247,55 @@ a{
 .bestSeller-text{
     z-index: 5;
 }
+.ele-1{
+    z-index: 4;
+}
+.ele-2{
+    z-index: 3;
+}
+.ele-3{
+    z-index: 2;
+}
 
 .slideItem > img{
- /* 헤더이미지 크기조절 */
-    width: 100%;
+    /* 헤더이미지 크기조절 */
+       width: 100%;
 }
-/* .bestSeller-book{
-    width: 210px;
-    position: relative;
-    margin-top: 160px;
-    transform: translate(190px);
-
-} */
-/* .bestSeller-book-warp{
+.bestSeller-book{
+    /* 베스트셀러 작은 이미지 */
+    width: 130px;
+    height: 195px;
+    position: fixed;   
+    z-index: 90;
+    transform: translate(-780px, 250px);
+}
+.bestSeller-book-warp{
+    width: 130px;
+    height: 195px;
     overflow: hidden;
-} */
-/* .bestSeller-book-move{
+}
+.bestSeller-book-move{
+    width: 130px;
+    height: 195px;
     display: flex;
-    
-} */
-/* .bestSeller-book > div > div > div > img{
-    width: 210px;
-} */
 
-/* .bestSeller-book-modal{
+}
+.bestSeller-book > div > div > div > img{
+    width: 130px;
+}
+.bestSeller-book-warp > button{
+    position: absolute;
+    border-radius: 50%;
+    top: 8px;
+    right: 8px;
+    border: none;
+    width: 20px;
+    height: 20px;
+}
+/* 
+.bestSeller-book-modal{
     width: 100%;
-    height: 200px;
+    height: 100%;
     position: absolute;
     top: 0;
     background-color: rgba(153,153,153, 0.5);
@@ -1058,8 +1304,9 @@ a{
     justify-content: center;
     align-items: center;
     display: none;
+    z-index: 120;
 
-}
+} */
 
 .bestSeller-book-modal > p{
     font-size: 1.5rem;
@@ -1073,7 +1320,50 @@ a{
 .bestSeller-book > div:nth-child(2) > img
 ,.bestSeller-book > div:nth-child(3) > img{
     display: none;
-} */
+}
+#font1 > span{
+    position: relative;
+    margin: -4px;
 
+}
+#font3 > span{
+    position: relative;
+    margin: -4px;
+
+}
+#font5 > span{
+    position: relative;
+    margin: -4px;
+
+}
+.textani{
+    animation: ani 0.5s ease;
+    animation-delay: 1s;
+    -webkit-font-smoothing: antialiased;
+}
+.textani1{
+    animation: ani 0.5s ease;
+    animation-delay: 1.1s;
+    -webkit-font-smoothing: antialiased;
+}
+.textani2{
+    animation: ani 0.5s ease;
+    animation-delay: 1.2s;
+    -webkit-font-smoothing: antialiased;
+}
+@keyframes ani {
+    0%{
+        top: 0px;
+    }
+    50%{
+        top: -15px;
+
+    }
+    100%{
+        top: 0px;
+
+    }
+    
+}
 /* ///////////////////////////////////이상호//////////////////////////////// */
 
