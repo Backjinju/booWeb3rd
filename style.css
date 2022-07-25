@@ -1,9 +1,12 @@
+@font-face {
+    font-family: 'Gowun Dodum';
+    src: url(GowunDodum-Regular.ttf);
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gowun Dodum', sans-serif;
-
 }
 
 li{
@@ -1269,7 +1272,7 @@ a{
 }
 .bestSeller-book{
     /* 베스트셀러 작은 이미지 */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 150px;
     height: 310px;
     position: fixed;   
