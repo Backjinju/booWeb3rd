@@ -905,6 +905,133 @@ for(let i = 0; i <heart.length; i++)
 
 //페이징
 
+//상자 정보들을 객체에 담기 (20개)
+//1,2,3번있음
+//2번을 클릭하면 객체에서 정보빼오기(3번도똑같이)
+
+const pagesY = [
+    {
+      id: 1,
+      name: "cmklove1***",
+      img: "reviewimage/img11.jpg"
+    },
+    {
+        id: 2,
+        name: "whend5***",
+        img: "reviewimage/img12.jpg"
+    },
+    {
+        id: 3,
+        name: "kimok0***",
+        img: "reviewimage/img13.jpg"
+    },
+    {
+        id: 4,
+        name: "ddsgrg***",
+        img: "reviewimage/img14.jpg"
+    },
+    {
+        id: 5,
+        name: "sfe5454***",
+        img: "reviewimage/img15.jpg"
+    },
+    {
+        id: 6,
+        name: "jyyo34***",
+        img: "reviewimage/img16.jpg"
+    },
+    {
+        id: 7,
+        name: "hryy68***",
+        img: "reviewimage/img17.jpg"
+    },
+    {
+        id: 8,
+        name: "ru46i***",
+        img: "reviewimage/img18.jpg"
+    },
+    {
+        id: 9,
+        name: "whend5***",
+        img: "reviewimage/img19.jpg"
+    },
+    {
+        id: 10,
+        name: "ktyty45***",
+        img: "reviewimage/img20.jpg"
+    },
+    {
+        id: 11,
+        name: "heru7***",
+        img: "reviewimage/img21.jpg"
+    },
+    {
+        id: 12,
+        name: "dfheh***",
+        img: "reviewimage/img22.jpg"
+    },
+    {
+        id: 13,
+        name: "kkuyt***",
+        img: "reviewimage/img23.jpg"
+    },
+    {
+        id: 14,
+        name: "dgrheh899***",
+        img: "reviewimage/img24.jpg"
+    },
+    {
+        id: 15,
+        name: "ytktdg77***",
+        img: "reviewimage/img25.jpg"
+    },
+    {
+        id: 16,
+        name: "qwryty76***",
+        img: "reviewimage/img26.jpg"
+    },
+    {
+        id: 17,
+        name: "tyrju88***",
+        img: "reviewimage/img27.jpg"
+    },
+    {
+        id: 18,
+        name: "greggb65***",
+        img: "reviewimage/img28.jpg"
+    },
+    {
+        id: 19,
+        name: "dhtrhbg76***",
+        img: "reviewimage/img29.jpg"
+    },
+    {
+        id: 20,
+        name: "yegbg454***",
+        img: "reviewimage/img30.jpg"
+    },
+
+  ];
+
+  let pagebtn = document.querySelectorAll('.listnumber span');
+  let nameY = document.querySelectorAll('.name');
+
+    for(let i=0; i < pagebtn.length; i++)
+    {
+        pagebtn[i].addEventListener('click', function(e){
+            // alert("w");
+            //if-else > 1,2,3번 눌렀을 때
+            //이미지, 아이디 바꾸기
+
+            console.dir(e.target);
+        });
+    }
+
+
+//모달창도 상자를 클릭하면 ~
+
+
+
 
 
 

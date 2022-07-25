@@ -556,7 +556,7 @@ li {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin: 30px 0;
+    margin: 25px 0;
     /* position: relative; */
     /* border: 1px solid red; */
 }
@@ -564,10 +564,10 @@ li {
 
 .reviewbox{
     /* width: 13vw; */
-    width: 250px;
-    height: 100%;
+    width: 200px;
+    height: 93%;
     /* margin-right: 1vw; */
-    margin: 0 15px;
+    margin: 0 25px;
     border-radius: 5px;
     box-shadow: 0 1px 2px gray;
 
@@ -576,7 +576,7 @@ li {
     box-shadow: 3px 3px 5px gray;
 }
 .reviewbox .topimg{
-    height: 83%;
+    height: 85%;
 }
 /* 수정하기 */
 .topimg img{
@@ -589,7 +589,7 @@ li {
 }
 
 .bottomtext{
-    height: 17%;
+    height: 15%;
     display: flex;
     align-items: center;
     justify-content: space-between;
