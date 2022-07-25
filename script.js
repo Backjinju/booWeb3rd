@@ -354,162 +354,298 @@ footerScroll.addEventListener('click',function(e){
 ////////////-------Sign up 유효성 검사 끝--------///////////
 
 ////////////////////////////상호////////////////////////////
+
+
+
 // 베스트셀러 책 캐러셀
-// let bookitem = document.querySelectorAll(".bookItem");
-// let bookslider = document.querySelector(".bestSeller-book-move")
+let bookitem = document.querySelectorAll(".bookItem");
+let bookslider = document.querySelector(".bestSeller-book-move");
+let bookwarp = document.querySelector(".bestSeller-book-warp");
+let bookfirstChild = bookslider.firstElementChild.cloneNode(true);
+let booklastChild = bookslider.lastChild.cloneNode(true);
 
-// let bookfirstChild = bookslider.firstElementChild.cloneNode(true);
-// let booklastChild = bookslider.lastChild.cloneNode(true);
-// bookslider.append(bookfirstChild)
 
-// let width = 0;
-// let i = 0
+let width = 0;
+let i = 0;
 
-// setInterval(function(){    
-//     if(bookitem.length >= i){
-//         bookslider.style.transform = "translate3d(-"+163*(i+1)+"px, 0px, 0px)"
-//         bookslider.style.transition = "0.2s"
-       
-//         i++
-//     }
-//     if(i === 3){
-//         setTimeout(function(){
+setInterval(function(){    
+    if(bookitem.length >= i){
+        bookslider.style.transform = "translate3d(-"+130*(i+1)+"px, 0px, 0px)";
+        bookslider.style.transition = "0.2s";
+        i++
+    }
+    if(i === 3){
+        setTimeout(function(){
+            bookslider.style.transition = "0s";
+            bookslider.style.transform = "translate3d(0px,0px,0px)";
+        },100)
+        i = 0;
+    }       
+},5000)
 
-//             bookslider.style.transition = "0s";
-//             bookslider.style.transform = "translate3d(0px,0px,0px)";
-//         },200)
-//         i = 0
-//     }
+
+
+//광고 이벤트
+window.addEventListener("scroll",function(){
+    this.setTimeout(function(){
+        if(window.pageYOffset > 80){
+            bookslider.style.opacity = "1";
+            bookwarp.style.transition = "1.5s";
+            bookwarp.style.transform = "translate(160px , 0px)"; 
+            bookwarp.style.boxShadow = "0px 2px 5px 2px rgba(0, 0, 0, 0.1)";
+         
+        }
+        else if(window.pageYOffset < 70){
+            bookslider.style.opacity = "0";
+            bookwarp.style.transition = "0s";
+            bookwarp.style.transform = "translate(0px , 0px)";
+     
+
+           
+        }
+    },500)
+    
+
+});
+
+//  window.addEventListener("scroll",function(){
+  
+
+//         if(window.pageYOffset > 80){
+//             bookwarp.style.transform = "translate(160px , 0px)";
         
-// },5000)
+//         }
+//         if(window.pageYOffset < 70){
+//             bookBtn.style.opacity = "1";
+//             bookBtn.style.transition = "0.5s";
+//         }
+        
+    
+// },2500)
+ 
 
+
+
+//광고 삭제 버튼
+let bookBtn = document.querySelector("#bestSeller-book-btn");
+
+    bookBtn.addEventListener("click",function(){
+        bookwarp.style.opacity = "0";
+        bookwarp.style.transition = "0s";
+        bookBtn.style.display = "none"
+        bookBtn.style.transition = "0s";
+    })
+
+
+//메뉴바 호버
 let hoverEle = document.querySelector(".hoverEle");
 let dropdown = document.querySelector(".nav-bar-dropdown");
 let dropdown_mo = document.querySelector(".nav-bar-modal");
 
+
 hoverEle.addEventListener("mouseover",function(){
-    dropdown.style.display = "flex"
-    dropdown_mo.style.display = "block"
+    dropdown.style.opacity = "1";
+    dropdown_mo.style.display = "block";
+    dropdown.style.transition = "0.3s";
 
 })
 dropdown.addEventListener("mouseleave",function(){
-    dropdown.style.display = "none"
-    dropdown_mo.style.display = "none"
+    dropdown.style.opacity = "0";
+    dropdown_mo.style.display = "none";
+    dropdown.style.transition = "0.3s";
 })
 
 
-
+//헤더 폰트,이미지 이벤트
 let fontEle_1 = document.querySelector("#font1");
 let fontEle_2 = document.querySelector("#font2");
 let fontEle_3 = document.querySelector("#font3");
 let fontEle_4 = document.querySelector("#font4");
 let fontEle_5 = document.querySelector("#font5");
 let fontEle_6 = document.querySelector("#font6");
+let headerimg_1 = document.querySelector(".ele-1");
+let headerimg_2 = document.querySelector(".ele-2");
+let headerimg_3 = document.querySelector(".ele-3");
+let text = document.querySelectorAll(".textani");
+let text1 = document.querySelectorAll(".ani-1");
+let text2 = document.querySelectorAll(".ani-2");
+let text3 = document.querySelectorAll(".ani-3");
+let imgEle = document.querySelector("#bestSeller-sell-img");
+
+console.log(text1)
 let fontcount = 0
 
 if(fontcount === 0){
     setTimeout(function(){
-        fontEle_1.style.transition = "1s"
-        fontEle_1.style.opacity = "1"
-        fontEle_1.style.transform = "translateY(-100px)"
-    },400)
+        headerimg_1.style.transition = "1s";
+        headerimg_1.style.opacity = "1";
+        imgEle.style.opacity = "1";
+        imgEle.style.transition = "1s";
+        imgEle.style.boxShadow = "0px 10px 20px 5px rgba(0, 0, 0, 0.5)";
+
+    },1000)
     setTimeout(function(){
-        fontEle_2.style.transition = "1s"
+        fontEle_1.style.transition = "1s";
+        fontEle_1.style.opacity = "1";
+        fontEle_1.style.transform = "translateY(-100px)";
+    },1300)
+    setTimeout(function(){
+        fontEle_2.style.transition = "1s";
         fontEle_2.style.opacity = "1";
-        fontEle_2.style.transform = "translateY(-100px)"
-    },600)
+        fontEle_2.style.transform = "translateY(-100px)";
+    },1600)
+    setTimeout(function(){
+        text1[0].className = "textani"
+        text2[0].className = "textani1"
+        text3[0].className = "textani2"
+    },2000)
     
 }
 
  setInterval(function(){
-
     if(fontcount === 0){
-        fontEle_1.style.opacity = "0"
-        fontEle_2.style.opacity = "0"
+        headerimg_1.style.opacity = "0";
+        imgEle.style.opacity = "0";
+        imgEle.style.transition = "1s"     
+        fontEle_1.style.opacity = "0";
+        fontEle_2.style.opacity = "0";
         fontEle_5.style.transform = "translateY(0px)";
         fontEle_6.style.transform = "translateY(0px)";
-  
+        text1[0].className = "ani-1"
+        text2[0].className = "ani-2"
+        text3[0].className = "ani-3"
     setTimeout(function(){
-        fontEle_3.style.transition = "1s"
-        fontEle_3.style.opacity = "1"
-        fontEle_3.style.transform = "translateY(-100px)"
-    },400)
+        headerimg_2.style.transition = "1s";
+        headerimg_2.style.opacity = "1";
+        imgEle.style.opacity = "1";
+        imgEle.style.transition = "1s"
+        imgEle.style.boxShadow = "0px 10px 20px 5px rgba(0, 0, 0, 0.5)";
+
+    },1200)
     setTimeout(function(){
-        fontEle_4.style.transition = "1s"
+        fontEle_3.style.transition = "1s";
+        fontEle_3.style.opacity = "1";
+        fontEle_3.style.transform = "translateY(-100px)";
+    },1500)
+    setTimeout(function(){
+        fontEle_4.style.transition = "1s";
         fontEle_4.style.opacity = "1";
-        fontEle_4.style.transform = "translateY(-100px)"
-    },600)
+        fontEle_4.style.transform = "translateY(-100px)";
+    },1800)
+    setTimeout(function(){
+        text1[1].className = "textani"
+        text2[1].className = "textani1"
+        text3[1].className = "textani2"
+    },2000)
+
     }
-     if(fontcount === 1){
-        fontEle_3.style.opacity = "0"
-        fontEle_4.style.opacity = "0"
+
+    
+    if(fontcount === 1){
+        headerimg_2.style.opacity = "0";
+        imgEle.style.transition = "1s"
+        fontEle_3.style.opacity = "0";
+        fontEle_4.style.opacity = "0";
+        imgEle.style.opacity = "0";
         fontEle_1.style.transform = "translateY(0px)";
         fontEle_2.style.transform = "translateY(0px)";
-        setTimeout(function(){
-            fontEle_5.style.transition = "1s"
-            fontEle_5.style.opacity = "1"
-            fontEle_5.style.transform = "translateY(-100px)"
-        },400)
-        setTimeout(function(){
-            fontEle_6.style.transition = "1s"
-            fontEle_6.style.opacity = "1";
-            fontEle_6.style.transform = "translateY(-100px)"
-        },600)
+        text1[1].className = "ani-1"
+        text2[1].className = "ani-2"
+        text3[1].className = "ani-3"
+    setTimeout(function(){
+        headerimg_3.style.transition = "1s";
+        headerimg_3.style.opacity = "1";
+        imgEle.style.opacity = "1";
+        imgEle.style.transition = "1s"
+        imgEle.style.boxShadow = "0px 10px 20px 5px rgba(0, 0, 0, 0.5)";
 
-     }
+    },1200)
+    setTimeout(function(){
+        fontEle_5.style.transition = "1s";
+        fontEle_5.style.opacity = "1";
+        fontEle_5.style.transform = "translateY(-100px)";
+    },1500)
+    setTimeout(function(){
+        fontEle_6.style.transition = "1s";
+        fontEle_6.style.opacity = "1";
+        fontEle_6.style.transform = "translateY(-100px)";
+    },1800)
+    setTimeout(function(){
+        text1[2].className = "textani"
+        text2[2].className = "textani1"
+        text3[2].className = "textani2"
+    },2000)
+
+    }
      
-     if(fontcount === 2){
-        fontEle_5.style.opacity = "0"
-        fontEle_6.style.opacity = "0"
+    if(fontcount === 2){
+        headerimg_3.style.opacity = "0";
+        imgEle.style.opacity = "0";
+        imgEle.style.transition = "1s"
+        fontEle_5.style.opacity = "0";
+        fontEle_6.style.opacity = "0";
         fontEle_3.style.transform = "translateY(0px)";
         fontEle_4.style.transform = "translateY(0px)";
+        text1[2].className = "ani-1"
+        text2[2].className = "ani-2"
+        text3[2].className = "ani-3"
+        setTimeout(function(){
+            headerimg_1.style.transition = "1s";
+            headerimg_1.style.opacity = "1";
+            imgEle.style.opacity = "1";
+            imgEle.style.transition = "1s"
+            imgEle.style.boxShadow = "0px 10px 20px 5px rgba(0, 0, 0, 0.5)";
 
+        },1200)
         setTimeout(function(){
-            fontEle_1.style.transition = "1s"
-            fontEle_1.style.opacity = "1"
-            fontEle_1.style.transform = "translateY(-100px)"
-        },400)
+            fontEle_1.style.transition = "1s";
+            fontEle_1.style.opacity = "1";
+            fontEle_1.style.transform = "translateY(-100px)";
+        },1500)
         setTimeout(function(){
-            fontEle_2.style.transition = "1s"
-            fontEle_2.style.opacity = "1"
-            fontEle_2.style.transform = "translateY(-100px)"
-        },600)
-       
-        
+            fontEle_2.style.transition = "1s";
+            fontEle_2.style.opacity = "1";
+            fontEle_2.style.transform = "translateY(-100px)";
+        },1800)
+        setTimeout(function(){
+            text1[0].className = "textani"
+            text2[0].className = "textani1"
+            text3[0].className = "textani2"
+        },2000)
+ 
      }
-    
 
-        if(fontcount === 2){
-            setTimeout(function(){
-                fontcount = 0
-            },200)
-        }
-        fontcount++
-
+    if(fontcount === 2){
+        setTimeout(function(){
+            fontcount = 0;
+        },200)
+    }
+    fontcount++
     },5000)
+
 
 //베스트 셀러 큰 이미지
 let sellItem = document.querySelectorAll(".slideItem");
 let sellEle = document.querySelectorAll(".sellEle");
-let sellwarp = document.querySelector(".bestSeller-sell-warp")
+let sellwarp = document.querySelector(".bestSeller-sell-warp");
 let child = sellwarp.firstElementChild.cloneNode(true);
+
 sellwarp.appendChild(child);
 
 let sellCount = 0
- setInterval(function(){
-
+ 
+    setInterval(function(){
      if(sellItem.length > sellCount){
          sellItem[sellCount].style.opacity = "0";
-
      }
      if(sellCount === 0){
-        sellItem[1].style.opacity = "1"
+        sellItem[1].style.opacity = "1";
      }   
      if(sellCount ===1){
-        sellItem[2].style.opacity = "1"
+        sellItem[2].style.opacity = "1";
      } 
      if(sellCount ===2){
-        sellItem[0].style.opacity = "1"
+        sellItem[0].style.opacity = "1";
      }
     setTimeout(function(){
         if(sellCount === 3){
@@ -517,32 +653,31 @@ let sellCount = 0
          }
         },101)
      
- 
      sellCount++
 
     },5000)
+
 
 //네비바 픽스드 이벤트
 let scrollNav_bar = document.querySelector(".nav-bar"); 
 
 window.addEventListener("scroll",function(){
     if(window.pageYOffset > 80){
-        scrollNav_bar.className = "nav-bar-fixed"
+        scrollNav_bar.className = "nav-bar-fixed";
     }
     else if(window.pageYOffset < 30){
-        scrollNav_bar.className = "nav-bar"
-    }
-
-    
+        scrollNav_bar.className = "nav-bar";
+    } 
 })
+
 
 // 네비바 스크롤 이동 이벤트
 let scrollele = document.querySelectorAll(".scroll-ele");
 let scrollpotint = document.querySelectorAll(".pointer");
-let first = scrollpotint[0].offsetTop
-let second = scrollpotint[1].offsetTop
-let third = scrollpotint[2].offsetTop
-let fourth = scrollpotint[3].offsetTop
+let first = scrollpotint[0].offsetTop;
+let second = scrollpotint[1].offsetTop;
+let third = scrollpotint[2].offsetTop;
+let fourth = scrollpotint[3].offsetTop;
 
 scrollele[0].addEventListener("click",function(){
     window.scrollTo({top:first,behavior:"smooth"});
@@ -556,6 +691,7 @@ scrollele[2].addEventListener("click",function(){
 scrollele[3].addEventListener("click",function(){
     window.scrollTo({top:fourth,behavior:"smooth"});
 })
+
 
 
 //////////////////상호//////////////////
