@@ -23,6 +23,7 @@ body{
     /* background-color: rgb(64, 135, 201); */
     height: 400vh;
     z-index: 1;
+    overflow: hidden;
 }
 
 .header{
@@ -269,7 +270,7 @@ body{
     width: 100%;
     border: none;
     margin: 5px 0;
-    padding: 10px 5px;    
+    padding: 6px 5px;    
     border-radius: 1px;
     background-color: transparent;
     border-bottom: 1px solid rgba(0, 0, 0, 0.39);
@@ -280,8 +281,9 @@ body{
 .loginFormContent .smallText{
     font-size: 0.8rem;
     opacity: 0.8;
+    font-weight: bold;
     color: #D2691E;
-    margin: 3px 5px;
+    margin: 0 2px;
 }
 
 .loginFormContent input::placeholder{
@@ -322,8 +324,8 @@ body{
 }
 
 #dayText{
-    width: 70px;
-    margin-left: 80px;
+    width: 160px;
+    transform: translate(70px,0);
 }
 
 .identityBox{
@@ -351,6 +353,7 @@ body{
 
 .addressBox{
     width: 100%;
+    margin: 15px 0;
 }
 
 .loginFormContent .addressBtn{
@@ -371,7 +374,7 @@ body{
     background-color: #FDE6BE;
     border-radius: 2px;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 
@@ -397,7 +400,7 @@ body{
 
 /* /////////////////////수근/////////////////////////// */
 .newBook {
-    width: 1600px;
+    width: 1500px;
     height: 500px;
     margin-top: 50px;
     position: relative;
@@ -421,7 +424,7 @@ li {
 }
 .newBook_slide_wrapper {
     position: relative;
-    width: 1600px;
+    width: 1320px;
     overflow: hidden;
     height: 400px;
     margin: 50px auto;
@@ -441,7 +444,7 @@ li {
     float: left;
 }
 .newBook_slides li:not(:last-child) {
-    margin-right: 50px;
+    margin-right: 30px;
 }
 .newBook_slides li .img_box {
     width: 200px;
@@ -787,6 +790,10 @@ li {
 
 .loadingImg.fadeOut{
     display: none;
+}
+.loadingContainer{
+    height: 100vh;
+    width: 100vw;
 }
 
 /* /////////////////박성진 - loading END /////////////////////////////////// */

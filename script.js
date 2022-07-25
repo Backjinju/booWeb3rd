@@ -23,16 +23,19 @@ let signUpXmark = document.querySelector('#signUpXmark')
 let legAddress = document.querySelector('.legAddress')
 let legDetailAddress = document.querySelector('.legDetailAddress')
 let addressBtn = document.querySelector('.addressBtn')
+let loadingContainer = document.querySelector('.container')
 
 window.onload = () => {
+    loadingContainer.classList.add('loadingContainer')
     loadingPage();
 }
 
 function loadingFadeout(){
     loading.classList.add('fadeOut')
+    loadingContainer.classList.remove('loadingContainer')
 }
 function loadingPage(){
-    setTimeout(loadingFadeout,50) // 테스트할 때 로딩화면 기다리기 싫어서 0.05초로 만들어 둠
+    setTimeout(loadingFadeout,4500) // 테스트할 때 로딩화면 기다리기 싫어서 0.05초로 만들어 둠
 }
 
 loginIcon.addEventListener('click',function(){
@@ -724,8 +727,8 @@ let SGslides = document.querySelector('.newBook_slides'); //ul
 let SGslide = document.querySelectorAll('.newBook_slides li'); //li를 다 넣기 위해 All를 씀
 let SGcurrentIdx = 0; //클릭할때마다 이 값을 차감해서 슬라이드를 움직이기 위함
 let SGslideCount = SGslide.length; //li의 길이  
-let SGslideWidth = 260; //
-let SGslideMargin = 56;
+let SGslideWidth = 300; //
+let SGslideMargin = 30;
 // let SGprevBtn = document.querySelector('.prev');
 // let SGnextBtn = document.querySelector('.next');
 // let SGimg = document.querySelectorAll('.newBook_slides li img')
@@ -740,26 +743,6 @@ function SGmakeClone(){
         SGcloneSlide.classList.add('clone') //clone 클래스명으로 클론을 추가
         SGslides.appendChild(SGcloneSlide); // ul의 뒤에 클론을 붙혀줌
     }
-}
-let slides = document.querySelector('.newBook_slides');
-let slide = document.querySelectorAll('.newBook_slides li');
-let currentIdx = 0; //클릭할때마다 이 값을 차감해서 슬라이드를 움직이기 위함
-let slideCount = slide.length;
-let slideWidth = 270;
-let slideMargin = 30;
-let prevBtn = document.querySelector('.prev');
-let nextBtn = document.querySelector('.next');
-
-makeClone();
-
-function makeClone(){
-    for(let i =0; i<slideCount; i++) {
-        // a.cloneNode(), a.cloneNode(true) a의 자식 요소까지
-        var cloneSlide = slide[i].cloneNode(true);
-        cloneSlide.classList.add('clone')
-        // a.appendChild(b)
-        slides.appendChild(cloneSlide);
-    }
     for(let i = SGslideCount-1; i>=0; i--) { 
         var SGcloneSlide = SGslide[i].cloneNode(true);
         SGcloneSlide.classList.add('clone')
@@ -772,6 +755,7 @@ function makeClone(){
         SGslides.classList.add('animated');
     },1100);
 }
+
 
 function SGupdateWidth(){
     let SGcurrentSlide = document.querySelectorAll('.newBook_slides li')
