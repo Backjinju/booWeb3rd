@@ -2,7 +2,7 @@
 let ISslides = document.querySelector('.issue_slides');
 let ISslide = document.querySelectorAll('.issue_slides li');
 let IScurrentIdx =0;
-let ISslideWidth = 1200;
+let ISslideWidth = 1221;
 let ISslideMargin = 10;
 let ISslideCount = ISslide.length;
 let ISprevBtn = document.querySelector('.issue_prev');
@@ -74,3 +74,57 @@ ISslides.addEventListener('mouseleave',function(){
     ISautoSlide();
 })
 
+var THslides = document.querySelector('.theme_slides'),
+    THslide = document.querySelectorAll('.theme_slides li'),
+    THcurrentIdx =0;
+    THslideWidth = 600,
+    THslideMargin = 20,
+    THslideCount = THslide.length,
+    THprevBtn = document.querySelector('.theme_prev'),
+    THnextBtn = document.querySelector('.theme_next');
+
+    THmakeClone();
+
+    function THmakeClone() {
+        for(var i=0; i < THslideCount; i++) {
+            var THcloneSlide = THslide[i].cloneNode(true);
+            THcloneSlide.classList.add('clone');
+            THslides.appendChild(THcloneSlide);
+        }
+        for(var i= THslideCount-1; i >= 0; i--) {
+            var THcloneSlide = THslide[i].cloneNode(true);
+            THcloneSlide.classList.add('clone');
+            THslides.prepend(THcloneSlide);
+        }
+        THupdateWidth();
+        THsetInitialPos();
+    }
+    function THupdateWidth() {
+        var THcurrentSlides = document.querySelectorAll('.theme_slides li');
+        var THnewSlideCount = THcurrentSlides.length;
+        
+        var THnewWidth = (THslideWidth + THslideMargin) * THnewSlideCount - THslideMargin + 'px';
+        THslides.style.width = THnewWidth; 
+    }
+    function THsetInitialPos() {
+        var THinitialTranslateValue = -(THslideWidth + THslideMargin) * THslideCount;
+        THslides.style.transform = 'translateX(' +THinitialTranslateValue+ 'px)'
+    }
+
+    THnextBtn.addEventListener('click', function(){
+        THmoveSlide(THcurrentIdx +1);
+    })
+
+    THprevBtn.addEventListener('click', function(){
+        THmoveSlide(THcurrentIdx -1);
+    })
+
+    function THmoveSlide(num) {
+        THslides.style.left = -num * (THslideWidth + THslideMargin) + 'px';
+        THcurrentIdx = num;
+        if(THcurrentIdx == THslideCount || THcurrentIdx == -THslideCount) {
+            THslides.style.left = '0px';
+            THcurrentIdx = 0;
+        }
+
+    }
