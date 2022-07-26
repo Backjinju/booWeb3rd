@@ -1267,17 +1267,19 @@ a{
 }
 .bestSeller-sell-warp{
     display: flex;
+    justify-content: center;
     width: 100%;
     height: 335px;
     position: relative;
     overflow: hidden;
+    
 }
+
 #bestSeller-sell-img{
     width: 200px;
     height: 300px;
     z-index: 100;
     position: relative;
-    left: 950px;
     top: 20px;
     border-top-left-radius: 10px;
     overflow: hidden;
@@ -1288,21 +1290,35 @@ a{
     width: 200px;
     height: 300px;
     position: absolute;
+    z-index: 30;
     opacity: 0;
 }
 .bestSeller-sell-ele > img{
     width: 200px;
 
 }
+#font-warp,.bestSeller-sell-warp{
+    margin: 0 80px;
+}
 .slideItem{
     width: 100%;
     position: absolute;
     transition: all 1.5s;
 }
-.bestSeller-text{
-    position: absolute;
+#font-warp{
+    z-index: 100;
+}
+.text1{
     top: 120px;
-    left: 250px;
+    position: relative;
+}
+.text2{
+    position: relative;
+    bottom: 110px;
+}
+.text3{
+    position: relative;
+    bottom: 330px;
 }
 .bestSeller-text > h1{
     color: white;
@@ -1346,65 +1362,65 @@ a{
 .bestSeller-book{
     /* 베스트셀러 작은 이미지 */
     /* border: 1px solid black; */
-    width: 150px;
-    height: 310px;
-    position: fixed;   
-    z-index: 90;
-    transform: translate(-780px, 250px);
+    width: 200px;
+    height: 500px;
+    position: fixed;
+    left: -10px;
+    top: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FDE6BE;
+    z-index: 40;
+    box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.2);
+
+}
+#bestSeller-book-font,.bestSeller-book-warp{
+    margin: 30px 0;
+}
+#bestSeller-book-font{
+    text-align: center;
 }
 .bestSeller-book-warp{
     width: 130px;
     height: 195px;
     overflow: hidden;
-    position: absolute;
 }
 .bestSeller-book-move{
     width: 130px;
     height: 195px;
     display: flex;
-    position: absolute;
 
 }
 .bestSeller-book > div > div > div > img{
     width: 130px;
 }
-.bestSeller-book-warp > button{
-    position: absolute;
+button{
     border-radius: 50%;
-    top: 8px;
-    right: 8px;
     border: none;
-    width: 20px;
-    height: 20px;
+    width: 100px;
+    height: 100px;
+    top: 890px;
+    left: 140px;
+    position: fixed;
+    z-index: 30;
+
 }
-/* 
-.bestSeller-book-modal{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    background-color: rgba(153,153,153, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    display: none;
-    z-index: 120;
-
-} */
-
-.bestSeller-book-modal > p{
-    font-size: 1.5rem;
+button > i{
+    position: relative;
+    left: 20px;
+    font-size: 2.4rem;
+    font-weight: 800;
 }
 
-.bestSeller-book > div:hover ~ .bestSeller-book-modal{
-    display: flex;
+#bestSeller-book-font > p{
+    font-size: 1.4rem;
+
 }
-
-
-.bestSeller-book > div:nth-child(2) > img
-,.bestSeller-book > div:nth-child(3) > img{
-    display: none;
+#bestSeller-book-font > p:last-child{
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
 }
 #font1 > span{
     position: relative;

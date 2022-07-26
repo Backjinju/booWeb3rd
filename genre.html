@@ -16,6 +16,101 @@
 	</head>
 
 <body>
+	<!-- login modal start -->
+    <!-- modal container -->
+    <div class="loginModal" style="display: none;">
+        <!-- login modal -->
+        <div class="lgModal">
+            <!-- x mark -->
+            <i class="fa-solid fa-xmark"></i>
+            <div class="modalTitle">Sign In</div>
+            <!-- id,password input box -->
+            <div class="inputBox">
+                <div class="userNameBox">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" class="userName" placeholder="User Name">
+                </div>
+                <div class="passwdBox">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" class="passwd" placeholder="Password">
+                </div>
+                <button class="modalBtn">LOGIN</button>
+            </div>
+            <!-- sign up button -->
+            <div class="modalCheckBox">
+                <p id="signUp">SIGN UP</p>
+            </div>
+        </div>
+        <!-- login modal ==> sign up modal loading img -->
+        <img src="loadingBook.gif" class="loadingBook" alt="">
+        <!-- login Form -->
+        <div class="loginForm">
+            <!-- input content -->
+            <div class="loginFormContent">
+
+                <p class="loginFormTitle">Sign Up<i class="fa-solid fa-xmark" id="signUpXmark"></i></p>
+                <input type="text" class="legId" placeholder="ID">
+                <p class="smallText">영문과 숫자만으로 작성해 주세요.(6~20자)</p>
+                <input type="text" class="legPasswd" placeholder="비밀번호">
+                <p class="smallText">대/소문자, 숫자, 특수문자의 조합으로 작성해 주세요.(8~16자)</p>
+                <input type="password" class="legPasswdCheck" placeholder="비밀번호 재확인">
+                <p class="smallText"></p>
+                <input type="text" class="legName" placeholder="이름">
+                <p class="smallText">이름은 한글로 입력해 주세요.</p>
+                <div class="birthBox">
+                    <input type="text" name="" class="legYear" placeholder="연도(4자)">
+                    <select name="" id="" class="legMonth">
+                        <option value="month" disabled selected>월</option>
+                        <option value="1">1월</option>
+                        <option value="2">2월</option>
+                        <option value="3">3월</option>
+                        <option value="4">4월</option>
+                        <option value="5">5월</option>
+                        <option value="6">6월</option>
+                        <option value="7">7월</option>
+                        <option value="8">8월</option>
+                        <option value="9">9월</option>
+                        <option value="10">10월</option>
+                        <option value="11">11월</option>
+                        <option value="12">12월</option>
+                    </select>
+                    <input type="text" class="legDay" placeholder="일">
+                </div>
+                <div class="birthTextBox">
+                    <p class="smallText" id="yearText">&nbsp;</p>
+                    <p class="smallText" id="dayText">&nbsp;</p>
+                </div>
+                <dev class="identityBox">
+                    <input type="text" class="legIdentity" placeholder="주민등록번호">
+                    <p class="smallText">하이픈(-)을 포함해서 입력해 주세요.</p>
+                    <i class="fa-solid fa-mars"></i>
+                    <i class="fa-solid fa-venus"></i>
+                </dev>
+                <div class="addressBox">
+                    <input type="text" class="legAddress" placeholder="주소">
+                    <button class="addressBtn">주소 검색</button>
+                    <input type="text" class="legDetailAddress" placeholder="상세 주소">
+                </div>
+                <input type="text" class="legPhone" placeholder="전화 번호">
+                <p class="smallText">하이픈(-)을 포함하여 입력해 주세요.</p>
+                <button class="legBtn">가입하기</button>
+                <!--
+                        아이디 
+                        비밀번호
+                        비밀번호 확인
+                        이름
+                        생년월일 / 성별
+                        주소
+                        핸드폰 번호
+                        [가입] - 버튼
+                     -->
+            </div>
+        </div>
+
+    </div>
+
+
+
 	<div class="container">
         <!-- header section start -->
         <div class="header pointer">
@@ -36,112 +131,122 @@
             </div>
             
             <!-- logo & login section end -->
-
-            <!-- header navBar start -->
-            <div class="nav">
-                <div class="nav-bar">
-
-                    <!--메뉴바-->
-                    <span class="scroll-ele">HOME</span>
-
-                    <span class="scroll-ele">신간도서</span>
-
-                    <span class="scroll-ele hoverEle">장르별도서</span>
-
-                    <span class="scroll-ele">REVIEW</span>
-                    <div class="nav-bar-dropdown">
-                        <!--메뉴바 드롭다운-->
-                        <div>
-                            <a href="">
-                                <img src="header3.jpeg" alt="">
-
-                                <span>국내도서</span>
-                            </a>
-                            <a href="">
-                                <img src="dropdown1.jpeg" alt="">
-
-                                <span>해외도서</span>
-                            </a>
-                            <a href="">
-                                <img src="header9.jpeg" alt="">
-
-                                <span>전자책</span>
-                            </a>
-                            <a href="">
-                                <img src="header5.jpeg" alt="">
-
-                                <span>웹소설</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="nav-bar-modal"></div>
-                    <!--드롭다운 하단 가리개-->
-                </div>
-
-            </div>
-        
+                    <!-- header navBar start -->
+					<div class="nav pointer">
+						<div class="nav-bar">
+		
+							<!--메뉴바-->
+							<span class="scroll-ele">HOME</span>
+		
+							<span class="scroll-ele">신간도서</span>
+		
+							<span class="scroll-ele hoverEle">장르별도서</span>
+		
+							<span class="scroll-ele">REVIEW</span>
+							<div class="nav-bar-dropdown">
+								<!--메뉴바 드롭다운-->
+								<div>
+									<a href="genre.html">
+										<img src="header3.jpeg" alt="" id="test1">
+		
+										<span>국내도서</span>
+									</a>
+									<a href="genre.html">
+										<img src="dropdown1.jpeg" alt="">
+		
+										<span>해외도서</span>
+									</a>
+									<a href="genre.html">
+										<img src="header9.jpeg" alt="">
+		
+										<span>전자책</span>
+									</a>
+									<a href="genre.html">
+										<img src="header5.jpeg" alt="">
+		
+										<span>웹소설</span>
+									</a>
+								</div>
+							</div>
+		
+							<div class="nav-bar-modal"></div>
+							<!--드롭다운 하단 가리개-->
+						</div>
+		
+					</div>
+				
+					<!-- header navBar end -->
+		
             <!-- header navBar end -->
 
             <!-- header bestSeller start -->
-            <div class="bestSeller">
+             <!-- header bestSeller start -->
+			 <div class="bestSeller">
                 <!-- 베스트셀러 캐러셀 -->
                 <div class="bestSeller-sell-warp">
                     <!-- 오버플로우 히든 디브 -->
-                    <div class="slideItem">
-                        <img src="headerColor1.png" alt="" class="sellEle">
-                    </div>
-
-                    <div class="slideItem">
-                        <img src="headerColor2.jpeg" alt="" class="sellEle">
-                    </div>
-
-                    <div class="slideItem">
-                        <img src="headerColor3.png" alt="" class="sellEle">
-                    </div>
-
-                    <div class="slideItem">
-                        <img src="headerColor1.png" alt="" class="sellEle">
-                    </div>
-
-                    <div id="font-warp">
-                        <div class="bestSeller-text text1">
-                            <h1 id="font1">이달의
-                                <span class="ani-1">베</span>
-
-                                <span class="ani-2">스</span>
-
-                                <span class="ani-3">트</span>
-                                셀러
-                            </h1>
-                            <h6 id="font2">추천추천추천</h6>
+                   
+                        <div class="slideItem">
+                            <img src="headerColor1.png" alt="" class="sellEle">
                         </div>
 
-                        <div class="bestSeller-text text2">
-                            <h1 id="font3">이달의
-                                <span class="ani-1">베</span>
-
-                                <span class="ani-2">스</span>
-
-                                <span class="ani-3">트</span>
-                                셀러2
-                            </h1>
-                            <h6 id="font4">추천추천추천2</h6>
+                        <div class="slideItem">
+                            <img src="headerColor2.jpeg" alt="" class="sellEle">
                         </div>
 
-                        <div class="bestSeller-text text3">
-                            <h1 id="font5">이달의
-
-                                <span class="ani-1">베</span>
-
-                                <span class="ani-2">스</span>
-
-                                <span class="ani-3">트</span>
-                                셀러3
-                            </h1>
-                            <h6 id="font6">추천추천추천4</h6>
+                        <div class="slideItem">
+                            <img src="headerColor3.png" alt="" class="sellEle">
                         </div>
-                    </div>
+
+
+                        <div class="slideItem">
+                            <img src="headerColor1.png" alt="" class="sellEle">
+                        </div>
+                
+                            
+                        <div id="font-warp">
+                            <div class="bestSeller-text text1">
+                                <h1 id="font1">이달의 
+                                    <span class="ani-1">베</span>
+                                    
+                                    <span class="ani-2">스</span>
+                                    
+                                    <span class="ani-3">트</span>
+                                    셀러</h1>
+                                    <pre id="font2">불편한데 자꾸 가고 싶은 편의점이 있다!
+정체불명의 알바로부터 시작된 웃음과 감동의 나비효과
+『망원동 브라더스』 김호연의 ‘동네 이야기’ 시즌 2!!!</pre>
+                            </div>
+
+                            <div class="bestSeller-text text2">
+                                <h1 id="font3">이달의
+                                    <span class="ani-1">베</span>
+                                    
+                                    <span class="ani-2">스</span>
+                                    
+                                    <span class="ani-3">트</span>
+                                     셀러2</h1>
+                                     <pre id="font4">일본 독자들 사이에서 크게 입소문이 난 화제작! 
+단숨에 이야기의 세계로 빠져들게 하는 다케시의 소설로,
+단연코 손꼽히는 판타지 휴머니즘 소설!!!</pre>
+                            </div>
+
+                            <div class="bestSeller-text text3">
+                                <h1 id="font5">이달의 
+                                    
+                                    <span class="ani-1">베</span>
+                                    
+                                    <span class="ani-2">스</span>
+                                    
+                                    <span class="ani-3">트</span>
+                                    셀러3</h1>
+                                    <pre id="font6">김영하 작가가 『살인자의 기억법』 이후, 9년만의 소설 
+별안간 삶이 송두리째 뒤흔들린 한 소년의 여정을 좇는다.
+만남과 이별의 변증법이 작품 전체를 관통한다!!!</pre>
+                            </div>
+                        </div>
+
+     
 
                     <div id="bestSeller-sell-img">
                         <div class="bestSeller-sell-ele ele-1">
@@ -159,6 +264,12 @@
                 </div>
 
                 <div class="bestSeller-book">
+                    <div id="bestSeller-book-font">
+                        <p>2022년</p>
+                        <p>3분기</p>
+                        <p>베스트 셀러</p>
+                        <p>3종!</p>
+                    </div>
                     <!-- 베스트셀러 책 이미지 -->
                     <div class="bestSeller-book-warp">
                         <!-- 베스트셀러 캐러셀 -->
@@ -176,15 +287,15 @@
                             </div>
 
                         </div>
-                        <button id="bestSeller-book-btn"><i class="fa-solid fa-x"></i></button>
+                        
                     </div>
                 </div>
+                <button id="bestSeller-book-btn"><i class="fa-solid fa-angle-right" id="icon"></i></i></button>
 
                 <!-- header bestSeller end -->
             </div>
-            <!-- header section end -->
         </div>
-		
+        <!-- header section end -->
 
 
 		<!-- 백진주 시작 -->
@@ -192,7 +303,7 @@
 		<!-- 도서목록  국내도서 타이틀 -->
 		
 		
-		<div class="genre_main_section">
+		<div class="genre_main_section pointer">
 			<!-- <div class="genre_tit_box">
 				<h3>국내도서</h3>
 				<p>다양한 국내도서 정보를 확인하세요</p>
@@ -204,7 +315,7 @@
 			<div class="tabmenu">
 				<ul class="tabmenu_list">
 					<li id="tab1" class="btnCon"><input type="radio" checked name="tabmenu" id="tabmenu1" checked="checked">
-						<label for="tabmenu1">국내도서</label>
+						<label for="tabmenu1" id="testlabel">국내도서</label>
 						<div class="tabCon">
 							<div class="genre_mid_slide">
 								<div class="genre_mid_slide_box">
@@ -1238,7 +1349,7 @@
 		 
 			<!-- 김수근 끝-->
 		<!-- footer start -->
-		<div class="footer">
+		<div class="footer pointer">
 			<div class="icons">
 				<div class="iconFrame">
 					<i class="fa-brands fa-facebook-f ficon"></i>
