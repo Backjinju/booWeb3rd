@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gowun Dodum', sans-serif;
+    user-select: none;
 }
 
 li{
@@ -27,6 +28,7 @@ body{
     height: 400vh;
     z-index: 1;
     overflow: hidden;
+    position: relative;
 }
 
 .header{
@@ -48,44 +50,45 @@ body{
     justify-content: center;
 }
 
-.headerTop .loginIcon{
+.container .loginIcon{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: right;
-    background-color: #ffd5a6e3;
+    background-color: #e9d4bbe3;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     position: fixed;
     right: 10px;
-    bottom: 15px;
-    z-index: 12;
+    top: 20px;
+    z-index: 10000;
     overflow: hidden;
-    transition: 0.3s;
+    transition: 0.1s;
 }
 
 .iconsBox{
     width: 150px;
-    transform: translate(43px,0);
+    transform: translate(57px,0);
     display: flex;
     transition: 0.3s;
 }
 
-.loginIcon .fa-user,.fa-cart-shopping,.fa-heart{
+.loginIcon .fa-user,.fa-cart-shopping,.fa-heart,.fa-circle-arrow-left{
     font-size: 1.9rem;
     padding: 5px;
     cursor: pointer;
 }
 
-.loginIcon:hover .iconsBox{
+/* .loginIcon:hover .iconsBox{
     transform: translate(20px,0);
 }
 
 .loginIcon:hover{
     width: 150px;
     border-radius: 30px;
-}
+} */
+
 
 .loginModal{
     position: fixed;
@@ -504,17 +507,17 @@ li {
 /* issue book/////////////////////////////////////////////////////////////////// */
 
 .issue_container {
-    width: 1201px;
-    height: 350px;
-    margin-top: 100px;
+    width: 1220px;
+    height: 250px;
     position: relative;
+    margin: 100px auto;
 }
 .issue_container:hover .issue_controls span {
     opacity: 0.5;
     transition: linear 0.35s;
 }
 .issue_slide_title {
-    width: 1205px;
+    width: 1221px;
     margin: auto;
 }
 .issue_slide_title h3 {
@@ -522,7 +525,7 @@ li {
     margin-bottom: 10px;
 }
 .issue_slide_wrapper {
-    width: 1205px;
+    width: 1221px;
     height: 254px;
     margin: auto;
     overflow: hidden;
@@ -534,7 +537,7 @@ li {
 }
 
 .issue_slides li {
-    width: 1200px;
+    width: 1221px;
     height: 250px;
     background-color: #eee;
     float: left;
@@ -597,7 +600,92 @@ li {
 .issue_controls span:first-child:hover {
     opacity: 1;
 }
+/* 테마 */
+.theme_container {
+    width: 1221px;
+    height: 350px;
+    position: relative;
+    margin: auto;
+}
 
+.theme_slide_title {
+    width: 1225px;
+    margin: auto;
+}
+.theme_slide_title h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.theme_slide_wrapper {
+    width: 1220px;
+    height: 304px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+.theme_slides {
+    position: absolute;
+    left: 0; top: 0;
+}
+
+.theme_slides li {
+    width: 600px;
+    height: 300px;
+    background-color: #eee;
+    float: left;
+}
+.theme_slides li:hover {
+    border: 1px solid #aaa;
+}
+.theme_slides li img:hover {
+    box-shadow:0 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+
+.theme_slides li:not(:last-child){
+    margin-right: 20px;
+}
+.theme_slides li p {
+    text-align: center;
+    padding-top: 20px;
+    font-weight: 600;
+    color: black;
+}
+.theme_con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme_con img {
+    width: 130px;
+    margin: 30px 20px;
+    box-shadow: 0 3px 6px #dadce0;
+}
+
+
+.theme_controls span:first-child {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding: 0px 5px;
+    font-size: 35px;
+    color: white;
+}
+.theme_controls span:last-child {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    padding: 0px 5px;
+    font-size: 35px;
+    color: white;
+}
+.theme_controls span:last-child:hover {
+    background-color: #ccc;
+}
+.theme_controls span:first-child:hover {
+    background-color: #ccc;
+}
 
 /* ///////////////////////수근 끝/////////////////////////////////////// */
 
@@ -1102,6 +1190,7 @@ li {
   width: 100%;
   height: 850px; 
   background-color: #ffefd6;
+  overflow: hidden;
   
 }
 /* .btnCon label:hover{
