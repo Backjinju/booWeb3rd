@@ -854,131 +854,185 @@ const pagesY = [
     {
       id: 1,
       name: "cmklove1***",
-      img: "reviewimage/img11.jpg"
+      img: "http://127.0.0.1:5504/reviewimage/img11.jpg"
     },
     {
         id: 2,
         name: "whend5***",
-        img: "reviewimage/img12.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img12.jpg"
     },
     {
         id: 3,
         name: "kimok0***",
-        img: "reviewimage/img13.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img13.jpg"
     },
     {
         id: 4,
         name: "ddsgrg***",
-        img: "reviewimage/img14.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img14.jpg"
     },
     {
         id: 5,
         name: "sfe5454***",
-        img: "reviewimage/img15.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img15.jpg"
     },
     {
         id: 6,
         name: "jyyo34***",
-        img: "reviewimage/img16.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img16.jpg"
     },
     {
         id: 7,
         name: "hryy68***",
-        img: "reviewimage/img17.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img17.jpg"
     },
     {
         id: 8,
         name: "ru46i***",
-        img: "reviewimage/img18.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img18.jpg"
     },
     {
         id: 9,
         name: "whend5***",
-        img: "reviewimage/img19.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img19.jpg"
     },
     {
         id: 10,
         name: "ktyty45***",
-        img: "reviewimage/img20.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img20.jpg"
     },
     {
         id: 11,
         name: "heru7***",
-        img: "reviewimage/img21.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img21.jpg"
     },
     {
         id: 12,
         name: "dfheh***",
-        img: "reviewimage/img22.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img22.jpg"
     },
     {
         id: 13,
         name: "kkuyt***",
-        img: "reviewimage/img23.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img23.jpg"
     },
     {
         id: 14,
         name: "dgrheh899***",
-        img: "reviewimage/img24.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img24.jpg"
     },
     {
         id: 15,
         name: "ytktdg77***",
-        img: "reviewimage/img25.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img25.jpg"
     },
     {
         id: 16,
         name: "qwryty76***",
-        img: "reviewimage/img26.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img26.jpg"
     },
     {
         id: 17,
         name: "tyrju88***",
-        img: "reviewimage/img27.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img27.jpg"
     },
     {
         id: 18,
         name: "greggb65***",
-        img: "reviewimage/img28.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img28.jpg"
     },
     {
         id: 19,
         name: "dhtrhbg76***",
-        img: "reviewimage/img29.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img29.jpg"
     },
     {
         id: 20,
         name: "yegbg454***",
-        img: "reviewimage/img30.jpg"
+        img: "http://127.0.0.1:5504/reviewimage/img30.jpg"
     },
-
   ];
 
+  const firstpageY = [
+    {
+        name: "ss**3ssy",
+        img: "http://127.0.0.1:5504/reviewimage/img1.jpg"
+    },
+    {
+        name: "el**antfly",
+        img: "http://127.0.0.1:5504/reviewimage/img2.jpg"
+    },
+    {
+        name: "hy**9800",
+        img: "http://127.0.0.1:5504/reviewimage/img3.jpg"
+    },
+    {
+        name: "ju**juno1",
+        img: "http://127.0.0.1:5504/reviewimage/img4.jpg"
+    },
+    {
+        name: "al**holic0",
+        img: "http://127.0.0.1:5504/reviewimage/img5.jpg"
+    },
+    {
+        name: "ja**man456",
+        img: "http://127.0.0.1:5504/reviewimage/img6.jpg"
+    },
+    {
+        name: "ka**ng05",
+        img: "http://127.0.0.1:5504/reviewimage/img7.jpg"
+    },
+    {
+        name: "ti**iii",
+        img: "http://127.0.0.1:5504/reviewimage/img8.jpg"
+    },
+    {
+        name: "a**ae205",
+        img: "http://127.0.0.1:5504/reviewimage/img9.jpg"
+    },
+    {
+        name: "a**ae205",
+        img: "http://127.0.0.1:5504/reviewimage/img10.jpg"
+    }
+  ]
+
   let pagebtn = document.querySelectorAll('.listnumber span');
+  let boxsimg = document.querySelectorAll('.topimg img');
   let nameY = document.querySelectorAll('.name');
 
-    for(let i=0; i < pagebtn.length; i++)
+    for(let i=0; i < pagebtn.length; i++) //3
     {
         pagebtn[i].addEventListener('click', function(e){
-            // alert("w");
-            //if-else > 1,2,3번 눌렀을 때
-            //이미지, 아이디 바꾸기
 
-            console.dir(e.target);
+            if(i == 0)
+            {
+                for(let j=0; j < boxsimg.length; j++) //10
+                {
+                    // console.log(boxsimg[j].src);
+                    boxsimg[j].src = firstpageY[j].img;
+                    nameY[j].innerHTML = firstpageY[j].name;  
+                }
+            }
+            else if(i == 1)
+            {
+                //한번에 나타나도록 하려면...
+                for(let j=0; j < boxsimg.length; j++) //10
+                {
+                    // console.log(boxsimg[j].src);
+                    boxsimg[j].src = pagesY[j].img;
+                    nameY[j].innerHTML = pagesY[j].name;  
+                }
+            }
+            else if(i == 2)
+            {
+                for(let j=0; j < boxsimg.length; j++) //10
+                {
+                    // console.log(boxsimg[j].src);
+                    boxsimg[j].src = pagesY[j+10].img;
+                    nameY[j].innerHTML = pagesY[j+10].name;  
+                }
+            }
         });
     }
-
-
-// 모달창도 상자를 클릭하면 ~
-
-
-
-
-
-
-
-
-
-
 
 //////////////////////양희끝////////////////////////

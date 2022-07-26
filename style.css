@@ -603,17 +603,18 @@ li {
 
 /* //////////////////////////////////양희 시작///////////////////////////////////// */
 .reviewBook{
-    padding: 10px 0;
-    background-color: white;
-    width: 1500px;
+    margin-top: 100px;
+    /* background-color: #FDF5DC; */
+    width: 1600px;
     height: 800px;
+    /* border: 1px solid red; */
 }
 .reviewtitle{
     padding: 10px;
-    border-bottom: 3px solid gainsboro;
-    color: black;
+    border-bottom: 1px solid black;
+    color: gray;
     transition: .5s;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .reviews{
@@ -650,8 +651,10 @@ li {
 .reviewbox:hover{
     box-shadow: 3px 3px 5px gray;
 }
+
 .reviewbox .topimg{
     height: 85%;
+    position: relative;
 }
 /* 수정하기 */
 .topimg img{
@@ -661,6 +664,20 @@ li {
     transition: .3s;
     cursor: pointer;
     overflow: hidden;
+}
+.reviewshow{
+    /* border: 1px solid red; */
+    /* display: block; */
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    bottom: 40%;
+    left: 35%;
+    opacity: 0;
+    transition: .5s;
+}
+.topimg:hover .reviewshow{
+    opacity: 1;
 }
 
 .bottomtext{
@@ -706,6 +723,14 @@ li {
 .listnumber{
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+.listnumber button{
+    background-color: gainsboro;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 .listnumber span{
     padding: 20px 20px;
@@ -714,6 +739,7 @@ li {
 }
 .listnumber span:hover{
     color: #1E90FF;
+    text-decoration: underline;
 }
 /* 모달창 */
 .modalbg{
