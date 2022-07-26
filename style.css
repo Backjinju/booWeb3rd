@@ -878,6 +878,7 @@ li {
 .genreBook{    
     width: 1600px;
     height: 800px; 
+    
 }
 /* 타이틀 변경 */
 .genreBook_pointer_title {
@@ -917,7 +918,10 @@ li {
 } */
 .gb_cont{
     display: flex;
-    justify-content: center; 
+    justify-content: center;
+    background-color: #ffebd4e3; 
+    
+    
     
 }
 .gb_cont ul{
@@ -994,7 +998,7 @@ li {
     text-shadow: 0 0 5px rgb(70, 70, 70);
     overflow:hidden;
     white-space:nowrap;
-    animation: typing 5s steps(27) forwards, 
+    animation: typing 3s steps(27) forwards, 
                 blink .4s step-end infinite;
     animation-iteration-count: infinite;
 }
@@ -1035,10 +1039,11 @@ li {
 /* 탭메뉴 */
 .tabmenu{ 
   width:80%;
-  height: 1200px; 
-  background-color: rgb(242, 251, 255);
-  margin: auto;
+  height: 930px; 
+  background-color: #fff0d6;
+  margin: 20px auto;
   position:relative; 
+ 
 }
 .tabmenu_list{
     list-style:none;
@@ -1046,20 +1051,18 @@ li {
 .tabmenu ul li{
   display:  inline-block;
   width:25%;
-  height: 50px; 
+  height: 70px; 
   float:left;  
   text-align:center; 
-  background: linear-gradient(to left, #feffff,rgb(216, 215, 255));
-  color:rgb(50, 156, 255);
-  
-  /* line-height:40px; */
-  /* border: 1px solid black; */
-}
+  background-color: rgb(253, 244, 244);
+  color:#333;
+  font-size: 1.2rem;
+ }
 .tabmenu label{
   display:block;
   width:100%; 
   height:50px;
-  line-height:40px;
+  line-height:50px;
   cursor: pointer;
 }
 .tabmenu input{
@@ -1071,20 +1074,28 @@ li {
   position:absolute; 
   left:0; top:50px; 
   width: 100%;
-  height: 800px;
-  
+  height: 850px; 
+  background-color: #ffefd6;
   
 }
-.btnCon label:hover{
-    height: 50px;
-}
+/* .btnCon label:hover{
+    height: 80px;
+} */
+
 .tabmenu input:checked ~ label{    
     font-size: 1.5rem;
-    color: rgb(119, 148, 245);
+    font-weight: 800;
+    color: black;
     cursor: pointer;
+    background-color: #ffefd6;
 }
+.tabmenu input:checked .tabmenu{
+    background-color: #ffefd6;
+}
+
 .tabmenu input:checked ~ .tabCon{
   display:block;
+ 
 }
 /* 탭메뉴 안 책 리스트 */
 .genre_mid_slide{
@@ -1098,8 +1109,7 @@ li {
     margin-top: 20px;
 }
 
-.genre_mid_slide_box{
-    
+.genre_mid_slide_box{    
     width: 180px;
     height: 230px;
     margin: 20px;
@@ -1114,10 +1124,9 @@ li {
     box-shadow: 3px 3px 3px rgb(104, 104, 104);
 }
 .genre_mid_slide_box:hover .genre_doc_box{
-    width: 100%;
-    height: 70px;
-    
-    background-color: #333;
+    width: 180px;
+    height: 60px;    
+    background-color: black;
 }
 .genre_thumb{
     position: absolute;
@@ -1132,25 +1141,67 @@ li {
 }
 .genre_doc_box{
     position: absolute;
-    bottom:0px;    
-    
+    bottom:0px;
+    width: 180px;
     height: 0px;
     background-color: black;
     transition: all 0.9s;
     display: flex;
-
-}
-.genre_doc_box div{
-    width: 80px;
-    height: 40px;
-    background-color: black;
-    border: 1px solid white;
-    margin: 10px;
     color: white;
 
 }
-
-
+.genre_doc_box_btn{
+    width: 70px;
+    height: 30px;
+    background-color: black;
+    border: 1px solid white;
+    margin-top: 15px;
+    margin-left: 15px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+       
+}
+.genre_doc_box_btn_txt1{
+    position: absolute;
+    color: white;  
+    padding-top: 2px; 
+    padding-left: 4px;
+    font-size: 1rem;
+}
+.genre_doc_box_btn_txt2{
+    position: absolute;
+    color: white;  
+    padding-top: 2px; 
+    padding-left: 12px; 
+    font-size: 1rem;
+   
+}
+.genre_doc_box_hover{
+    position: absolute;
+    bottom: -10px;
+    left: -65px;
+    width: 40px;
+    height: 50px;
+    transform: skew(50deg);
+    background-color: white;
+    color: #333;
+    transition: all 0.7s ease-in-out;
+    z-index: 0;   
+    
+}
+.genre_doc_box_btn:hover .genre_doc_box_hover{
+ width: 180px;
+ height: 50px;
+}
+.genre_doc_box_btn:hover .genre_doc_box_btn_txt1{
+    color: black;
+    font-weight: 700;
+}
+.genre_doc_box_btn:hover .genre_doc_box_btn_txt2{
+    color: black;
+    font-weight: 700;
+}
 /* ///////////////////////백진주 영역 끝--------------------------------------------------- */
 
 /* //////이상호////////////////////////////////////////////////// */
