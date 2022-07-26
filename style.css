@@ -1439,11 +1439,11 @@ a{
 .bestSeller-book{
     /* 베스트셀러 작은 이미지 */
     /* border: 1px solid black; */
-    width: 200px;
-    height: 500px;
+    width: 130px;
+    height: 450px;
     position: fixed;
     left: -10px;
-    top: 700px;
+    top: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1460,12 +1460,12 @@ a{
     text-align: center;
 }
 .bestSeller-book-warp{
-    width: 130px;
+    width: 120px;
     height: 195px;
     overflow: hidden;
 }
 .bestSeller-book-move{
-    width: 130px;
+    width: 120px;
     height: 195px;
     display: flex;
 
@@ -1473,20 +1473,20 @@ a{
 .bestSeller-book > div > div > div > img{
     width: 130px;
 }
-button{
+#bestSeller-book-btn{
     border-radius: 50%;
     border: none;
     width: 100px;
     height: 100px;
-    top: 890px;
-    left: 140px;
+    top: 610px;
+    left: 65px;
     position: fixed;
     z-index: 30;
 
 }
-button > i{
+#bestSeller-book-btn > i{
     position: relative;
-    left: 20px;
+    left: 25px;
     font-size: 2.4rem;
     font-weight: 800;
 }
@@ -1543,5 +1543,68 @@ button > i{
     }
     
 }
+.grade{
+    border: 1px solid black;
+    width: 1201px;
+    height: 350px;
+    margin:  80px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.grade > h3{
+    margin: 20px 0;
+}
+.grade-Con{
+    border: 1px solid red;
+    width: 1201px;
+    height: 250px;
+    display: flex;
+    justify-content: flex-start;
+}
+.grade-Con > div:last-child{
+    margin-left: 130px;
+}
+.grade-firstCon{
+    border: 1px solid blue;
+    width: 170px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.grade-firstCon > div{
+    width: 100px;
+}
+.grade-firstCon > div > img{
+    width: 100%;
+}
+.grade-secondCon{
+    display: flex;
+    justify-content: center;
+    border: 1px solid green;
+    width: 900px;
+    height: 250px;
+}
+.grade-secondCon > div{
+    width: 170px;
+    height: 250px;
+    border: 1px solid brown;
+    margin: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.grade-secondCon > div > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100px;
+}
+.grade-secondCon > div > div > img{
+    width: 100%;
+}
+
 /* ///////////////////////////////////이상호//////////////////////////////// */
 

@@ -417,20 +417,18 @@ let bookicon = document.querySelector("#icon")
 let flag = false;
     bookBtn.addEventListener("click",function(){
         if(flag === false){
-            bookmove.style.left ="-200px";
-            bookBtn.style.left = "-50px";
+            bookmove.style.left ="-150px";
+            bookBtn.style.left = "-65px";
             bookmove.style.transition = "0.5s"
             bookBtn.style.transition = "0.5s"
             bookicon.className = "fa-solid fa-angle-right";
-
             flag = true;
         }
         else if(flag === true){
             bookmove.style.left = "0px";
-            bookBtn.style.left = "150px";
+            bookBtn.style.left = "80px";
             bookmove.style.transition = "0.5s"
             bookBtn.style.transition = "0.5s"
-            bookicon.className = "fa-solid fa-angle-right";
             bookicon.className = "fa-solid fa-angle-left";
             flag = false;
         }
