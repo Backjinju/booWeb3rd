@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gowun Dodum', sans-serif;
+    user-select: none;
 }
 
 li{
@@ -27,6 +28,7 @@ body{
     height: 400vh;
     z-index: 1;
     overflow: hidden;
+    position: relative;
 }
 
 .header{
@@ -48,44 +50,45 @@ body{
     justify-content: center;
 }
 
-.headerTop .loginIcon{
+.container .loginIcon{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: right;
-    background-color: #ffd5a6e3;
+    background-color: #e9d4bbe3;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     position: fixed;
     right: 10px;
-    bottom: 15px;
-    z-index: 12;
+    top: 20px;
+    z-index: 10000;
     overflow: hidden;
-    transition: 0.3s;
+    transition: 0.1s;
 }
 
 .iconsBox{
     width: 150px;
-    transform: translate(43px,0);
+    transform: translate(57px,0);
     display: flex;
     transition: 0.3s;
 }
 
-.loginIcon .fa-user,.fa-cart-shopping,.fa-heart{
+.loginIcon .fa-user,.fa-cart-shopping,.fa-heart,.fa-circle-arrow-left{
     font-size: 1.9rem;
     padding: 5px;
     cursor: pointer;
 }
 
-.loginIcon:hover .iconsBox{
+/* .loginIcon:hover .iconsBox{
     transform: translate(20px,0);
 }
 
 .loginIcon:hover{
     width: 150px;
     border-radius: 30px;
-}
+} */
+
 
 .loginModal{
     position: fixed;

@@ -1,4 +1,5 @@
 //////////////////성진//////////////////
+let container = document.querySelector('.container')
 let footerScroll = document.querySelector('.footerScroll')
 let header = document.querySelector('.header')
 let newBook = document.querySelector('.newBook')
@@ -6,6 +7,9 @@ let genreBook = document.querySelector('.genreBook')
 let reviewBook = document.querySelector('.reviewBook')
 let loading = document.querySelector('.loadingImg')
 let loginIcon = document.querySelector('.loginBtn')
+let loginBox = document.querySelector('.loginIcon')
+let iconsBox = document.querySelector('.iconsBox')
+let iconsCloseBtn = document.querySelector('.iconsCloseBtn')
 let loginModal = document.querySelector('.loginModal')
 let body = document.querySelector('body')
 let lgModal = document.querySelector('.lgModal')
@@ -39,9 +43,62 @@ function loadingPage(){
 }
 
 loginIcon.addEventListener('click',function(){
-    if(loginModal.style.display == 'none'){
+    if(loginModal.style.display == 'none' &&
+    loginBox.style.width == '200px'){
         loginModal.style.display = 'flex'
     }
+})
+
+iconsCloseBtn.addEventListener('click',function(){
+        iconsBox.style.transform = 'translate(57px,0)'
+        loginBox.style.width = '50px'
+        loginBox.style.borderRadius = '50%'
+})
+
+const {width:loginBoxWidth, height:loginBoxheight} = loginBox.getBoundingClientRect();
+const {width:containerWidth, height:containerHeight} = container.getBoundingClientRect();
+
+let boxFlag = null;
+let originLeft = null;
+let originTop = null;
+let originX = null;
+let originY = null;
+
+loginIcon.addEventListener('click',function(){
+    if(loginBox.style.width != '200px'){
+        iconsBox.style.transform = 'translate(0px,0)'
+        loginBox.style.width = '200px'
+        loginBox.style.borderRadius = '30px'
+    } else{
+        iconsBox.style.transform = 'translate(57px,0)'
+        loginBox.style.width = '50px'
+        loginBox.style.borderRadius = '50%'
+    }
+})
+
+loginBox.addEventListener("mousedown", function(e){
+    boxFlag = true;
+    originX = e.clientX; //마우스의 x축 포인터(브라우저 기준)
+    originY = e.clientY; //마우스의 y축 포인터(브라우저 기준)
+    originLeft = loginBox.offsetLeft;//container(부모)기준 loginBox좌표
+    originTop = loginBox.offsetTop;
+}) //loginBox를 클릭했을 때 저장되는 변수 값들
+
+document.addEventListener("mouseup", function(e){
+    boxFlag = false;
+})
+
+document.addEventListener("mousemove", function(e){
+    if(boxFlag && loginBox.style.width != '200px'){
+        const diffx= e.clientX - originX // 마우스가 움직일 때의 좌표값에 처음 클릭했을 때 입력된 좌표값을 빼서 이동거리를 구한다. 
+        const diffy= e.clientY - originY
+        const xEndPoint = containerWidth - loginBoxWidth; //container의 크기에서 loginBox의 크기를 빼서 loginBox가 넘어가지 않는 경계선을 구한다.
+        const yEndPoint = containerHeight - loginBoxheight;
+        loginBox.style.left = `${Math.min(Math.max(0,originLeft+diffx),xEndPoint)}px`
+        //좌우는 max로 좌측으론 0이하로 떨어지지 않게 만들고 , min으로 오른쪽 끝을 넘어가지 않게 만든다.
+        loginBox.style.top = `${Math.min(Math.max(0,originTop+diffy),yEndPoint)}px`
+    }
+
 })
 
 let timeOutClear1;
