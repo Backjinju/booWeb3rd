@@ -60,7 +60,7 @@ body{
     height: 50px;
     border-radius: 50%;
     position: fixed;
-    right: 10px;
+    right: 80px;
     top: 20px;
     z-index: 10000;
     overflow: hidden;
@@ -1146,7 +1146,7 @@ li {
 /* 타이틀 */
 .genre_main_section{
     width: 80%;
-    height: 1300px;
+    height: 2000px;
     
     /* background-color: rgb(242, 251, 255); */
 }

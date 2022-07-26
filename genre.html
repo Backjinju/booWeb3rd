@@ -16,7 +16,6 @@
 
 <body>
 	<!-- login modal start -->
-    <!-- modal container -->
     <div class="loginModal" style="display: none;">
         <!-- login modal -->
         <div class="lgModal">
@@ -105,12 +104,20 @@
                      -->
             </div>
         </div>
+		</div>
 
-    </div>
 
 
 
 	<div class="container">
+		<div class="loginIcon">
+            <div class="iconsBox">
+                <i class="fa-solid fa-user loginBtn"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-circle-arrow-left iconsCloseBtn"></i>
+            </div>
+        </div>
         <!-- header section start -->
         <div class="header pointer">
             <!-- logo & login section start -->
@@ -119,13 +126,6 @@
                     <a href="index.html">
                         <img src="logo.png" alt="" id="logo">
                     </a>
-                </div>
-                <div class="loginIcon">
-                    <div class="iconsBox">
-                        <i class="fa-solid fa-user loginBtn"></i>
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
                 </div>
             </div>
             
@@ -177,10 +177,8 @@
         
             <!-- header navBar end -->
 
-
             <!-- header bestSeller start -->
-             <!-- header bestSeller start -->
-			 <div class="bestSeller">
+            <div class="bestSeller">
                 <!-- 베스트셀러 캐러셀 -->
                 <div class="bestSeller-sell-warp">
                     <!-- 오버플로우 히든 디브 -->
@@ -289,10 +287,14 @@
                         
                     </div>
                 </div>
-                <button id="bestSeller-book-btn"><i class="fa-solid fa-angle-left" id="icon"></i></i></button>
+
+                <button id="bestSeller-book-btn">
+                    <i class="fa-solid fa-angle-left" id="icon"></i>
+                </button>
 
                 <!-- header bestSeller end -->
             </div>
+            <!-- header section end -->
         </div>
         <!-- header section end -->
 
@@ -446,6 +448,7 @@
 				<span class="theme_prev">&lt;</span>
 				<span class="theme_next">&gt;</span>
 			</p>
+			
 		
 		</div>
 
@@ -1396,12 +1399,8 @@
 
 
 		
-//
-			<p class="issue_controls">
-				<span class="issue_prev">&lt;</span>
-				<span class="issue_next">&gt;</span>
-			</p>
-		</div>
+
+
 
 
 		 
@@ -1470,7 +1469,7 @@
 				</div>
 			</div>
 		</div>
-//
+
 
 		<!-- footer start -->
 		<div class="footer pointer">
@@ -1511,7 +1510,7 @@
 		<!-- js file link -->
 	
 		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-		<script src="script.js"></script>
+		<!-- <script src="script.js"></script> -->
 		<script src="genre.js"></script>
 	</div>
 </body>

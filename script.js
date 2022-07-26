@@ -138,7 +138,7 @@ loginModal.addEventListener('click', function(){
 
 
 signUp.addEventListener('click', function(){
-    loadingBook.style.zIndex = '1';
+    loadingBook.style.zIndex = '1'; 
     modalTitle.style.opacity = '0';
     inputText.style.opacity = '0';
     inputPasswd.style.opacity = '0';
