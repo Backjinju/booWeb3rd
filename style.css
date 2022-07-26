@@ -406,7 +406,7 @@ body{
 
 /* /////////////////////수근/////////////////////////// */
 .newBook {
-    width: 1600px;
+    width: 1220px;
     height: 500px;
     margin-top: 50px;
     position: relative;
@@ -429,7 +429,7 @@ li {
 }
 .newBook_slide_wrapper {
     position: relative;
-    width: 1325px;
+    width: 1200px;
     overflow: hidden;
     height: 400px;
     margin: 50px auto;
@@ -449,7 +449,7 @@ li {
     float: left;
 }
 .newBook_slides li:not(:last-child) {
-    margin-right: 75px;
+    margin-right: 50px;
 }
 .newBook_slides li .img_box {
     width: 200px;
@@ -506,12 +506,22 @@ li {
 
 /* issue book/////////////////////////////////////////////////////////////////// */
 
+.issue_main_title {
+    width: 1220px;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    color: rgb(117, 117, 118);
+}
+.issue_main_title:hover {
+    color: black;
+}
 .issue_container {
     width: 1220px;
     height: 250px;
     position: relative;
-    margin: 100px auto;
+    margin: 80px auto;
 }
+
 .issue_container:hover .issue_controls span {
     opacity: 0.5;
     transition: linear 0.35s;
@@ -521,7 +531,6 @@ li {
     margin: auto;
 }
 .issue_slide_title h3 {
-    margin-top: 30px;
     margin-bottom: 10px;
 }
 .issue_slide_wrapper {
@@ -576,7 +585,7 @@ li {
 
 .issue_controls span:first-child {
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 0;
     padding: 0px 5px;
     font-size: 35px;
@@ -586,7 +595,7 @@ li {
 }
 .issue_controls span:last-child {
     position: absolute;
-    top: 50%;
+    top: 35%;
     right: 0;
     opacity: 0;
     padding: 0px 5px;
@@ -605,7 +614,9 @@ li {
     width: 1221px;
     height: 350px;
     position: relative;
+    padding-top: 20px;
     margin: auto;
+
 }
 
 .theme_slide_title {
@@ -666,7 +677,7 @@ li {
 
 .theme_controls span:first-child {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 0;
     padding: 0px 5px;
     font-size: 35px;
@@ -674,7 +685,7 @@ li {
 }
 .theme_controls span:last-child {
     position: absolute;
-    top: 50%;
+    top: 40%;
     right: 0;
     padding: 0px 5px;
     font-size: 35px;
@@ -693,7 +704,7 @@ li {
 .reviewBook{
     margin-top: 100px;
     /* background-color: #FDF5DC; */
-    width: 1600px;
+    width: 1220px;
     height: 800px;
     /* border: 1px solid red; */
 }
@@ -990,16 +1001,18 @@ li {
 /* ///////////////////////백진주 영역 시작--------------------------------------------------- */
 /* 장르별 도서 */
 .genreBook{    
-    width: 1600px;
+    width: 1220px;
     height: 800px; 
     
 }
 /* 타이틀 변경 */
 .genreBook_pointer_title {
+    width: 1220px;
     padding: 10px;
     border-bottom: 1px solid black;
     color: rgb(117, 117, 118);
     margin: 50px 0px;
+    margin-top: 100px;
 }
 .genreBook_pointer_title:hover {
     color: black;
@@ -1145,14 +1158,14 @@ li {
 /* 장르별 도서 새페이지영역*/
 /* 타이틀 */
 .genre_main_section{
-    width: 80%;
+    width: 1220px;
     height: 2000px;
     
     /* background-color: rgb(242, 251, 255); */
 }
 /* 탭메뉴 */
 .tabmenu{ 
-  width:80%;
+  width:1220px;
   height: 930px; 
   background-color: #fff0d6;
   margin: 20px auto;
