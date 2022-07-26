@@ -500,33 +500,105 @@ li {
     opacity: 0.9;
 }
 
-@media (max-width: 1800px) {
-    .newBook_slide_wrapper {
-        width: 100%;
-    }
-  }
 
-/* .newBook_controls span {
+/* issue book/////////////////////////////////////////////////////////////////// */
+
+.issue_container {
+    width: 1201px;
+    height: 350px;
+    margin-top: 100px;
+    position: relative;
+}
+.issue_container:hover .issue_controls span {
+    opacity: 0.5;
+    transition: linear 0.35s;
+}
+.issue_slide_title {
+    width: 1205px;
+    margin: auto;
+}
+.issue_slide_title h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.issue_slide_wrapper {
+    width: 1205px;
+    height: 254px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+.issue_slides {
     position: absolute;
-    top: 40%;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    font-size: 30px;
-    color: #ccc;
-    cursor: pointer;
-}
-.newBook_controls span:hover {
-    background-color: rgb(98, 96, 96);
-    transition: ease-out 0.35s;
-}
-.prev {
-    left: 0px;
+    left: 0; top: 0;
 }
 
-.next {
-    right: 0px;
-} */
+.issue_slides li {
+    width: 1200px;
+    height: 250px;
+    background-color: #eee;
+    float: left;
+}
+.issue_slides li:hover {
+    border: 1px solid #aaa;
+}
+.issue_slides li:hover img{
+    box-shadow:0 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+.issue_slides li:not(:last-child){
+    margin-right: 10px;
+}
+.issue_con {
+    display: flex;
+    align-items: center;
+}
+.issue_con img {
+    width: 130px;
+    margin: 30px 50px;
+    box-shadow: 0 3px 6px #dadce0;
+}
+.issue_con p:first-child {
+    font-size: 13px;
+    color: #aaa;
+}
+.issue_con p:nth-child(3) {
+    margin: 10px 0px;
+}
+.issue_con p:nth-child(3) span {
+    color: red;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.issue_controls span:first-child {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding: 0px 5px;
+    font-size: 35px;
+    opacity: 0;
+    background-color: black;
+    color: white;
+}
+.issue_controls span:last-child {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    opacity: 0;
+    padding: 0px 5px;
+    font-size: 35px;
+    background-color: black;
+    color: white;
+}
+.issue_controls span:last-child:hover {
+    opacity: 1;
+}
+.issue_controls span:first-child:hover {
+    opacity: 1;
+}
+
+
 /* ///////////////////////수근 끝/////////////////////////////////////// */
 
 /* //////////////////////////////////양희 시작///////////////////////////////////// */
@@ -960,6 +1032,7 @@ li {
 /* 타이틀 */
 .genre_main_section{
     width: 80%;
+    height: 1300px;
     
     /* background-color: rgb(242, 251, 255); */
 }
@@ -1245,17 +1318,19 @@ a{
 }
 .bestSeller-sell-warp{
     display: flex;
+    justify-content: center;
     width: 100%;
     height: 335px;
     position: relative;
     overflow: hidden;
+    
 }
+
 #bestSeller-sell-img{
     width: 200px;
     height: 300px;
     z-index: 100;
     position: relative;
-    left: 950px;
     top: 20px;
     border-top-left-radius: 10px;
     overflow: hidden;
@@ -1266,21 +1341,35 @@ a{
     width: 200px;
     height: 300px;
     position: absolute;
+    z-index: 30;
     opacity: 0;
 }
 .bestSeller-sell-ele > img{
     width: 200px;
 
 }
+#font-warp,.bestSeller-sell-warp{
+    margin: 0 80px;
+}
 .slideItem{
     width: 100%;
     position: absolute;
     transition: all 1.5s;
 }
-.bestSeller-text{
-    position: absolute;
+#font-warp{
+    z-index: 100;
+}
+.text1{
     top: 120px;
-    left: 250px;
+    position: relative;
+}
+.text2{
+    position: relative;
+    bottom: 110px;
+}
+.text3{
+    position: relative;
+    bottom: 330px;
 }
 .bestSeller-text > h1{
     color: white;
@@ -1324,65 +1413,65 @@ a{
 .bestSeller-book{
     /* 베스트셀러 작은 이미지 */
     /* border: 1px solid black; */
-    width: 150px;
-    height: 310px;
-    position: fixed;   
-    z-index: 90;
-    transform: translate(-780px, 250px);
+    width: 200px;
+    height: 500px;
+    position: fixed;
+    left: -10px;
+    top: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FDE6BE;
+    z-index: 40;
+    box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.2);
+
+}
+#bestSeller-book-font,.bestSeller-book-warp{
+    margin: 30px 0;
+}
+#bestSeller-book-font{
+    text-align: center;
 }
 .bestSeller-book-warp{
     width: 130px;
     height: 195px;
     overflow: hidden;
-    position: absolute;
 }
 .bestSeller-book-move{
     width: 130px;
     height: 195px;
     display: flex;
-    position: absolute;
 
 }
 .bestSeller-book > div > div > div > img{
     width: 130px;
 }
-.bestSeller-book-warp > button{
-    position: absolute;
+button{
     border-radius: 50%;
-    top: 8px;
-    right: 8px;
     border: none;
-    width: 20px;
-    height: 20px;
+    width: 100px;
+    height: 100px;
+    top: 890px;
+    left: 140px;
+    position: fixed;
+    z-index: 30;
+
 }
-/* 
-.bestSeller-book-modal{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    background-color: rgba(153,153,153, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    display: none;
-    z-index: 120;
-
-} */
-
-.bestSeller-book-modal > p{
-    font-size: 1.5rem;
+button > i{
+    position: relative;
+    left: 20px;
+    font-size: 2.4rem;
+    font-weight: 800;
 }
 
-.bestSeller-book > div:hover ~ .bestSeller-book-modal{
-    display: flex;
+#bestSeller-book-font > p{
+    font-size: 1.4rem;
+
 }
-
-
-.bestSeller-book > div:nth-child(2) > img
-,.bestSeller-book > div:nth-child(3) > img{
-    display: none;
+#bestSeller-book-font > p:last-child{
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
 }
 #font1 > span{
     position: relative;

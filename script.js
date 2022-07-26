@@ -387,6 +387,7 @@ let bookitem = document.querySelectorAll(".bookItem");
 let bookslider = document.querySelector(".bestSeller-book-move");
 let bookwarp = document.querySelector(".bestSeller-book-warp");
 let bookfirstChild = bookslider.firstElementChild.cloneNode(true);
+bookslider.appendChild(bookfirstChild)
 let booklastChild = bookslider.lastChild.cloneNode(true);
 
 
@@ -403,62 +404,37 @@ setInterval(function(){
         setTimeout(function(){
             bookslider.style.transition = "0s";
             bookslider.style.transform = "translate3d(0px,0px,0px)";
-        },100)
+        },300)
         i = 0;
     }       
 },5000)
 
 
-
-//광고 이벤트
-window.addEventListener("scroll",function(){
-    this.setTimeout(function(){
-        if(window.pageYOffset > 80){
-            bookslider.style.opacity = "1";
-            bookwarp.style.transition = "1.5s";
-            bookwarp.style.transform = "translate(160px , 0px)"; 
-            bookwarp.style.boxShadow = "0px 2px 5px 2px rgba(0, 0, 0, 0.1)";
-         
-        }
-        else if(window.pageYOffset < 70){
-            bookslider.style.opacity = "0";
-            bookwarp.style.transition = "0s";
-            bookwarp.style.transform = "translate(0px , 0px)";
-     
-
-           
-        }
-    },500)
-    
-
-});
-
-//  window.addEventListener("scroll",function(){
-  
-
-//         if(window.pageYOffset > 80){
-//             bookwarp.style.transform = "translate(160px , 0px)";
-        
-//         }
-//         if(window.pageYOffset < 70){
-//             bookBtn.style.opacity = "1";
-//             bookBtn.style.transition = "0.5s";
-//         }
-        
-    
-// },2500)
- 
-
-
-
 //광고 삭제 버튼
 let bookBtn = document.querySelector("#bestSeller-book-btn");
-
+let bookmove = document.querySelector(".bestSeller-book");
+let bookicon = document.querySelector("#icon")
+let flag = false;
     bookBtn.addEventListener("click",function(){
-        bookwarp.style.opacity = "0";
-        bookwarp.style.transition = "0s";
-        bookBtn.style.display = "none"
-        bookBtn.style.transition = "0s";
+        if(flag === false){
+            bookmove.style.left ="-200px";
+            bookBtn.style.left = "-50px";
+            bookmove.style.transition = "0.5s"
+            bookBtn.style.transition = "0.5s"
+            bookicon.className = "fa-solid fa-angle-right";
+
+            flag = true;
+        }
+        else if(flag === true){
+            bookmove.style.left = "0px";
+            bookBtn.style.left = "150px";
+            bookmove.style.transition = "0.5s"
+            bookBtn.style.transition = "0.5s"
+            bookicon.className = "fa-solid fa-angle-right";
+            bookicon.className = "fa-solid fa-angle-left";
+            flag = false;
+        }
+       
     })
 
 
@@ -769,13 +745,6 @@ function SGsetInitialPos() {
     SGslides.style.transform = 'translateX(' +SGinitialTranslateValue+ 'px)'
 };
 
-// SGnextBtn.addEventListener('click', function(){
-//     SGmoveSlide(SGcurrentIdx +1);
-// })
-// SGprevBtn.addEventListener('click', function(){
-//     SGmoveSlide(SGcurrentIdx -1);
-// })
-
 
 function SGmoveSlide(num){
     SGslides.style.left = -num * (SGslideWidth + SGslideMargin) + 'px';
@@ -812,85 +781,6 @@ SGslides.addEventListener('mouseenter',function(){
 SGslides.addEventListener('mouseleave',function(){
     autoSlide();
 })
-
-
-
-////// 수근///////////////
-
-// var slides = document.querySelector('.slides'),
-//     slide = document.querySelectorAll('.slides li'),
-//     currentIdx =0;
-//     slideWidth = 1300,
-//     slideMargin = 10,
-//     slideCount = slide.length,
-//     prevBtn = document.querySelector('.prev'),
-//     nextBtn = document.querySelector('.next');
-
-//     makeClone();
-
-//     function makeClone() {
-//         for(var i=0; i < slideCount; i++) {
-//             var cloneSlide = slide[i].cloneNode(true);
-//             cloneSlide.classList.add('clone');
-//             slides.appendChild(cloneSlide);
-//         }
-//         for(var i= slideCount-1; i >= 0; i--) {
-//             var cloneSlide = slide[i].cloneNode(true);
-//             cloneSlide.classList.add('clone');
-//             slides.prepend(cloneSlide);
-//         }
-//         updateWidth();
-//         setInitialPos();
-//     }
-//     function updateWidth() {
-//         var currentSlides = document.querySelectorAll('.slides li');
-//         var newSlideCount = currentSlides.length;
-        
-//         var newWidth = (slideWidth + slideMargin) * newSlideCount - slideMargin + 'px';
-//         slides.style.width = newWidth; 
-//     }
-//     function setInitialPos() {
-//         var initialTranslateValue = -(slideWidth + slideMargin) * slideCount;
-//         slides.style.transform = 'translateX(' +initialTranslateValue+ 'px)'
-//     }
-
-//     nextBtn.addEventListener('click', function(){
-//         moveSlide(currentIdx +1);
-//     })
-
-//     prevBtn.addEventListener('click', function(){
-//         moveSlide(currentIdx -1);
-//     })
-
-//     function moveSlide(num) {
-//         slides.style.left = -num * (slideWidth + slideMargin) + 'px';
-//         currentIdx = num;
-//         if(currentIdx == slideCount || currentIdx == -slideCount) {
-//                 slides.style.left = '0px';
-//                 currentIdx = 0;
-//         }
-
-//     }
-// let timer1 = undefined;
-// function autoSlide(){
-//     if(timer1 == undefined){
-//         timer1 = setInterval(function(){
-//             moveSlide(currentIdx +1);
-//         },3000);
-//     }
-// }
-// autoSlide();
-// function stopSlide(){
-//     clearInterval(timer1);
-//     timer1 = undefined;
-// }
-// slides.addEventListener('mouseenter',function(){
-//     stopSlide();
-// })
-// slides.addEventListener('mouseleave',function(){
-//     autoSlide();
-// })
-
 
 ///////////////////////////////////////
 //////////////////진주//////////////////
@@ -1079,7 +969,7 @@ const pagesY = [
     }
 
 
-//모달창도 상자를 클릭하면 ~
+// 모달창도 상자를 클릭하면 ~
 
 
 
