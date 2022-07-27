@@ -29,10 +29,29 @@ let legDetailAddress = document.querySelector('.legDetailAddress')
 let addressBtn = document.querySelector('.addressBtn')
 let loadingContainer = document.querySelector('.container')
 
+
+
 window.onload = () => {
     loadingContainer.classList.add('loadingContainer')
     loadingPage();
 }
+
+
+footerScroll.addEventListener('click',function(e){
+    if(e.target.innerText=='HOME'){
+        header.scrollIntoView({
+            behavior: "smooth"})
+    } else if (e.target.innerText == '신간도서'){
+        newBook.scrollIntoView({
+            behavior: "smooth"})
+    } else if (e.target.innerText == '장르별 도서'){
+        genreBook.scrollIntoView({
+            behavior: "smooth"})
+    } else if (e.target.innerText == '리뷰'){
+        reviewBook.scrollIntoView({
+            behavior: "smooth"}) 
+    }
+})
 
 function loadingFadeout(){
     loading.classList.add('fadeOut')
@@ -42,9 +61,11 @@ function loadingPage(){
     setTimeout(loadingFadeout,45) // 테스트할 때 로딩화면 기다리기 싫어서 0.05초로 만들어 둠
 }
 
+let activeIconWidth = 200;
+
 loginIcon.addEventListener('click',function(){
     if(loginModal.style.display == 'none' &&
-    loginBox.style.width == '200px'){
+    loginBox.style.width == `${activeIconWidth}px`){
         loginModal.style.display = 'flex'
     }
 })
@@ -63,11 +84,13 @@ let originLeft = null;
 let originTop = null;
 let originX = null;
 let originY = null;
+const xEndPoint = containerWidth - loginBoxWidth; //container의 크기에서 loginBox의 크기를 빼서 loginBox가 넘어가지 않는 경계선을 구한다.
+const yEndPoint = containerHeight - loginBoxheight;
 
 loginIcon.addEventListener('click',function(){
-    if(loginBox.style.width != '200px'){
+    if(loginBox.style.width != `${activeIconWidth}px`){
         iconsBox.style.transform = 'translate(0px,0)'
-        loginBox.style.width = '200px'
+        loginBox.style.width = `${activeIconWidth}px`
         loginBox.style.borderRadius = '30px'
     } else{
         iconsBox.style.transform = 'translate(57px,0)'
@@ -92,8 +115,7 @@ document.addEventListener("mousemove", function(e){
     if(boxFlag && loginBox.style.width != '200px'){
         const diffx= e.clientX - originX // 마우스가 움직일 때의 좌표값에 처음 클릭했을 때 입력된 좌표값을 빼서 이동거리를 구한다. 
         const diffy= e.clientY - originY
-        const xEndPoint = containerWidth - loginBoxWidth; //container의 크기에서 loginBox의 크기를 빼서 loginBox가 넘어가지 않는 경계선을 구한다.
-        const yEndPoint = containerHeight - loginBoxheight;
+
         loginBox.style.left = `${Math.min(Math.max(0,originLeft+diffx),xEndPoint)}px`
         //좌우는 max로 좌측으론 0이하로 떨어지지 않게 만들고 , min으로 오른쪽 끝을 넘어가지 않게 만든다.
         loginBox.style.top = `${Math.min(Math.max(0,originTop+diffy),yEndPoint)}px`
@@ -270,6 +292,25 @@ if(typeof(Storage)!== 'undefined'){
         }
     })
 
+    const eyeconSlash = document.querySelector('.slash')
+    const eyeconShow = document.querySelector('.show')
+    const eyecon = document.querySelector('#eyecon')
+
+    eyecon.addEventListener('click', function () {
+        if (legPw.type == 'password') {
+            // input이 password 타입이면 text로 변경하고 그에 맞는 아이콘 활성화
+            legPw.type = 'text'
+            legPwCk.type = 'text'
+            eyeconSlash.style.display = 'none'
+            eyeconShow.style.display = 'block'
+        } else {
+            legPw.type = 'password'
+            legPwCk.type = 'password'
+            eyeconShow.style.display = 'none'
+            eyeconSlash.style.display = 'block'
+        }
+    })
+
     legPwCk.addEventListener('keyup', function () {
         if (legPwCk.value.length == 0) {
             legPwCk.nextElementSibling.innerHTML = '비밀번호를 다시 한번 입력해 주세요.'
@@ -416,22 +457,6 @@ if(typeof(Storage)!== 'undefined'){
     })
 }
 
-
-footerScroll.addEventListener('click',function(e){
-    if(e.target.innerText=='HOME'){
-        header.scrollIntoView({
-            behavior: "smooth"})
-    } else if (e.target.innerText == '신간도서'){
-        newBook.scrollIntoView({
-            behavior: "smooth"})
-    } else if (e.target.innerText == '장르별 도서'){
-        genreBook.scrollIntoView({
-            behavior: "smooth"})
-    } else if (e.target.innerText == '리뷰'){
-        reviewBook.scrollIntoView({
-            behavior: "smooth"}) 
-    }
-})
 
 ////////////-------Sign up 유효성 검사 끝--------///////////
 
@@ -759,7 +784,7 @@ let SGslide = document.querySelectorAll('.newBook_slides li'); //li를 다 넣�
 let SGcurrentIdx = 0; //클릭할때마다 이 값을 차감해서 슬라이드를 움직이기 위함
 let SGslideCount = SGslide.length; //li의 길이  
 let SGslideWidth = 200; //
-let SGslideMargin = 75;
+let SGslideMargin = 50;
 // let SGprevBtn = document.querySelector('.prev');
 // let SGnextBtn = document.querySelector('.next');
 // let SGimg = document.querySelectorAll('.newBook_slides li img')
