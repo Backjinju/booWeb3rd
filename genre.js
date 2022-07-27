@@ -622,6 +622,7 @@ let flag = false;
     })
 
 
+
 //메뉴바 호버
 let hoverEle = document.querySelector(".hoverEle");
 let dropdown = document.querySelector(".nav-bar-dropdown");
@@ -629,15 +630,15 @@ let dropdown_mo = document.querySelector(".nav-bar-modal");
 
 
 hoverEle.addEventListener("mouseover",function(){
-    dropdown.style.opacity = "1";
+    dropdown.style.display = "flex";
     dropdown_mo.style.display = "block";
-    dropdown.style.transition = "0.3s";
+
 
 })
 dropdown.addEventListener("mouseleave",function(){
-    dropdown.style.opacity = "0";
+    dropdown.style.display = "none";
     dropdown_mo.style.display = "none";
-    dropdown.style.transition = "0.3s";
+
 })
 
 
