@@ -61,14 +61,14 @@ function loadingPage(){
     setTimeout(loadingFadeout,45) // 테스트할 때 로딩화면 기다리기 싫어서 0.05초로 만들어 둠
 }
 
-let activeIconWidth = 200;
+let activeIconWidth = 200; // 로그인 아이콘박스가 활성화 됐을 때의 너비
 
 loginIcon.addEventListener('click',function(){
     if(loginModal.style.display == 'none' &&
     loginBox.style.width == `${activeIconWidth}px`){
         loginModal.style.display = 'flex'
     }
-})
+}) // 로그인 아이콘을 클릭했을 때 모달창이 display none상태이고 로그인 아이콘 박스가 활성화 되지 않았다면 모달창을 활성화
 
 iconsCloseBtn.addEventListener('click',function(){
         iconsBox.style.transform = 'translate(57px,0)'

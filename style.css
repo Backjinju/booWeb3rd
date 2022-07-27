@@ -29,7 +29,10 @@ body{
     z-index: 1;
     overflow: hidden;
     position: relative;
+    background-image: url(pattern2.jpg);
+    background-size: 250px;
 }
+
 
 .header{
     /* border: 1px solid pink; */
@@ -418,7 +421,7 @@ body{
     height: 500px;
     margin-top: 50px;
     position: relative;
-    background-color:#FFF;
+    /* background-color:#FFF; */
 
     
 }
@@ -1040,7 +1043,7 @@ li {
 .genreBook_pointer_con{
     width: 100%;
     height: 800px;
-    background-color: #ffebd4e3; 
+    /* background-color: #ffebd4e3;  */
     /* background-color: #ffecfa; */
     display: flex;
     justify-content: center;
@@ -1065,7 +1068,7 @@ li {
 .gb_cont{   
     display: flex;
     justify-content: center;
-    background-color: #ffebd4e3; 
+    /* background-color: #ffebd4e3;  */
     margin: 0px auto;
     overflow: hidden;
 
@@ -1357,7 +1360,7 @@ a{
 }
 .nav{
     /* 네비바 영역시작 */
-    height: 80px;
+    height: 90px;
     width: 100%
 }
 .nav-bar{
@@ -1365,6 +1368,7 @@ a{
     justify-content: center;
     position: relative;
     padding: 20px;
+
 }
 
 .nav-bar-fixed{
