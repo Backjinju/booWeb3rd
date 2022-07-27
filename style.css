@@ -1036,66 +1036,57 @@ li {
 
 /* ///////////////////////백진주 영역 시작--------------------------------------------------- */
 /* 장르별 도서 */
+
+.genreBook_pointer_con{
+    width: 2000px;
+    height: 800px;
+    background-color: #ffebd4e3; 
+    /* background-color: #ffecfa; */
+    display: flex;
+    justify-content: center;
+   
+
 .genreBook{    
     width: 1220px;
     height: 800px; 
     
 }
+.genreBook_pointer_box{
+    width: 1600px;   
+    display: flex;
+    flex-direction: column;
+ 
+}
+
 /* 타이틀 변경 */
 .genreBook_pointer_title {
     width: 1220px;
     padding: 10px;
     border-bottom: 1px solid black;
     color: rgb(117, 117, 118);
+
     margin: 50px 0px;
     margin-top: 100px;
+
 }
 .genreBook_pointer_title:hover {
     color: black;
 }
-
-/* 타이틀 변경전 */
-/* .gb_mtit{
-    font-size: 2.5rem;
-    padding: 20px 0px;
-    text-align: center;
-    display: flex;
-    flex-basis: 100%;
-    align-items: center;
-    color: #1E90FF;
-    margin: 8px 0;
-}
-.gb_mtit::before{
-    content: "";
-    flex-grow: 1;
-    margin: 0 16px;
-    background: #1E90FF;
-    height: 2px;
-}
-.gb_mtit::after{
-    content: "";
-    flex-grow: 1;
-    margin: 0 16px;
-    height: 2px;
-    background: #1E90FF;
-} */
-.gb_cont{
+.gb_cont{   
     display: flex;
     justify-content: center;
     background-color: #ffebd4e3; 
-    
-    
-    
+    margin: 0px auto;
 }
 .gb_cont ul{
-    width: 100%;    
+    width: 1380px;    
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    
+    /* background-color: #D2691E;
+     */
 }
-
 .gb_item {
     display: inline-block;    
     text-align: center;
@@ -1104,7 +1095,7 @@ li {
     position: relative;
     width: 600px;
     height: 230px;
-    margin: 40px 80px;
+    margin: 40px 40px;
 }
 .gb_thumb{
     width: 100%;
@@ -1136,7 +1127,6 @@ li {
     z-index: 5;
     color: yellow;        
 }
-
 .gb_thumb_title_txt span{
     display: block;
     width: 130px;
@@ -1146,7 +1136,6 @@ li {
     color: white;
     z-index: 2;     
 }
-
 .gb_tagList{
     position: absolute;
     width: 250px;
