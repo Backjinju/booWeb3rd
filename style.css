@@ -25,7 +25,7 @@ body{
     align-items: center;
     width: 100%;
     /* background-color: rgb(64, 135, 201); */
-    height: 400vh;
+    height: 400%;
     z-index: 1;
     overflow: hidden;
     position: relative;
@@ -260,6 +260,14 @@ body{
     top: -15px;
 }
 
+.show ,.slash{
+    position: absolute;
+    transform: translate(360px,-51px);
+}
+.show{
+    transform: translate(361px,-51px);
+}
+
 .loginForm .loginFormContent{
     opacity: 0;
     width: 70%;
@@ -406,7 +414,7 @@ body{
 
 /* /////////////////////수근/////////////////////////// */
 .newBook {
-    width: 1600px;
+    width: 1220px;
     height: 500px;
     margin-top: 50px;
     position: relative;
@@ -429,7 +437,7 @@ li {
 }
 .newBook_slide_wrapper {
     position: relative;
-    width: 1325px;
+    width: 1200px;
     overflow: hidden;
     height: 400px;
     margin: 50px auto;
@@ -449,7 +457,7 @@ li {
     float: left;
 }
 .newBook_slides li:not(:last-child) {
-    margin-right: 75px;
+    margin-right: 50px;
 }
 .newBook_slides li .img_box {
     width: 200px;
@@ -506,12 +514,22 @@ li {
 
 /* issue book/////////////////////////////////////////////////////////////////// */
 
+.issue_main_title {
+    width: 1220px;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    color: rgb(117, 117, 118);
+}
+.issue_main_title:hover {
+    color: black;
+}
 .issue_container {
     width: 1220px;
     height: 250px;
     position: relative;
-    margin: 100px auto;
+    margin: 80px auto;
 }
+
 .issue_container:hover .issue_controls span {
     opacity: 0.5;
     transition: linear 0.35s;
@@ -521,7 +539,6 @@ li {
     margin: auto;
 }
 .issue_slide_title h3 {
-    margin-top: 30px;
     margin-bottom: 10px;
 }
 .issue_slide_wrapper {
@@ -576,7 +593,7 @@ li {
 
 .issue_controls span:first-child {
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 0;
     padding: 0px 5px;
     font-size: 35px;
@@ -586,7 +603,7 @@ li {
 }
 .issue_controls span:last-child {
     position: absolute;
-    top: 50%;
+    top: 35%;
     right: 0;
     opacity: 0;
     padding: 0px 5px;
@@ -605,7 +622,9 @@ li {
     width: 1221px;
     height: 350px;
     position: relative;
+    padding-top: 20px;
     margin: auto;
+
 }
 
 .theme_slide_title {
@@ -666,7 +685,7 @@ li {
 
 .theme_controls span:first-child {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 0;
     padding: 0px 5px;
     font-size: 35px;
@@ -674,7 +693,7 @@ li {
 }
 .theme_controls span:last-child {
     position: absolute;
-    top: 50%;
+    top: 40%;
     right: 0;
     padding: 0px 5px;
     font-size: 35px;
@@ -693,7 +712,7 @@ li {
 .reviewBook{
     margin-top: 100px;
     /* background-color: #FDF5DC; */
-    width: 1600px;
+    width: 1220px;
     height: 800px;
     /* border: 1px solid red; */
 }
@@ -912,11 +931,13 @@ li {
 .footer{
     /* border: 1px solid yellow; */
     width: 100%;
-    height: 350px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 150px;
+    background-color: #f1e1c8dc;
 }
 
 .icons{
@@ -926,7 +947,8 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid rgba(15, 15, 155, 0.377);
+    /* border-top: 1px solid rgba(15, 15, 155, 0.377); */
+    margin-top: 20px;
 }
 
 .footer .icons .iconFrame{
@@ -948,16 +970,41 @@ li {
 .footerScroll{
     /* background-color: red; */
     width: 100%;
-    height: 200px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* border-bottom: 1px solid rgba(15, 15, 155, 0.377); */
+    font-weight: bold;
+    /* border-bottom: #aaa double 1px; */
+
 }
 .footerScroll ul li{
     display: inline-block;
     margin: 10px;
     opacity: 0.7;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.footerContents{
+    margin-top: 50px;
+    width: 60%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.footerContents .logoBox{
+    height: 100%;
+    margin: 50px 80px 0 0;
+}
+
+.footerContents .footerText{
+    height: 100%;
 }
 
 /* /////////////////박성진 - footer END /////////////////////////////////// */
@@ -989,6 +1036,7 @@ li {
 
 /* ///////////////////////백진주 영역 시작--------------------------------------------------- */
 /* 장르별 도서 */
+
 .genreBook_pointer_con{
     width: 2000px;
     height: 800px;
@@ -997,6 +1045,10 @@ li {
     display: flex;
     justify-content: center;
    
+
+.genreBook{    
+    width: 1220px;
+    height: 800px; 
     
 }
 .genreBook_pointer_box{
@@ -1008,11 +1060,14 @@ li {
 
 /* 타이틀 변경 */
 .genreBook_pointer_title {
+    width: 1220px;
     padding: 10px;
     border-bottom: 1px solid black;
     color: rgb(117, 117, 118);
-    margin-top: 25px;
-    width: 100%; 
+
+    margin: 50px 0px;
+    margin-top: 100px;
+
 }
 .genreBook_pointer_title:hover {
     color: black;
@@ -1128,14 +1183,13 @@ li {
 /* 장르별 도서 새페이지영역*/
 /* 타이틀 */
 .genre_main_section{
-    width: 80%;
+    width: 1220px;
     height: 2000px;
-    
     /* background-color: rgb(242, 251, 255); */
 }
 /* 탭메뉴 */
 .tabmenu{ 
-  width:80%;
+  width:1220px;
   height: 930px; 
   background-color: #fff0d6;
   margin: 20px auto;
@@ -1319,38 +1373,46 @@ a{
     position: relative;
     padding: 20px;
 }
+
 .nav-bar-fixed{
     position: fixed;
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
     z-index: 150;
     top: 0;
     padding: 20px;
     background-color: white;
 }
-.nav-bar > span{
+.nav-bar > ul{
+    display: flex;
+}
+.nav-bar > ul > li{
+    padding: 10px;
+    margin: 0 30px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    
+}
+.nav-bar-fixed > ul{
+    display: flex;
+}
+.nav-bar-fixed > ul > li{
     padding: 10px;
     margin: 0 30px;
     font-size: 1.3rem;
     font-weight: 600;
     cursor: pointer;
 }
-.nav-bar-fixed > span{
-    padding: 10px;
-    margin:  0 30px;
-    font-size: 1.3rem;
-    font-weight: 600;
-    cursor: pointer;
-}
+
 .nav-bar-dropdown{
     /* 네비바 드롭다운 */
     display: flex;
+    display: none;
     justify-content: center;
-    opacity: 0;
     position: absolute;
-    top: 70px;
+    top: 80px;
     width: 100%; 
     z-index: 400;
     background-color: #F2F7F9;
@@ -1382,12 +1444,6 @@ a{
     font-size: 1.2rem;
 
 }
-.nav-bar > span:nth-child(3):hover ~ .nav-bar-dropdown{
-    display: flex;
-}
-.nav-bar-fixed > span:nth-child(3):hover ~ .nav-bar-dropdown{
-    display: flex;
-}
 
 .nav-bar-modal{
     position: absolute;
@@ -1399,14 +1455,7 @@ a{
     z-index: 200;
 
 }
-.nav-bar > span:nth-child(3):hover ~ .nav-bar-modal{
-    display: block;
 
-}
-.nav-bar-fixed > span:nth-child(3):hover ~ .nav-bar-modal{
-    display: block;
-
-}
 .bestSeller{
     display: flex;
     justify-content: center;
@@ -1615,68 +1664,109 @@ a{
     }
     
 }
-.grade{
-    border: 1px solid black;
+#bg-line{
     width: 1201px;
-    height: 350px;
-    margin:  80px 0;
+    padding: 10px;
+    margin-top: 40px;
+    background: url(bg\ line.gif);
+}
+.grade{
+    width: 1201px;
+    height: 450px;
+    margin:  30px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-top: 10px  #aaa;
 }
 .grade > h3{
     margin: 20px 0;
 }
+.grade-firstCon > h3{
+    font-size: 0.8rem;
+}
+.grade-firstCon > h2{
+    font-size: 0.6rem;
+}
+.grade-secondCon > div > h3{
+    font-size: 0.8rem;
+}
+.grade-secondCon > div > h2{
+    font-size: 0.6rem;
+}
 .grade-Con{
-    border: 1px solid red;
     width: 1201px;
-    height: 250px;
+    height: 450px;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
+
 .grade-Con > div:last-child{
-    margin-left: 130px;
+    margin-left: 90px;
 }
 .grade-firstCon{
-    border: 1px solid blue;
-    width: 170px;
-    height: 250px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    width: 200px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    background-color: #FCFCFC;
+ 
 
 }
+
+.grade-firstCon > *{
+    margin: 3px 0;
+}
 .grade-firstCon > div{
-    width: 100px;
+    width: 140px;
+
+}
+.grade-firstCon > div > img:hover{
+    border: 1px solid rgba(0, 0, 0, 0.6);
 }
 .grade-firstCon > div > img{
     width: 100%;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
 }
 .grade-secondCon{
     display: flex;
     justify-content: center;
-    border: 1px solid green;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     width: 900px;
-    height: 250px;
+    height: 350px;
 }
 .grade-secondCon > div{
     width: 170px;
     height: 250px;
-    border: 1px solid brown;
     margin: 0 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+.grade-secondCon > div > *{
+    margin: 3px 0;
 }
 .grade-secondCon > div > div{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100px;
+    width: 140px;
 }
 .grade-secondCon > div > div > img{
     width: 100%;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.3);
 }
+.grade-secondCon > div > div > img:hover{
+    border: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+
 
 /* ///////////////////////////////////이상호//////////////////////////////// */
 
