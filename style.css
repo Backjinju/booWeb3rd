@@ -1180,7 +1180,7 @@ li {
 /* 타이틀 */
 .genre_main_section{
     width: 1220px;
-    height: 2000px;
+    height: 1950px;
     /* background-color: rgb(242, 251, 255); */
 }
 /* 탭메뉴 */
@@ -1409,10 +1409,10 @@ a{
     display: none;
     justify-content: center;
     position: absolute;
-    top: 80px;
+    top: 89px;
     width: 100%; 
     z-index: 400;
-    background-color: #F2F7F9;
+    background-color: #e9d4bbe3;
 }
 .nav-bar-dropdown > div{
     margin: 10px 0;
@@ -1491,9 +1491,6 @@ a{
 .bestSeller-sell-ele > img{
     width: 200px;
 
-}
-#font-warp,.bestSeller-sell-warp{
-    margin: 0 80px;
 }
 .slideItem{
     width: 100%;
@@ -1761,6 +1758,10 @@ a{
 }
 .grade-secondCon > div > div > img:hover{
     border: 1px solid rgba(0, 0, 0, 0.6);
+}
+.grade > h1{
+    border-bottom: 1px solid black;
+    color: rgb(117, 117, 118);
 }
 
 
