@@ -25,7 +25,7 @@ body{
     align-items: center;
     width: 100%;
     /* background-color: rgb(64, 135, 201); */
-    height: 400%;
+    height: 100%;
     z-index: 1;
     overflow: hidden;
     position: relative;
@@ -63,7 +63,7 @@ body{
     height: 50px;
     border-radius: 50%;
     position: fixed;
-    right: 80px;
+    left: 80px;
     top: 20px;
     z-index: 10000;
     overflow: hidden;
