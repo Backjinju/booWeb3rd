@@ -878,19 +878,78 @@ let close = document.querySelector('.close-area');
 let modalimg = document.querySelector('.modalimg');
 let heart = document.querySelectorAll('.fa-regular');
 
+let p2 = document.querySelector('.p2Y');
+let p3 = document.querySelector('.p3Y');
+
+
+const modalpageY = [
+        {
+            date: "2022-07-26",
+            text: "123"
+        },
+        {
+            date: "2021-02-28",
+            text: "456"
+        },
+        {
+            date: "2020-07-21",
+            text: "789"
+        },
+        {
+            date: "2018-01-11"
+            
+        },
+        {
+            date: "2022-01-10"
+           
+        },
+        {
+            date: "2022-04-11"
+          
+        },
+        {
+            date: "2020-08-21"
+           
+        },
+        {
+            date: "2020-08-30"
+            
+        },
+        {
+            date: "2018-09-07"
+         
+        },
+        {
+            date: "2020-06-29"
+            
+        }
+]
+
 
 //모달창
 for(let i = 0; i< boxs.length; i++){
     boxs[i].addEventListener('click', function(e){
         modalY.style.display = 'flex';
+        //박스를 클릭했을 때 그 박스의 이미지를
+        //모달창에 있는 이미지로 바로 가져올 수 있도록 함
         modalimg.src = e.target.src;
+
+
+        //객체에서 내용가져와서 상자마다 내용다르게
+        p2.innerHTML = modalpageY[i].date;
+        
+        
+
     })
 }
 
+//모달창 x클릭했을 때 닫히는 것
 close.addEventListener('click', function(){
     modalY.style.display = 'none';
 })
 
+
+//모달창 외의 배경을 클릭했을 때 닫히는 것
 modalY.addEventListener('click', function(e){
 
     //조건문을 사용!
@@ -901,218 +960,88 @@ modalY.addEventListener('click', function(e){
 })
 
 
-//하트 색칠해지는
-
+//하트 색칠+애니메이션
 for(let i = 0; i <heart.length; i++)
 {
     heart[i].addEventListener('click', function(e){
         
-        //애니메이션으로 scale 조절 & opacity
+        //css에서 애니메이션으로 scale 조절 & opacity
         //queryselectorAll은 배열, 인덱스로 요소 하나하나를 접근
-        //같다 > == or ===
-        if(heart[i].className == 'fa-regular fa-heart')
+        if(heart[i].className == 'fa-regular fa-heart') //빈하트
         {
-            heart[i].className = 'fa-solid fa-heart';
-            heart[i].classList.add('animation');
+            heart[i].className = 'fa-solid fa-heart'; //꽉찬하트
+            heart[i].classList.add('animation'); //애니메이션 호출
         }
-        else if(heart[i].className == 'fa-solid fa-heart animation')
+        else if(heart[i].className == 'fa-solid fa-heart animation') //꽉찬하트
         {
-            heart[i].className = 'fa-regular fa-heart';
+            heart[i].className = 'fa-regular fa-heart'; //다시 빈하트로
         }
     })
 }
 
-//좋아요 수 up
 
 //페이징
 
-//상자 정보들을 객체에 담기 (20개)
-//1,2,3번있음
-//2번을 클릭하면 객체에서 정보빼오기(3번도똑같이)
+//상자 정보들을 제이슨 파일에 담기 (30개)
 
-const pagesY = [
-    {
-      id: 1,
-      name: "cmklove1***",
-      img: "http://127.0.0.1:5504/reviewimage/img11.jpg"
-    },
-    {
-        id: 2,
-        name: "whend5***",
-        img: "http://127.0.0.1:5504/reviewimage/img12.jpg"
-    },
-    {
-        id: 3,
-        name: "kimok0***",
-        img: "http://127.0.0.1:5504/reviewimage/img13.jpg"
-    },
-    {
-        id: 4,
-        name: "ddsgrg***",
-        img: "http://127.0.0.1:5504/reviewimage/img14.jpg"
-    },
-    {
-        id: 5,
-        name: "sfe5454***",
-        img: "http://127.0.0.1:5504/reviewimage/img15.jpg"
-    },
-    {
-        id: 6,
-        name: "jyyo34***",
-        img: "http://127.0.0.1:5504/reviewimage/img16.jpg"
-    },
-    {
-        id: 7,
-        name: "hryy68***",
-        img: "http://127.0.0.1:5504/reviewimage/img17.jpg"
-    },
-    {
-        id: 8,
-        name: "ru46i***",
-        img: "http://127.0.0.1:5504/reviewimage/img18.jpg"
-    },
-    {
-        id: 9,
-        name: "whend5***",
-        img: "http://127.0.0.1:5504/reviewimage/img19.jpg"
-    },
-    {
-        id: 10,
-        name: "ktyty45***",
-        img: "http://127.0.0.1:5504/reviewimage/img20.jpg"
-    },
-    {
-        id: 11,
-        name: "heru7***",
-        img: "http://127.0.0.1:5504/reviewimage/img21.jpg"
-    },
-    {
-        id: 12,
-        name: "dfheh***",
-        img: "http://127.0.0.1:5504/reviewimage/img22.jpg"
-    },
-    {
-        id: 13,
-        name: "kkuyt***",
-        img: "http://127.0.0.1:5504/reviewimage/img23.jpg"
-    },
-    {
-        id: 14,
-        name: "dgrheh899***",
-        img: "http://127.0.0.1:5504/reviewimage/img24.jpg"
-    },
-    {
-        id: 15,
-        name: "ytktdg77***",
-        img: "http://127.0.0.1:5504/reviewimage/img25.jpg"
-    },
-    {
-        id: 16,
-        name: "qwryty76***",
-        img: "http://127.0.0.1:5504/reviewimage/img26.jpg"
-    },
-    {
-        id: 17,
-        name: "tyrju88***",
-        img: "http://127.0.0.1:5504/reviewimage/img27.jpg"
-    },
-    {
-        id: 18,
-        name: "greggb65***",
-        img: "http://127.0.0.1:5504/reviewimage/img28.jpg"
-    },
-    {
-        id: 19,
-        name: "dhtrhbg76***",
-        img: "http://127.0.0.1:5504/reviewimage/img29.jpg"
-    },
-    {
-        id: 20,
-        name: "yegbg454***",
-        img: "http://127.0.0.1:5504/reviewimage/img30.jpg"
-    },
-  ];
-
-  const firstpageY = [
-    {
-        name: "ss**3ssy",
-        img: "http://127.0.0.1:5504/reviewimage/img1.jpg"
-    },
-    {
-        name: "el**antfly",
-        img: "http://127.0.0.1:5504/reviewimage/img2.jpg"
-    },
-    {
-        name: "hy**9800",
-        img: "http://127.0.0.1:5504/reviewimage/img3.jpg"
-    },
-    {
-        name: "ju**juno1",
-        img: "http://127.0.0.1:5504/reviewimage/img4.jpg"
-    },
-    {
-        name: "al**holic0",
-        img: "http://127.0.0.1:5504/reviewimage/img5.jpg"
-    },
-    {
-        name: "ja**man456",
-        img: "http://127.0.0.1:5504/reviewimage/img6.jpg"
-    },
-    {
-        name: "ka**ng05",
-        img: "http://127.0.0.1:5504/reviewimage/img7.jpg"
-    },
-    {
-        name: "ti**iii",
-        img: "http://127.0.0.1:5504/reviewimage/img8.jpg"
-    },
-    {
-        name: "a**ae205",
-        img: "http://127.0.0.1:5504/reviewimage/img9.jpg"
-    },
-    {
-        name: "a**ae205",
-        img: "http://127.0.0.1:5504/reviewimage/img10.jpg"
-    }
-  ]
+//복합적인 문제때문에 ajax로 했을 때나 그냥 했을 때나
+//성능의 차이가 별로 없어서 fadein, fadeout으로 눈속임해야 할 듯
 
   let pagebtn = document.querySelectorAll('.listnumber span');
   let boxsimg = document.querySelectorAll('.topimg img');
   let nameY = document.querySelectorAll('.name');
 
-    for(let i=0; i < pagebtn.length; i++) //3
-    {
-        pagebtn[i].addEventListener('click', function(e){
+for(let i=0; i<pagebtn.length; i++)
+{
+    //페이지 버튼 1,2,3을 눌렀을 때
+    pagebtn[i].addEventListener('click', function(){
+        //ajax사용
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function(){
 
+            //json파일에 있는 객체 빼오기
+            const myObj = JSON.parse(this.responseText);
+            
+            //1페이지
             if(i == 0)
             {
-                for(let j=0; j < boxsimg.length; j++) //10
+                for(let j=0; j < boxsimg.length; j++) //길이:10
                 {
                     // console.log(boxsimg[j].src);
-                    boxsimg[j].src = firstpageY[j].img;
-                    nameY[j].innerHTML = firstpageY[j].name;  
+                    boxsimg[j].src = myObj[j].img;
+                    nameY[j].innerHTML = myObj[j].name;  
                 }
             }
+            //2페이지
             else if(i == 1)
             {
-                //한번에 나타나도록 하려면...
-                for(let j=0; j < boxsimg.length; j++) //10
+                for(let j=0; j < boxsimg.length; j++) //길이:10
                 {
-                    // console.log(boxsimg[j].src);
-                    boxsimg[j].src = pagesY[j].img;
-                    nameY[j].innerHTML = pagesY[j].name;  
+                    
+                    boxsimg[j].src = myObj[j+10].img;
+                    nameY[j].innerHTML = myObj[j+10].name;  
                 }
             }
+            //3페이지
             else if(i == 2)
             {
-                for(let j=0; j < boxsimg.length; j++) //10
+                for(let j=0; j < boxsimg.length; j++) //길이:10
                 {
-                    // console.log(boxsimg[j].src);
-                    boxsimg[j].src = pagesY[j+10].img;
-                    nameY[j].innerHTML = pagesY[j+10].name;  
+                   
+                    boxsimg[j].src = myObj[j+20].img;
+                    nameY[j].innerHTML = myObj[j+20].name;  
                 }
             }
-        });
-    }
+
+
+        }
+        //ajax는 서버에 get 혹은 post 방식의 요청을 보낼 수 있음
+        //이때 서버로 전송하고자 하는 데이터는 url에 포함되어 전송
+
+        xhttp.open("GET", "review.json");
+        xhttp.send();
+    })
+}
+
 
 //////////////////////양희끝////////////////////////
