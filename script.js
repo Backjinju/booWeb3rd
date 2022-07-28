@@ -484,27 +484,33 @@ let bookitem = document.querySelectorAll(".bookItem");
 let bookslider = document.querySelector(".bestSeller-book-move");
 let bookwarp = document.querySelector(".bestSeller-book-warp");
 let bookfirstChild = bookslider.firstElementChild.cloneNode(true);
+//마지막에서 첫번째로 돌아올때 잠시 보여질 첫번째 자식클론노드 변수에 저장
 bookslider.appendChild(bookfirstChild)
-let booklastChild = bookslider.lastChild.cloneNode(true);
+// 클론노드 추가하기
 
-
-let width = 0;
 let i = 0;
-
+//setinterval의 실행 횟수를 사용하기 위해 변수 0 초기화
 setInterval(function(){    
     if(bookitem.length >= i){
         bookslider.style.transform = "translate3d(-"+130*(i+1)+"px, 0px, 0px)";
         bookslider.style.transition = "0.2s";
         i++
     }
+    // 이미지 요소 개수만큼 슬라이드를 구현하기 위해 length로 비교 조건을 주었음
+    // 요소 개수보다 작으면 슬라이드를 요소의 넓이만큼 이동시킨뒤
+    // 변수를 1증가 시킴
     if(i === 3){
         setTimeout(function(){
             bookslider.style.transition = "0s";
             bookslider.style.transform = "translate3d(0px,0px,0px)";
         },300)
+    // 이미지 요소의 마지막인 3에서 슬라이드 위치를 초기하기위해 translate를 0으로 맞추고
+    // 자연스러운 슬라이드를 위해 바뀌는 시간에는 미리 만들어놓은 클론노드가 잠시 보여진다
+    // 처음부터 시작하기 위한 변수 0초기화
         i = 0;
     }       
 },5000)
+
 
 
 //광고 삭제 버튼
@@ -512,6 +518,7 @@ let bookBtn = document.querySelector("#bestSeller-book-btn");
 let bookmove = document.querySelector(".bestSeller-book");
 let bookicon = document.querySelector("#icon")
 let flag = false;
+// 플래그 사용
     bookBtn.addEventListener("click",function(){
         if(flag === false){
             bookmove.style.left ="-150px";
@@ -520,6 +527,9 @@ let flag = false;
             bookBtn.style.transition = "0.5s"
             bookicon.className = "fa-solid fa-angle-right";
             flag = true;
+            // 버튼 클릭시 위치를 바꾸는 이벤트
+            // -위치를 줘서 화면 바깥으로 나가보임
+
         }
         else if(flag === true){
             bookmove.style.left = "0px";
@@ -540,12 +550,15 @@ let dropdown_mo = document.querySelector(".nav-bar-modal");
 
 
 hoverEle.addEventListener("mouseover",function(){
+    // 마우스 포인터가 요소위로 올라가면 이벤트가 발생하는 mouseover사용으로
+    // 드롭다운 구현
     dropdown.style.display = "flex";
     dropdown_mo.style.display = "block";
 
 
 })
 dropdown.addEventListener("mouseleave",function(){
+    // 마우스 포인터가 요소를 떠나가면 이벤트가 발생하는 mouseleave사용
     dropdown.style.display = "none";
     dropdown_mo.style.display = "none";
 
@@ -568,7 +581,6 @@ let text2 = document.querySelectorAll(".ani-2");
 let text3 = document.querySelectorAll(".ani-3");
 let imgEle = document.querySelector("#bestSeller-sell-img");
 
-console.log(text1)
 let fontcount = 0
 
 if(fontcount === 0){
@@ -598,6 +610,9 @@ if(fontcount === 0){
     
 }
 
+
+//전체적인 구현 -> 겹쳐놓은 이미지를 setinterval 실행횟수에 따라 하나씩 opacity 0 으로 바꿔주는 것 
+//이미지의 개수만큼 효과가 구현되면 실행횟수 0으로 재할당
  setInterval(function(){
     if(fontcount === 0){
         headerimg_1.style.opacity = "0";
@@ -610,25 +625,36 @@ if(fontcount === 0){
         text1[0].className = "ani-1"
         text2[0].className = "ani-2"
         text3[0].className = "ani-3"
+        //코드는 위에서 아래 순서로 시작되기 때문에 변수값이 변하면 이전에 발생한 코드를 먼저 사라지게 해줌
     setTimeout(function(){
+        // 5초 간격으로 opacity 1에서 0으로 변하는 이벤트를 주기위해 setinterval을 5000간격으로 줌
+        //폰트,이미지,헤더배경 각각 다른 시간차를 구현하고 싶어서 코드 실행 시간을 조정하는 settimeout을 각각 따로 부여  
+        //총 3번 변하는 이벤트를 구현하기 위해 총 3개의 setinterval사용
+        //변수는 실행 횟수를 0으로 초기화해서 사용
+        //setinterval을 5000간격으로 주면 5초간격으로 실행되기 때문에 바로 실행되진 않음
+        //처음 나오는 효과는 한번 사용하고 없어질수 있도록 if문으로 구현 실행
         headerimg_2.style.transition = "1s";
         headerimg_2.style.opacity = "1";
         imgEle.style.opacity = "1";
         imgEle.style.transition = "1s"
         imgEle.style.boxShadow = "0px 10px 20px 5px rgba(0, 0, 0, 0.5)";
+        //제일먼저 실행될 코드 -> settimeout의 시간값이 제일 낮아서 먼저 시작됨
 
     },1200)
     setTimeout(function(){
+        //두번째
         fontEle_3.style.transition = "1s";
         fontEle_3.style.opacity = "1";
         fontEle_3.style.transform = "translateY(-100px)";
     },1500)
     setTimeout(function(){
+        //세번째
         fontEle_4.style.transition = "1s";
         fontEle_4.style.opacity = "1";
         fontEle_4.style.transform = "translateY(-100px)";
     },1800)
     setTimeout(function(){
+        //네번째는 css 애니메이션으로 구현하였기 때문에 애니메이션 name이 있는 클래스로 변경        //마지막엔 그냥 변수 0으로 초기화하면됨
         text1[1].className = "textani"
         text2[1].className = "textani1"
         text3[1].className = "textani2"
@@ -724,26 +750,36 @@ if(fontcount === 0){
 let sellItem = document.querySelectorAll(".slideItem");
 let sellEle = document.querySelectorAll(".sellEle");
 let sellwarp = document.querySelector(".bestSeller-sell-warp");
+
 let child = sellwarp.firstElementChild.cloneNode(true);
-
 sellwarp.appendChild(child);
-
+//전체적인 구현-> position absolute로 겹쳐놓은 요소를 하나씩 opacity 0으로 사라지게하고
+//다른이미지가 보일때 opacity 1로 되돌리기 반복
+//5000초 간격마다 코드를 실행하기 위해 setinterval사용
+//마지막 요소에서 첫번째로 이동 할때 자연스러운 이동을 주기위해 첫번째 요소를
+//클론노드로 추가하여 마지막요소에서 첫번째로 바뀔때 클론노드가 잠시 보인다
 let sellCount = 0
- 
+    // setinterval 실행횟수를 사용하기 위해 변수를 0으로 초기화 
     setInterval(function(){
      if(sellItem.length > sellCount){
+        //이미지의 개수만큼 실행하기 위해 length로 조건 비교
          sellItem[sellCount].style.opacity = "0";
+        // 변수가 0~3으로 반복될것이기 때문에 쿼리셀렉터올의 요소를 변수로 하나씩 지정해줌
      }
      if(sellCount === 0){
+        //변수가 0일때 이미지2번이 opacity 1이 됨
         sellItem[1].style.opacity = "1";
      }   
      if(sellCount ===1){
+        //변수가 1일때 이미지2번이 opacity 1이 됨
         sellItem[2].style.opacity = "1";
      } 
      if(sellCount ===2){
+        //변수가 2일때 이미지2번이 opacity 1이 됨
         sellItem[0].style.opacity = "1";
      }
     setTimeout(function(){
+        //변수가 3일때 변수 0으로 재할당
         if(sellCount === 3){
                 sellCount = 0
          }
@@ -756,8 +792,12 @@ let sellCount = 0
 
 //네비바 픽스드 이벤트
 let scrollNav_bar = document.querySelector(".nav-bar"); 
+//전체적인 구현 -> 스크롤의 위치값을 받아올수 있는 window객체의 pageoffset메소드 사용
+//window객체를 사용하면 스크롤값에 따른 이벤트를 줄수 있다.
 
 window.addEventListener("scroll",function(){
+    //pageoffset으로 받은 값이 메뉴바의 높이인 80이 넘어가면 고정이 될수 있도록 조건을 80으로 작성
+    //position fixed값이 있는 클래스로 변경하여 스크롤바 고정 이벤트 구현
     if(window.pageYOffset > 80){
         scrollNav_bar.className = "nav-bar-fixed";
     }
@@ -775,8 +815,14 @@ let second = scrollpotint[1].offsetTop;
 let third = scrollpotint[2].offsetTop;
 let fourth = scrollpotint[3].offsetTop;
 
+//전체적인 구현-> 원하는 위치를 선정하여 클래스명을 부여하고 그 요소의 위치값을 받아올수 있는 속성 offsettop
+//으로 위치값을 변수에 저장하고 클릭을 하면 위치값으로 이동 시킬수 있는 window객체의 scrollto메소드 사용
+//scrollTo({top:위치값 , hehavior: 움직이는 스크롤 효과 지정}) 
+
 scrollele[0].addEventListener("click",function(){
+    //쿼리셀렉터올을 사용하여 []로 요소를 지정해서 클릭이벤트 부여
     window.scrollTo({top:first,behavior:"smooth"});
+    // 원하는 좌표로 스크롤을 움직일수 있게 하는 window.scrollTo사용
 })
 scrollele[1].addEventListener("click",function(){
     window.scrollTo({top:second,behavior:"smooth"});
