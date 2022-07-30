@@ -943,50 +943,6 @@ let p2 = document.querySelector('.p2Y');
 let p3 = document.querySelector('.p3Y');
 
 
-const modalpageY = [
-        {
-            date: "2022-07-26",
-            text: "123"
-        },
-        {
-            date: "2021-02-28",
-            text: "456"
-        },
-        {
-            date: "2020-07-21",
-            text: "789"
-        },
-        {
-            date: "2018-01-11"
-            
-        },
-        {
-            date: "2022-01-10"
-           
-        },
-        {
-            date: "2022-04-11"
-          
-        },
-        {
-            date: "2020-08-21"
-           
-        },
-        {
-            date: "2020-08-30"
-            
-        },
-        {
-            date: "2018-09-07"
-         
-        },
-        {
-            date: "2020-06-29"
-            
-        }
-]
-
-
 //모달창
 for(let i = 0; i< boxs.length; i++){
     boxs[i].addEventListener('click', function(e){
@@ -994,12 +950,6 @@ for(let i = 0; i< boxs.length; i++){
         //박스를 클릭했을 때 그 박스의 이미지를
         //모달창에 있는 이미지로 바로 가져올 수 있도록 함
         modalimg.src = e.target.src;
-
-
-        //객체에서 내용가져와서 상자마다 내용다르게
-        p2.innerHTML = modalpageY[i].date;
-        
-        
 
     })
 }
@@ -1043,66 +993,59 @@ for(let i = 0; i <heart.length; i++)
 
 //페이징
 
+
+let pagebtn = document.querySelectorAll('.listnumber span');
+let boxsimg = document.querySelectorAll('.topimg img');
+let nameY = document.querySelectorAll('.name');
+
+
 //상자 정보들을 제이슨 파일에 담기 (30개)
-
-//복합적인 문제때문에 ajax로 했을 때나 그냥 했을 때나
-//성능의 차이가 별로 없어서 fadein, fadeout으로 눈속임해야 할 듯
-
-  let pagebtn = document.querySelectorAll('.listnumber span');
-  let boxsimg = document.querySelectorAll('.topimg img');
-  let nameY = document.querySelectorAll('.name');
-
-for(let i=0; i<pagebtn.length; i++)
-{
-    //페이지 버튼 1,2,3을 눌렀을 때
-    pagebtn[i].addEventListener('click', function(){
-        //ajax사용
-        const xhttp = new XMLHttpRequest();
-        xhttp.onload = function(){
-
-            //json파일에 있는 객체 빼오기
-            const myObj = JSON.parse(this.responseText);
-            
-            //1페이지
-            if(i == 0)
-            {
-                for(let j=0; j < boxsimg.length; j++) //길이:10
+    for(let i=0; i<pagebtn.length; i++)
+    {
+        //페이지 버튼 1,2,3을 눌렀을 때
+        pagebtn[i].addEventListener('click', function(){
+            //ajax사용
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function(){
+                //json파일에 있는 객체 빼오기
+                const myObj = JSON.parse(this.responseText);
+                //1페이지
+                if(i == 0)
                 {
-                    // console.log(boxsimg[j].src);
-                    boxsimg[j].src = myObj[j].img;
-                    nameY[j].innerHTML = myObj[j].name;  
+                    for(let j=0; j < boxsimg.length; j++) //길이:10
+                    {
+                            boxsimg[j].src = myObj[j].img;
+                            nameY[j].innerHTML = myObj[j].name;
+                    }
+                }
+                //2페이지
+                else if(i == 1)
+                {
+                    for(let j=0; j < boxsimg.length; j++) //길이:10
+                    {
+                            boxsimg[j].src = myObj[j+10].img;
+                            nameY[j].innerHTML = myObj[j+10].name;
+                    }
+                }
+                //3페이지
+                else if(i == 2)
+                {
+                    for(let j=0; j < boxsimg.length; j++) //길이:10
+                    {
+                            boxsimg[j].src = myObj[j+20].img;
+                            nameY[j].innerHTML = myObj[j+20].name;  
+                    }
                 }
             }
-            //2페이지
-            else if(i == 1)
-            {
-                for(let j=0; j < boxsimg.length; j++) //길이:10
-                {
-                    
-                    boxsimg[j].src = myObj[j+10].img;
-                    nameY[j].innerHTML = myObj[j+10].name;  
-                }
-            }
-            //3페이지
-            else if(i == 2)
-            {
-                for(let j=0; j < boxsimg.length; j++) //길이:10
-                {
-                   
-                    boxsimg[j].src = myObj[j+20].img;
-                    nameY[j].innerHTML = myObj[j+20].name;  
-                }
-            }
+            //ajax는 서버에 get 혹은 post 방식의 요청을 보낼 수 있음
+            //이때 서버로 전송하고자 하는 데이터는 url에 포함되어 전송
+
+            xhttp.open("GET", "review.json");
+            xhttp.send();
+        })
+    }
 
 
-        }
-        //ajax는 서버에 get 혹은 post 방식의 요청을 보낼 수 있음
-        //이때 서버로 전송하고자 하는 데이터는 url에 포함되어 전송
-
-        xhttp.open("GET", "review.json");
-        xhttp.send();
-    })
-}
 
 
 //////////////////////양희끝////////////////////////
