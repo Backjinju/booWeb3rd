@@ -37,12 +37,13 @@ loadingPage();
 
 
 function loadingPage(){
-    setTimeout(loadingFadeout,5) // 첫 로딩 이미지(setTimeout으로 시간 조절)
+    setTimeout(loadingFadeout,5000) // 첫 로딩 이미지(setTimeout으로 시간 조절)
 }
 
 function loadingFadeout(){
     loading.classList.add('fadeOut')
     loadingContainer.classList.remove('loadingContainer')
+    loginBox.style.display='flex'
 }
 
 let inActiveIconWidth = 50; // 로그인 아이콘박스가 비활성화 됐을 때의 너비

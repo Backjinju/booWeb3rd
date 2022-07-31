@@ -161,19 +161,19 @@ let addressBtn = document.querySelector('.addressBtn')
 let loadingContainer = document.querySelector('.container')
 
 
+loginBox.style.display='none'
+loadingContainer.classList.add('loadingContainer') // 로딩 화면을 불러올 때 전체 화면의 크기를 display에 맞게 변경해서 스크롤이 생기지 않게 만듦
+loadingPage();
 
-window.onload = () => {
-    loadingContainer.classList.add('loadingContainer') // 로딩 화면을 불러올 때 전체 화면의 크기를 display에 맞게 변경해서 스크롤이 생기지 않게 만듦
-    loadingPage();
-}
 
 function loadingPage(){
-    setTimeout(loadingFadeout,50) // 지정한 시간 이후 로딩 이미지를 display none으로 만듦 (테스트할 때 로딩화면 기다리기 싫어서 0.05초로 만들어 둠)
+    setTimeout(loadingFadeout,5000) // 첫 로딩 이미지(setTimeout으로 시간 조절)
 }
 
 function loadingFadeout(){
     loading.classList.add('fadeOut')
     loadingContainer.classList.remove('loadingContainer')
+    loginBox.style.display='flex'
 }
 
 let inActiveIconWidth = 50; // 로그인 아이콘박스가 비활성화 됐을 때의 너비
