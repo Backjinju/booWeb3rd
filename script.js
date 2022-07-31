@@ -31,13 +31,13 @@ let loadingContainer = document.querySelector('.container')
 
 
 
-window.onload = () => {
-    loadingContainer.classList.add('loadingContainer') // 로딩 화면을 불러올 때 전체 화면의 크기를 display에 맞게 변경해서 스크롤이 생기지 않게 만듦
-    loadingPage();
-}
+
+loadingContainer.classList.add('loadingContainer') // 로딩 화면을 불러올 때 전체 화면의 크기를 display에 맞게 변경해서 스크롤이 생기지 않게 만듦
+loadingPage();
+
 
 function loadingPage(){
-    setTimeout(loadingFadeout,50) // 지정한 시간 이후 로딩 이미지를 display none으로 만듦 (테스트할 때 로딩화면 기다리기 싫어서 0.05초로 만들어 둠)
+    setTimeout(loadingFadeout,4) // 첫 로딩 이미지(setTimeout으로 시간 조절)
 }
 
 function loadingFadeout(){
