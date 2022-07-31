@@ -755,7 +755,6 @@ li {
     height: 85%;
     position: relative;
 }
-
 .topimg img{
     width: 100%;
     height: 100%;
@@ -874,6 +873,9 @@ li {
     height: 70%;
     box-shadow: 10px 10px 10px 5px rgb(199, 199, 199);
 }
+.leftimg img:hover{
+    box-shadow: 12px 12px 12px 8px rgb(155, 154, 154);
+}
 .rightcontent{
     width: 70%;
     display: flex;
@@ -911,6 +913,42 @@ li {
     font-size: 1.2rem;
 }
 
+.plus{
+    margin: 20px;
+    height: 200px;
+    background-color: #dadce0;
+    display: flex;
+    justify-content: center;
+}
+.plus1{
+    /* border: 1px solid black; */
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.plusimg{
+    width: 50%;
+    height: 90%;
+}
+.plusimg:hover{
+    box-shadow:3px 3px 3px gray;
+}
+.plusimg img{
+    width: 100%;
+    height: 100%;
+}
+.plus2{
+    width: 18%;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+.plus2:hover{
+    text-decoration: underline;
+}
 /* //////////////////////////////양희 끝/////////////////////////////////// */
 
 
