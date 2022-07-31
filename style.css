@@ -1039,12 +1039,9 @@ li {
 
 /* ///////////////////////백진주 영역 시작--------------------------------------------------- */
 /* 장르별 도서 */
-
 .genreBook_pointer_con{
     width: 100%;
-    height: 800px;
-    /* background-color: #ffebd4e3;  */
-    /* background-color: #ffecfa; */
+    height: 750px;
     display: flex;
     justify-content: center;
 }
@@ -1068,7 +1065,6 @@ li {
 .gb_cont{   
     display: flex;
     justify-content: center;
-    /* background-color: #ffebd4e3;  */
     margin: 0px auto;
     overflow: hidden;
 
@@ -1076,11 +1072,7 @@ li {
 .gb_cont ul{
     width: 1290px;    
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
     flex-wrap: wrap;
-  
-    
 }
 .gb_item {
     display: inline-block;    
@@ -1143,21 +1135,19 @@ li {
 .gb_tagList_txt{
     font-size:1.2rem;
     color:white;
+    /* 글자에 그림자효과 */
     text-shadow: 0 0 5px rgb(70, 70, 70);
     overflow:hidden;
+    /* white-space  공백처리 속성
+    스페이스와 탭은 1칸 띄어쓰기, 줄바꿈도 1개의 공백, 자동줄바꿈 안됨 */
     white-space:nowrap;
-    animation: typing 3s steps(27) forwards, 
-                blink .4s step-end infinite;
-    animation-iteration-count: infinite;
+    /* 애니메이션 이름, 시간, 속도 방향 ;
+    steps(15) 3초동안에 15단계로 실행-숫자가 클수록 부드러운느낌
+    forwards 키프레임의 100%에 도달했을때 마지막 키프레임유지 
+    infinite 무한반복 */
+    animation: typing 3s steps(15) forwards infinite;               
 }
-@keyframes blink{
-    from, to{
-        border-color:transparent;
-    }
-    50%{
-        border-color:white;
-    }
-}
+/* 너비 간격을 단계별로 두어 타이핑효과 애니메이션 */
 @keyframes typing{
     0%{
         width:0%;
@@ -1181,15 +1171,14 @@ li {
 .genre_main_section{
     width: 1220px;
     height: 2000px;
-    /* background-color: rgb(242, 251, 255); */
 }
 /* 탭메뉴 */
 .tabmenu{ 
-  width:1220px;
-  height: 930px; 
-  background-color: #fff0d6;
-  margin: 20px auto;
-  position:relative; 
+    width:1220px;
+    height: 930px; 
+    background-color: #fff0d6;
+    margin: 20px auto;
+    position:relative; 
  
 }
 .tabmenu_list{
@@ -1213,6 +1202,8 @@ li {
   cursor: pointer;
 }
 .tabmenu input{
+    /* radio input은 기능만 필요하므로
+     display: none 처리 */
     display:none;
 }
 .tabCon{
@@ -1226,11 +1217,9 @@ li {
   overflow: hidden;
   
 }
-/* .btnCon label:hover{
-    height: 80px;
-} */
-
-.tabmenu input:checked ~ label{    
+.tabmenu input:checked ~ label{
+/* 형제 선택자 ~를 이용하여 input이 checked 되면
+laber(탭제목)에 효과 부여 */
     font-size: 1.5rem;
     font-weight: 800;
     color: black;
@@ -1240,11 +1229,9 @@ li {
 .tabmenu input:checked .tabmenu{
     background-color: #ffefd6;
 }
-
 .tabmenu input:checked ~ .tabCon{
-  display:block;
- 
-}
+    display:block;
+ }
 /* 탭메뉴 안 책 리스트 */
 .genre_mid_slide{
     display: flex;

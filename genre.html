@@ -461,11 +461,15 @@
 			<!-- 김수근 끝-->
 			<div class="genreBook_pointer_title pointer">
 				<h1 class="gb_mtit">장르별 도서</h1>
-			</div>  				          
+			</div>				          
 
 			<div class="tabmenu">
-				<ul class="tabmenu_list">
+				<ul class="tabmenu_list">					
 					<li id="tab1" class="btnCon"><input type="radio" checked name="tabmenu" id="tabmenu1" >
+						<!-- input의 radio 속성으로 탭 메뉴 구성 - 여러 체크항목 중 한개만 선택되어야 하므로 radio로 처리
+							 첫번째 탭에 checked 속성을 추가해 활성화 시킴 -->
+						<!-- laber을 탭메뉴로 사용하고, input과 laber을 연동하기위에 input id와 laber for 정보를 일치시킴.-->
+						<!-- 탭 메뉴 만큼 laber을 추가하려면 모든 laber의 name은 동일해야함 -->
 						<label for="tabmenu1">국내도서</label>
 							<div class="tabCon">
 								<div class="genre_mid_slide">
