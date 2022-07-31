@@ -137,7 +137,7 @@ let newBook = document.querySelector('.newBook')
 let genreBook = document.querySelector('.genreBook')
 let reviewBook = document.querySelector('.reviewBook')
 let loading = document.querySelector('.loadingImg')
-let loginIcon = document.querySelector('.loginBtn')
+let loginBtn = document.querySelector('.loginBtn')
 let loginBox = document.querySelector('.loginIcon')
 let iconsBox = document.querySelector('.iconsBox')
 let iconsCloseBtn = document.querySelector('.iconsCloseBtn')
@@ -160,31 +160,37 @@ let legDetailAddress = document.querySelector('.legDetailAddress')
 let addressBtn = document.querySelector('.addressBtn')
 let loadingContainer = document.querySelector('.container')
 
+
+
 window.onload = () => {
-    loadingContainer.classList.add('loadingContainer')
+    loadingContainer.classList.add('loadingContainer') // 로딩 화면을 불러올 때 전체 화면의 크기를 display에 맞게 변경해서 스크롤이 생기지 않게 만듦
     loadingPage();
+}
+
+function loadingPage(){
+    setTimeout(loadingFadeout,50) // 지정한 시간 이후 로딩 이미지를 display none으로 만듦 (테스트할 때 로딩화면 기다리기 싫어서 0.05초로 만들어 둠)
 }
 
 function loadingFadeout(){
     loading.classList.add('fadeOut')
     loadingContainer.classList.remove('loadingContainer')
 }
-function loadingPage(){
-    setTimeout(loadingFadeout,45) // 테스트할 때 로딩화면 기다리기 싫어서 0.05초로 만들어 둠
-}
 
-loginIcon.addEventListener('click',function(){
-    if(loginModal.style.display == 'none' &&
-    loginBox.style.width == '200px'){
+let inActiveIconWidth = 50; // 로그인 아이콘박스가 비활성화 됐을 때의 너비
+let activeIconWidth = 200; // 로그인 아이콘박스가 활성화 됐을 때의 너비
+let iconsBoxTranslate = 57; // 비활성화 상태의 아이콘 박스에서 로그인 아이콘만 보이도록 좌표 조정
+
+loginBtn.addEventListener('click',function(){
+    if(loginModal.style.display == 'none' && loginBox.style.width == `${activeIconWidth}px`){
         loginModal.style.display = 'flex'
     }
-})
+}) // 로그인 아이콘을 클릭했을 때 모달창이 display none상태이고, 로그인 아이콘 박스가 활성화 되지 않았다면 모달창을 활성화
 
 iconsCloseBtn.addEventListener('click',function(){
-        iconsBox.style.transform = 'translate(57px,0)'
-        loginBox.style.width = '50px'
+        iconsBox.style.transform = `translate(${iconsBoxTranslate}px, 0)`
+        loginBox.style.width = `${inActiveIconWidth}px`
         loginBox.style.borderRadius = '50%'
-})
+}) // 아이콘 박스 내의 화살표 버튼을 누르면 아이콘 박스가 원형 모양으로 줄어든다.
 
 const {width:loginBoxWidth, height:loginBoxheight} = loginBox.getBoundingClientRect();
 const {width:containerWidth, height:containerHeight} = container.getBoundingClientRect();
@@ -194,21 +200,19 @@ let originLeft = null;
 let originTop = null;
 let originX = null;
 let originY = null;
+const xEndPoint = containerWidth - loginBoxWidth; //container의 크기에서 loginBox의 크기를 빼서 loginBox가 넘어가지 않는 경계선을 구한다. (x좌표)
+const yEndPoint = containerHeight - loginBoxheight; //container의 크기에서 loginBox의 크기를 빼서 loginBox가 넘어가지 않는 경계선을 구한다. (y좌표)
 
-loginIcon.addEventListener('click',function(){
-    if(loginBox.style.width != '200px'){
-        iconsBox.style.transform = 'translate(0px,0)'
-        loginBox.style.width = '200px'
+loginBtn.addEventListener('click',function(){
+    if(loginBox.style.width != `${activeIconWidth}px`){ // 아이콘 박스의 너비로 활성화 유무를 판단.
+        iconsBox.style.transform = 'translate(0px,0)' // 아이콘 박스가 활성화 됐을 땐 좌표 조정이 필요 없음
+        loginBox.style.width = `${activeIconWidth}px`
         loginBox.style.borderRadius = '30px'
-    } else{
-        iconsBox.style.transform = 'translate(57px,0)'
-        loginBox.style.width = '50px'
-        loginBox.style.borderRadius = '50%'
-    }
-})
+    } 
+}) // 로그인 버튼으로 로그인 박스를 활성화
 
 loginBox.addEventListener("mousedown", function(e){
-    boxFlag = true;
+    boxFlag = true; // 아이콘 이동이 시작 되었다는 표시
     originX = e.clientX; //마우스의 x축 포인터(브라우저 기준)
     originY = e.clientY; //마우스의 y축 포인터(브라우저 기준)
     originLeft = loginBox.offsetLeft;//container(부모)기준 loginBox좌표
@@ -216,15 +220,18 @@ loginBox.addEventListener("mousedown", function(e){
 }) //loginBox를 클릭했을 때 저장되는 변수 값들
 
 document.addEventListener("mouseup", function(e){
-    boxFlag = false;
+    boxFlag = false; // 아이콘 이동이 끝났다는 표시 (마우스 클릭을 땠을 때)
+
+    if(loginBox.style.left.split('px')[0]>=containerWidth-activeIconWidth){
+        loginBox.style.left = `${containerWidth-activeIconWidth}px`;        
+    } // 로그인 박스가 활성화 됐을 때, container밖으로 나갈 경우 left를 조정해서 나기지 않도록 한다.
 })
 
 document.addEventListener("mousemove", function(e){
     if(boxFlag && loginBox.style.width != '200px'){
-        const diffx= e.clientX - originX // 마우스가 움직일 때의 좌표값에 처음 클릭했을 때 입력된 좌표값을 빼서 이동거리를 구한다. 
+        const diffx= e.clientX - originX // 마우스가 움직일 때의 좌표값에 처음 클릭했을 때 입력된 좌표값을 빼서 "이동거리"를 구한다. 
         const diffy= e.clientY - originY
-        const xEndPoint = containerWidth - loginBoxWidth; //container의 크기에서 loginBox의 크기를 빼서 loginBox가 넘어가지 않는 경계선을 구한다.
-        const yEndPoint = containerHeight - loginBoxheight;
+
         loginBox.style.left = `${Math.min(Math.max(0,originLeft+diffx),xEndPoint)}px`
         //좌우는 max로 좌측으론 0이하로 떨어지지 않게 만들고 , min으로 오른쪽 끝을 넘어가지 않게 만든다.
         loginBox.style.top = `${Math.min(Math.max(0,originTop+diffy),yEndPoint)}px`
@@ -269,7 +276,7 @@ loginModal.addEventListener('click', function(){
 
 
 signUp.addEventListener('click', function(){
-    loadingBook.style.zIndex = '1';
+    loadingBook.style.zIndex = '1'; 
     modalTitle.style.opacity = '0';
     inputText.style.opacity = '0';
     inputPasswd.style.opacity = '0';
@@ -350,67 +357,95 @@ let legPhone = document.querySelector('.legPhone')
 let male = document.querySelector('.fa-mars')
 let female = document.querySelector('.fa-venus')
 
-if(typeof(Storage)!== 'undefined'){
-    sessionStorage.legId = legId.value;
+
+///////글씨 색깔///////////
+let defaultColor = "D2691E";
+let warnColor = "crimson";
+let cautionColor = "orangered";
+let passColor = "19,168,99";
+//////////////////////////
+
+
+if(typeof(Storage)!== 'undefined'){ //웹 브라우저가 스토리지를 지원하는 지 확인.
+    sessionStorage.legId = legId.value; // 스토리지에 value값을 저장해 둔다.
     if (legId.value === 'undefined') {
         //세션스토리지에 undefined가 들어 있다면
         //undefined가 뜨지않게 하기 위해서 공백을 넣음
         legId.value = '';
     } else {
-        legId.value = sessionStorage.legId;
+        legId.value = sessionStorage.legId;//스토리지에 저장되어 있는 값을 value에 뿌려줌
     }
     legId.addEventListener('keyup', function(){
         sessionStorage.legId = legId.value;
         if(legId.value.length == 0){
             legId.nextElementSibling.innerHTML = '영문과 숫자만으로 작성해 주세요.(6~20자)'
-            legId.nextElementSibling.style.color = '#D2691E'
+            legId.nextElementSibling.style.color = `#${defaultColor}`;
         } else if (ID_CHECK.test(legId.value) != true){
             legId.nextElementSibling.innerHTML = "영문 혹은 숫자가 아닙니다."
-            legId.nextElementSibling.style.color = "crimson"
+            legId.nextElementSibling.style.color = warnColor;
         } else if (legId.value.length > 20 || legId.value.length < 6) {
             legId.nextElementSibling.innerHTML = "6~20자 사이로 입력해 주세요."
-            legId.nextElementSibling.style.color = "orangered"
+            legId.nextElementSibling.style.color = cautionColor;
         } else {
             legId.nextElementSibling.innerHTML = "사용 가능"
-            legId.nextElementSibling.style.color = "rgb(19, 168, 99)"
+            legId.nextElementSibling.style.color = `rgb(${passColor})`
         }
     })
     legPw.addEventListener('keyup', function () {
         if (legPw.value.length == 0) {
             legPw.nextElementSibling.innerHTML = '대/소문자, 숫자, 특수문자의 조합으로 작성해 주세요.(8~16자)'
-            legPw.nextElementSibling.style.color = '#D2691E'
+            legPw.nextElementSibling.style.color = `#${defaultColor}`;
         } else if (PW_CHECK.test(legPw.value) != true) {
             legPw.nextElementSibling.innerHTML = "대문자,특수문자,숫자를 반드시 하나 이상 포함해 주세요."
-            legPw.nextElementSibling.style.color = "crimson"
+            legPw.nextElementSibling.style.color = warnColor;
         } else if (legPw.value.length > 16 || legPw.value.length < 8) {
             legPw.nextElementSibling.innerHTML = "8~16자 사이로 입력해 주세요."
-            legPw.nextElementSibling.style.color = "orangered"
+            legPw.nextElementSibling.style.color = cautionColor;
         } else {
             legPw.nextElementSibling.innerHTML = "사용 가능"
-            legPw.nextElementSibling.style.color = "rgb(19, 168, 99)"
+            legPw.nextElementSibling.style.color = `rgb(${passColor})`
         }
         if (legPwCk.value.length == 0) {
             legPwCk.nextElementSibling.innerHTML = '비밀번호를 다시 한번 입력해 주세요.'
-            legPwCk.nextElementSibling.style.color = '#D2691E'
+            legPwCk.nextElementSibling.style.color = `#${defaultColor}`;
         } else if (legPw.value != legPwCk.value) {
             legPwCk.nextElementSibling.innerHTML = "입력하신 비밀번호와 일치하지 않습니다."
-            legPwCk.nextElementSibling.style.color = "crimson"
+            legPwCk.nextElementSibling.style.color = warnColor;
         } else {
             legPwCk.nextElementSibling.innerHTML = "입력하신 비밀번호와 일치합니다."
-            legPwCk.nextElementSibling.style.color = "rgb(19, 168, 99)"
+            legPwCk.nextElementSibling.style.color = `rgb(${passColor})`;
+        }
+    })
+
+    const eyeconSlash = document.querySelector('.slash')
+    const eyeconShow = document.querySelector('.show')
+    const eyecon = document.querySelector('#eyecon')
+
+    eyecon.addEventListener('click', function () {
+        if (legPw.type == 'password') {
+            // input이 password 타입이면 text로 변경하고 그에 맞는 아이콘 활성화
+            legPw.type = 'text'
+            legPwCk.type = 'text'
+            eyeconSlash.style.display = 'none'
+            eyeconShow.style.display = 'block'
+        } else {
+            legPw.type = 'password'
+            legPwCk.type = 'password'
+            eyeconShow.style.display = 'none'
+            eyeconSlash.style.display = 'block'
         }
     })
 
     legPwCk.addEventListener('keyup', function () {
         if (legPwCk.value.length == 0) {
             legPwCk.nextElementSibling.innerHTML = '비밀번호를 다시 한번 입력해 주세요.'
-            legPwCk.nextElementSibling.style.color = '#D2691E'
+            legPwCk.nextElementSibling.style.color = `#${defaultColor}`;
         } else if (legPw.value != legPwCk.value) {
             legPwCk.nextElementSibling.innerHTML = "입력하신 비밀번호와 일치하지 않습니다."
-            legPwCk.nextElementSibling.style.color = "crimson"
+            legPwCk.nextElementSibling.style.color = warnColor;
         } else {
             legPwCk.nextElementSibling.innerHTML = "입력하신 비밀번호와 일치합니다."
-            legPwCk.nextElementSibling.style.color = "rgb(19, 168, 99)"
+            legPwCk.nextElementSibling.style.color = `rgb(${passColor})`;
         }
     })
 
@@ -426,16 +461,16 @@ if(typeof(Storage)!== 'undefined'){
         sessionStorage.nameCheck = nameCheck.value;
         if (nameCheck.value.length == 0) {
             nameCheck.nextElementSibling.innerHTML = '이름은 한글로 입력해 주세요.'
-            nameCheck.nextElementSibling.style.color = '#D2691E'
+            nameCheck.nextElementSibling.style.color = `#${defaultColor}`;
         } else if (NAME_CHECK.test(nameCheck.value) != true) {
             nameCheck.nextElementSibling.innerHTML = "이름은 영문 혹은 한글로만 입력해 주세요."
-            nameCheck.nextElementSibling.style.color = "crimson"
+            nameCheck.nextElementSibling.style.color = warnColor;
         } else if (nameCheck.value.length < 2) {
             nameCheck.nextElementSibling.innerHTML = "2글자 이상 입력해 주세요."
-            nameCheck.nextElementSibling.style.color = "orangered"
+            nameCheck.nextElementSibling.style.color = cautionColor;
         } else {
             nameCheck.nextElementSibling.innerHTML = "사용 가능"
-            nameCheck.nextElementSibling.style.color = "rgb(19, 168, 99)"
+            nameCheck.nextElementSibling.style.color = `rgb(${passColor})`;
         }
     })
     
@@ -454,16 +489,16 @@ if(typeof(Storage)!== 'undefined'){
         sessionStorage.year = year.value
         if (NUM_CHECK.test(year.value) != true) {
             yearText.innerHTML = '연도는 숫자로 입력해 주세요.'
-            yearText.style.color = "crimson"
+            yearText.style.color = warnColor;
         } else if (year.value > nowYear) {
             yearText.innerHTML = '연도가 ' + nowYear + '년을 넘었습니다.'
-            yearText.style.color = "orangered"
+            yearText.style.color = cautionColor;
         } else if (year.value.length == 4) {
             yearText.innerHTML = '완료'
-            yearText.style.color = "rgb(19, 168, 99)"
+            yearText.style.color = `rgb(${passColor})`;
         } else {
             yearText.innerHTML = '연도의 범위가 잘못 됐습니다.'
-            yearText.style.color = 'rgb(24, 65, 199)'
+            yearText.style.color = cautionColor;
         }
     })
     day.value = sessionStorage.day;
@@ -478,16 +513,16 @@ if(typeof(Storage)!== 'undefined'){
         // console.log(day.value)
         if (NUM_CHECK.test(day.value) != true) {
             dayText.innerHTML = '일자는 숫자로 입력해 주세요.'
-            dayText.style.color = "crimson"
+            dayText.style.color = warnColor;
         } else if (day.value.length == 0) {
             dayText.innerHTML = '&nbsp;'
             dayText.style.color = 'rgb(24, 65, 199)'
         } else if (day.value > 31 || day.value < 1) {
             dayText.innerHTML = '일자의 범위가 잘못 됐습니다.'
-            dayText.style.color = "orangered"
+            dayText.style.color = cautionColor;
         } else {
             dayText.innerHTML = '사용 가능'
-            dayText.style.color = "rgb(19, 168, 99)"
+            dayText.style.color = `rgb(${passColor})`;
         }
     })
 
@@ -495,22 +530,22 @@ if(typeof(Storage)!== 'undefined'){
         // console.log(IDENTITY_CHECK.test(identity.value))
         if (identity.value.length == 0) {
             identity.nextElementSibling.innerHTML = '하이픈(-)을 포함해서 입력해 주세요.'
-            identity.nextElementSibling.style.color = '#D2691E';
+            identity.nextElementSibling.style.color = `#${defaultColor}`;;
         } else if (IDENTITY_CHECK.test(identity.value) != true) {
             identity.nextElementSibling.innerHTML = "주민등록 번호를 제대로 입력해 주세요."
-            identity.nextElementSibling.style.color = "crimson";
+            identity.nextElementSibling.style.color = warnColor;
         } else if (identity.value.split("")[7] == 1 || identity.value.split("")[7] == 3) {
             //하이픈 뒤 첫 숫자가 1,3일 때 남자 표시를 띄움
             male.style.visibility = 'visible'
             female.style.visibility = 'hidden'
             identity.nextElementSibling.innerHTML = "사용 가능"
-            identity.nextElementSibling.style.color = "rgb(19, 168, 99)"
+            identity.nextElementSibling.style.color = `rgb(${passColor})`;
         } else if (identity.value.split("")[7] == 2 || identity.value.split("")[7] == 4) {
             //하이픈 뒤 첫 숫자가 2,4일 때 여자 표시를 띄움
             female.style.visibility = 'visible'
             male.style.visibility = 'hidden'
             identity.nextElementSibling.innerHTML = "사용 가능"
-            identity.nextElementSibling.style.color = "rgb(19, 168, 99)"
+            identity.nextElementSibling.style.color = `rgb(${passColor})`;
         }
     })
 
@@ -521,7 +556,7 @@ if(typeof(Storage)!== 'undefined'){
                 legDetailAddress.focus(); //상세입력 포커싱
             }
         }).open();
-    });
+    }); // 카카오 주소 찾기 api
     
 
     
@@ -536,30 +571,35 @@ if(typeof(Storage)!== 'undefined'){
         sessionStorage.legPhone = legPhone.value
         if (legPhone.value.length == 0) {
             legPhone.nextElementSibling.innerHTML = '하이픈(-)을 포함해서 입력해 주세요.'
-            legPhone.nextElementSibling.style.color = '#D2691E';
+            legPhone.nextElementSibling.style.color = `#${defaultColor}`;;
         } else if (PHONENUMBER_CHECK.test(legPhone.value) != true) {
             legPhone.nextElementSibling.innerHTML = '번호를 정확히 입력해 주세요'
-            legPhone.nextElementSibling.style.color = 'crimson'
+            legPhone.nextElementSibling.style.color = warnColor;
         } else {
             legPhone.nextElementSibling.innerHTML = '사용 가능'
-            legPhone.nextElementSibling.style.color = "rgb(19, 168, 99)"
+            legPhone.nextElementSibling.style.color = `rgb(${passColor})`;
         }
     })
 }
 
 
+////////////-------Sign up 유효성 검사 끝--------///////////
+
+let issue_main_title = document.querySelector('.issue_main_title')
+let grade_pointer = document.querySelector('.grade.pointer')
+
 footerScroll.addEventListener('click',function(e){
     if(e.target.innerText=='HOME'){
         header.scrollIntoView({
             behavior: "smooth"})
-    } else if (e.target.innerText == '신간도서'){
-        newBook.scrollIntoView({
+    } else if (e.target.innerText == '추천 도서'){
+        issue_main_title.scrollIntoView({
             behavior: "smooth"})
     } else if (e.target.innerText == '장르별 도서'){
         genreBook.scrollIntoView({
             behavior: "smooth"})
-    } else if (e.target.innerText == '리뷰'){
-        reviewBook.scrollIntoView({
+    } else if (e.target.innerText == '평점 좋은 도서'){
+        grade_pointer.scrollIntoView({
             behavior: "smooth"}) 
     }
 })
