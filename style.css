@@ -134,6 +134,10 @@ body{
     z-index: -1;
 }
 
+.lgModal .fa-xmark{
+    cursor: pointer;
+}
+
 .loginModal .modalTitle{
     text-align: center;
     width: 100%;
@@ -261,6 +265,7 @@ body{
     position: relative;
     right: 5px;
     top: -15px;
+    cursor: pointer;
 }
 
 .show ,.slash{

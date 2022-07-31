@@ -211,6 +211,8 @@ const PHONENUMBER_CHECK = /^\d{2,3}-\d{3,4}-\d{4}$/;
 //앞자리는 2~3자리의 숫자 / 중간자리는 3~4자리의 숫자
 const NUM_CHECK = /^[0-9]*$/;
 //숫자만 체크
+const REGIST_CHECK = /(pass){8,8}/
+//마지막 검증 때 배열에 pass가 8개 들어있나 확인
 ///////////////////////////////////////////////////////////////////
 
 let legId = document.querySelector('.legId');
@@ -226,17 +228,17 @@ let legPhone = document.querySelector('.legPhone')
 let male = document.querySelector('.fa-mars')
 let female = document.querySelector('.fa-venus')
 
+let btnFlag = ['fail', 'fail', 'fail', 'fail', 'fail', 'fail', 'fail', 'fail'] //0~7 까지의 유효성 체크 여부를 저장하는 배열
 
-///////글씨 색깔///////////
+///////글씨 색깔///////////////
 let defaultColor = "D2691E";
 let warnColor = "crimson";
 let cautionColor = "orangered";
 let passColor = "19,168,99";
-//////////////////////////
+///////////////////////////////
 
 
 if(typeof(Storage)!== 'undefined'){
-    sessionStorage.legId = legId.value;
     if (legId.value === 'undefined') {
         //세션스토리지에 undefined가 들어 있다면
         //undefined가 뜨지않게 하기 위해서 공백을 넣음
@@ -249,40 +251,38 @@ if(typeof(Storage)!== 'undefined'){
         if(legId.value.length == 0){
             legId.nextElementSibling.innerHTML = '영문과 숫자만으로 작성해 주세요.(6~20자)'
             legId.nextElementSibling.style.color = `#${defaultColor}`;
+            btnFlag[0]='fail'
         } else if (ID_CHECK.test(legId.value) != true){
             legId.nextElementSibling.innerHTML = "영문 혹은 숫자가 아닙니다."
             legId.nextElementSibling.style.color = warnColor;
+            btnFlag[0]='fail'
         } else if (legId.value.length > 20 || legId.value.length < 6) {
             legId.nextElementSibling.innerHTML = "6~20자 사이로 입력해 주세요."
             legId.nextElementSibling.style.color = cautionColor;
+            btnFlag[0]='fail'
         } else {
             legId.nextElementSibling.innerHTML = "사용 가능"
             legId.nextElementSibling.style.color = `rgb(${passColor})`
+            btnFlag[0]='pass' // 마지막에 가입하기를 눌렀을 때 유효성 검사에 통과했는지 확인하기 위한 배열 값.
         }
     })
     legPw.addEventListener('keyup', function () {
         if (legPw.value.length == 0) {
             legPw.nextElementSibling.innerHTML = '대/소문자, 숫자, 특수문자의 조합으로 작성해 주세요.(8~16자)'
             legPw.nextElementSibling.style.color = `#${defaultColor}`;
+            btnFlag[1]='fail'
         } else if (PW_CHECK.test(legPw.value) != true) {
             legPw.nextElementSibling.innerHTML = "대문자,특수문자,숫자를 반드시 하나 이상 포함해 주세요."
             legPw.nextElementSibling.style.color = warnColor;
+            btnFlag[1]='fail'
         } else if (legPw.value.length > 16 || legPw.value.length < 8) {
             legPw.nextElementSibling.innerHTML = "8~16자 사이로 입력해 주세요."
             legPw.nextElementSibling.style.color = cautionColor;
+            btnFlag[1]='fail'
         } else {
             legPw.nextElementSibling.innerHTML = "사용 가능"
             legPw.nextElementSibling.style.color = `rgb(${passColor})`
-        }
-        if (legPwCk.value.length == 0) {
-            legPwCk.nextElementSibling.innerHTML = '비밀번호를 다시 한번 입력해 주세요.'
-            legPwCk.nextElementSibling.style.color = `#${defaultColor}`;
-        } else if (legPw.value != legPwCk.value) {
-            legPwCk.nextElementSibling.innerHTML = "입력하신 비밀번호와 일치하지 않습니다."
-            legPwCk.nextElementSibling.style.color = warnColor;
-        } else {
-            legPwCk.nextElementSibling.innerHTML = "입력하신 비밀번호와 일치합니다."
-            legPwCk.nextElementSibling.style.color = `rgb(${passColor})`;
+            btnFlag[1]='pass'
         }
     })
 
@@ -309,12 +309,15 @@ if(typeof(Storage)!== 'undefined'){
         if (legPwCk.value.length == 0) {
             legPwCk.nextElementSibling.innerHTML = '비밀번호를 다시 한번 입력해 주세요.'
             legPwCk.nextElementSibling.style.color = `#${defaultColor}`;
+            btnFlag[2]='fail'
         } else if (legPw.value != legPwCk.value) {
             legPwCk.nextElementSibling.innerHTML = "입력하신 비밀번호와 일치하지 않습니다."
             legPwCk.nextElementSibling.style.color = warnColor;
+            btnFlag[2]='fail'
         } else {
             legPwCk.nextElementSibling.innerHTML = "입력하신 비밀번호와 일치합니다."
             legPwCk.nextElementSibling.style.color = `rgb(${passColor})`;
+            btnFlag[2]='pass'
         }
     })
 
@@ -331,15 +334,19 @@ if(typeof(Storage)!== 'undefined'){
         if (nameCheck.value.length == 0) {
             nameCheck.nextElementSibling.innerHTML = '이름은 한글로 입력해 주세요.'
             nameCheck.nextElementSibling.style.color = `#${defaultColor}`;
+            btnFlag[3]='fail'
         } else if (NAME_CHECK.test(nameCheck.value) != true) {
             nameCheck.nextElementSibling.innerHTML = "이름은 영문 혹은 한글로만 입력해 주세요."
             nameCheck.nextElementSibling.style.color = warnColor;
+            btnFlag[3]='fail'
         } else if (nameCheck.value.length < 2) {
             nameCheck.nextElementSibling.innerHTML = "2글자 이상 입력해 주세요."
             nameCheck.nextElementSibling.style.color = cautionColor;
+            btnFlag[3]='fail'
         } else {
             nameCheck.nextElementSibling.innerHTML = "사용 가능"
             nameCheck.nextElementSibling.style.color = `rgb(${passColor})`;
+            btnFlag[3]='pass'
         }
     })
     
@@ -359,15 +366,19 @@ if(typeof(Storage)!== 'undefined'){
         if (NUM_CHECK.test(year.value) != true) {
             yearText.innerHTML = '연도는 숫자로 입력해 주세요.'
             yearText.style.color = warnColor;
+            btnFlag[4]='fail'
         } else if (year.value > nowYear) {
             yearText.innerHTML = '연도가 ' + nowYear + '년을 넘었습니다.'
             yearText.style.color = cautionColor;
+            btnFlag[4]='fail'
         } else if (year.value.length == 4) {
             yearText.innerHTML = '완료'
             yearText.style.color = `rgb(${passColor})`;
+            btnFlag[4]='pass'
         } else {
             yearText.innerHTML = '연도의 범위가 잘못 됐습니다.'
             yearText.style.color = cautionColor;
+            btnFlag[4]='fail'
         }
     })
     day.value = sessionStorage.day;
@@ -383,15 +394,19 @@ if(typeof(Storage)!== 'undefined'){
         if (NUM_CHECK.test(day.value) != true) {
             dayText.innerHTML = '일자는 숫자로 입력해 주세요.'
             dayText.style.color = warnColor;
+            btnFlag[5]='fail'
         } else if (day.value.length == 0) {
             dayText.innerHTML = '&nbsp;'
             dayText.style.color = 'rgb(24, 65, 199)'
+            btnFlag[5]='fail'
         } else if (day.value > 31 || day.value < 1) {
             dayText.innerHTML = '일자의 범위가 잘못 됐습니다.'
             dayText.style.color = cautionColor;
+            btnFlag[5]='fail'
         } else {
             dayText.innerHTML = '사용 가능'
             dayText.style.color = `rgb(${passColor})`;
+            btnFlag[5]='pass'
         }
     })
 
@@ -399,22 +414,26 @@ if(typeof(Storage)!== 'undefined'){
         // console.log(IDENTITY_CHECK.test(identity.value))
         if (identity.value.length == 0) {
             identity.nextElementSibling.innerHTML = '하이픈(-)을 포함해서 입력해 주세요.'
-            identity.nextElementSibling.style.color = `#${defaultColor}`;;
+            identity.nextElementSibling.style.color = `#${defaultColor}`;
+            btnFlag[6]='fail'
         } else if (IDENTITY_CHECK.test(identity.value) != true) {
             identity.nextElementSibling.innerHTML = "주민등록 번호를 제대로 입력해 주세요."
             identity.nextElementSibling.style.color = warnColor;
+            btnFlag[6]='fail'
         } else if (identity.value.split("")[7] == 1 || identity.value.split("")[7] == 3) {
             //하이픈 뒤 첫 숫자가 1,3일 때 남자 표시를 띄움
             male.style.visibility = 'visible'
             female.style.visibility = 'hidden'
             identity.nextElementSibling.innerHTML = "사용 가능"
             identity.nextElementSibling.style.color = `rgb(${passColor})`;
+            btnFlag[6]='pass'
         } else if (identity.value.split("")[7] == 2 || identity.value.split("")[7] == 4) {
             //하이픈 뒤 첫 숫자가 2,4일 때 여자 표시를 띄움
             female.style.visibility = 'visible'
             male.style.visibility = 'hidden'
             identity.nextElementSibling.innerHTML = "사용 가능"
             identity.nextElementSibling.style.color = `rgb(${passColor})`;
+            btnFlag[6]='pass'
         }
     })
 
@@ -440,15 +459,38 @@ if(typeof(Storage)!== 'undefined'){
         sessionStorage.legPhone = legPhone.value
         if (legPhone.value.length == 0) {
             legPhone.nextElementSibling.innerHTML = '하이픈(-)을 포함해서 입력해 주세요.'
-            legPhone.nextElementSibling.style.color = `#${defaultColor}`;;
+            legPhone.nextElementSibling.style.color = `#${defaultColor}`;
+            btnFlag[7]='fail'
         } else if (PHONENUMBER_CHECK.test(legPhone.value) != true) {
             legPhone.nextElementSibling.innerHTML = '번호를 정확히 입력해 주세요'
             legPhone.nextElementSibling.style.color = warnColor;
+            btnFlag[7]='fail'
         } else {
             legPhone.nextElementSibling.innerHTML = '사용 가능'
             legPhone.nextElementSibling.style.color = `rgb(${passColor})`;
+            btnFlag[7]='pass'
         }
     })
+}
+
+function join(){
+    let lastCheck = '';
+    for (let i = 0; i < btnFlag.length; i++) {
+        lastCheck += btnFlag[i]
+        //flag에 들어있는 배열의 값들을 변수에 저장
+    }
+    console.log(btnFlag)
+    console.log(lastCheck)
+    console.log(REGIST_CHECK.test(lastCheck))
+
+    if (REGIST_CHECK.test(lastCheck) != true) {
+        alert("가입 양식을 다시 한번 체크해 주세요.")
+    } else {
+        alert("가입을 축하합니다.")
+        //lastCheck에 들어있는 값이 모두 pass라면 통과
+        modalClose();
+        loginModal.style.display = 'flex'
+    }
 }
 
 

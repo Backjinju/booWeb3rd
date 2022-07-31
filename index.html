@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    
     <!-- login modal start -->
     <!-- modal container -->
     <div class="loginModal" style="display: none;">
@@ -48,7 +49,7 @@
                 <p class="loginFormTitle">Sign Up<i class="fa-solid fa-xmark" id="signUpXmark"></i></p>
                 <input type="text" class="legId" placeholder="ID">
                 <p class="smallText">영문과 숫자만으로 작성해 주세요.(6~20자)</p>
-                <input type="text" class="legPasswd" placeholder="비밀번호">
+                <input type="password" class="legPasswd" placeholder="비밀번호">
                 <p class="smallText">대/소문자, 숫자, 특수문자의 조합으로 작성해 주세요.(8~16자)</p>
                 <label id="eyecon" for="password">
                     <i class="fa-solid fa-eye show" style="display: none;"></i>
@@ -94,7 +95,7 @@
                 </div>
                 <input type="text" class="legPhone" placeholder="전화 번호">
                 <p class="smallText">하이픈(-)을 포함하여 입력해 주세요.</p>
-                <button class="legBtn">가입하기</button>
+                <button class="legBtn" onclick="join()">가입하기</button>
                 <!--
                         아이디 
                         비밀번호
@@ -109,7 +110,6 @@
         </div>
 
     </div>
-
     <!-- container start -->
     <div class="container">
         <div class="loginIcon">
@@ -810,9 +810,9 @@
 
 
     <!-- js file link -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="script.js"></script>
-
     </div>
 </body>
 
