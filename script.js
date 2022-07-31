@@ -37,7 +37,7 @@ loadingPage();
 
 
 function loadingPage(){
-    setTimeout(loadingFadeout,4) // 첫 로딩 이미지(setTimeout으로 시간 조절)
+    setTimeout(loadingFadeout,5000) // 첫 로딩 이미지(setTimeout으로 시간 조절)
 }
 
 function loadingFadeout(){
