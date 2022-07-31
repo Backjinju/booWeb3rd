@@ -855,6 +855,8 @@ li {
     align-items: center;
     display: none;
     z-index: 500;
+    top: 0px;
+    left: 0px;
 }
 .modalview{
     width: 70%;
